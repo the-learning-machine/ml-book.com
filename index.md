@@ -3,7 +3,7 @@ layout: page
 width: expand
 hero:
     title: How can we help you?
-    subtitle: SAearch or browse in depth articles and videos on everything on Docs Jekyll theme, from basic theme setup to customisation and development
+    subtitle: Search or browse in depth articles and code repositories on everything on ML, from A-Z theory explanation to model development and implementation
     image: knowledge.svg
     search: true
 ---
