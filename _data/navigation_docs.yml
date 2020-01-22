@@ -1,16 +1,17 @@
 - title: Getting Started
   docs:
-  - installation
-  - setup
-  - navigation
-  - footer
-  - posts
+#  - installation
+#  - setup
+#  - navigation
+#  - footer
+#  - posts
 #  - docs
 #  - comments
 #  - analytics
 
 - title: Theme Features
   docs:
+  - mindmap
   - hero
   - boxes
   - featured
