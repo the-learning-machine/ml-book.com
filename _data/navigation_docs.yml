@@ -1,5 +1,6 @@
 - title: Getting Started
   docs:
+  - mindmap
 #  - installation
 #  - setup
 #  - navigation
@@ -11,7 +12,6 @@
 
 - title: Theme Features
   docs:
-  - mindmap
   - hero
   - boxes
   - featured
