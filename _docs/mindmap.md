@@ -1,9 +1,9 @@
 ---
-title: Navigation bar
+title: ML Mind Map
 subtitle: This document covers the setup and options of theme feature described in the doc title
-author: sara
+author: andrew
 tags: [setup]
-permalink: /aaaa
+permalink:
 ---
 
 Set in the main navigation links in `_data/navigation_header.yml`:
