@@ -1,16 +1,16 @@
 # Boxes include navigation
 
 - title: Getting Started
-  desc: Get started fast with installation and theme setup instructions
+  desc: Don't know where to start? Start here
   icon: cog
-  doc: installation
+  doc: mindmap
 
 - title: Theme Features
-  desc: Lean about all the theme options, features and how to use them
+  desc: Start with real projects we've prepped for you to excel your skills
   icon: settings
-  doc: hero
+  doc:
 
-- title: Customization
-  desc: Get help or tailor the theme to your specific requirements
+- title: Implementation
+  desc: Get started with Python implementation of ML algorithms
   icon: code
-  doc: customize
+  doc:
