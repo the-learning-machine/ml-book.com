@@ -1,7 +1,7 @@
 - title: Getting Started
   docs:
   - mindmap
-  - installation
+  - example
 #  - setup
 #  - navigation
 #  - footer
@@ -10,28 +10,37 @@
 #  - comments
 #  - analytics
 
-- title: Theme Features
+- title: Regression
   docs:
-  - hero
-  - boxes
-  - featured
-  - videos
-  - faq
-  - team
-  - cta
-  - changelog
-  - contact
-  - media
-  - toc
-  - alerts
+  - reg_nb
+  - reg_lasso_ridge_elastic
+  - cl_dt_cart
+  - reg_multi
+#  - boxes
+#  - featured
+#  - videos
+#  - faq
+#  - team
+#  - cta
+#  - changelog
+#  - contact
+#  - media
+#  - toc
+#  - alerts
 
-- title: Customization
+- title: Classification
   docs:
-  - translation
-  - customize
-  - development
-  - sources
+  - cl_nb
+  - cl_rf
+  - cl_lr
+  - cl_dt_id3
+  - cl_dt_cart
+#  - translation
+#  - customize
+#  - development
+#  - sources
 
-- title: Help
+- title: Clustering
   docs:
-  - support
+  - example
+#  - support
