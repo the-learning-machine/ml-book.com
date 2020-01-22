@@ -14,7 +14,7 @@ width: expand
 hero:
     title: How can we help you?
     subtitle: Search or browse in depth articles and videos
-    image: knowledge.svg
+    image: /uploads/slideshow-1/knowledge.svg
     search: true
 ---
 ```
