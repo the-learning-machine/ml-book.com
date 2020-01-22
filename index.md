@@ -16,7 +16,7 @@ hero:
 
 {% include faqs.html multiple="true" title="Frequently asked questions" category="presale" subtitle="Find quicke answers to frequent pre-sale questions asked by customers" %}
 
-{% include team.html authors="victor, gwena, rex, kirill, andrew" title="We are here to help" subtitle="Our team tries to accelerate the spread of data science knowledge across borders" %}
+{% include team.html authors="victor, gwena, rex, kirill, andrew" title="We are here to help" subtitle="and accelerate the spread of ML knowledge across borders" %}
 
 {% include cta.html title="Didn't find an answer?" button_text="Contact Us" button_url="/contact/" subtitle="Get in touch with us, we'd love to help you out on your data science jorney" %}
 
