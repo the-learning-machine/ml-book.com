@@ -5,9 +5,9 @@
   - navigation
   - footer
   - posts
-  - docs
-  - comments
-  - analytics
+#  - docs
+#  - comments
+#  - analytics
 
 - title: Theme Features
   docs:

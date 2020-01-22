@@ -12,7 +12,7 @@ To add a hero header to a page add the following to a YAML Front Matter:
 layout: page
 width: expand
 hero:
-    title: Making ML accessible to everyone
+    title: How can we help you?
     subtitle: Search or browse in depth articles and videos
     image: /uploads/slideshow-1/knowledge.svg
     search: true
