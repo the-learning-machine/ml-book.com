@@ -20,7 +20,7 @@ baseurl:            ""
 permalink:          /:title/
 
 # Site base hostname & protocol, e.g. http://example.com
-url:                "https://docs.jekyll.plus"
+url:                "https://the-learning-machine.github.io"
 
 # Site logo # e.g. logo.png, upload logo image file to /uploads/ folder
 logo:      
