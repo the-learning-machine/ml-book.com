@@ -1,5 +1,5 @@
 ---
-title: Naive Bayes
+title: Naive Bayes Regressor
 subtitle: This document will cover something cool.
 author: victor
 tags: [mlmindmap]
