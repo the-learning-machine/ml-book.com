@@ -9,7 +9,7 @@ Create FAQ post in `_faqs` folder (categories are optional):
 ```yml
 ---
 title: Do you provide customer support?
-categories: [presale]
+categories: [how-to-start]
 ---
 ```
 
