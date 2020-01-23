@@ -2,7 +2,7 @@
 title: Random Forest
 subtitle: This document will cover something cool.
 author: victor
-tags: [mlmindmap]
+tags: [featured]
 permalink:
 ---
 

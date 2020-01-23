@@ -8,7 +8,7 @@ author: evan
 Then add the following to a page to display featured docs:
 {% raw %}
 ```yaml
-{% include featured.html tag="featured" title="Popular Articles" subtitle="Selected featured articles to get you started fast in Jekyll" %}
+{% include featured.html tag="featured" title="Popular Articles" subtitle="Selected featured articles to get you started fast with ML" %}
 ```
 {% endraw %}
 

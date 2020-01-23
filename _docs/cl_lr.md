@@ -2,7 +2,7 @@
 title: Logistic Regression
 subtitle: This document will cover something cool.
 author: victor
-tags: [mlmindmap]
+tags: [mlmindmap, featured]
 permalink:
 ---
 

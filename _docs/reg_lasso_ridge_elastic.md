@@ -2,7 +2,7 @@
 title: Lasso, Ridge & Elastic Net
 subtitle: This document will cover something cool.
 author: victor
-tags: [mlmindmap]
+tags: [featured]
 permalink:
 ---
 
