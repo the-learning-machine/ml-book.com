@@ -4,10 +4,17 @@ subtitle: This document will cover something cool.
 author: victor
 tags: [mlmindmap, featured]
 permalink:
+useMath: true
 ---
 
 Hey. This is an example Blog.
 
+<div class="math">
+\begin{equation}
+  \sum (x_i + 24) = /inf - 1
+\end{equation}
+</div>
 
-When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
-\[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]
+Another go: 
+
+$ \sum (x_i + 24) = /inf - 1 $ 
