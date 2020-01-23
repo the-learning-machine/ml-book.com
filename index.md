@@ -18,5 +18,5 @@ hero:
 
 {% include team.html authors="victor, gwena, rex, kirill, andrew" title="We are here to help" subtitle="and accelerate the spread of ML knowledge across borders" %}
 
-{% include cta.html title="Didn't find an answer?" button_text="Contact Us" button_url="/contact/" subtitle="Get in touch with us, we'd love to help you out on your data science jorney" %}
+{% include cta.html title="Didn't find an answer?" button_text="Join us on Slack" button_url="https://join.slack.com/t/thelearningmachine/shared_invite/enQtNzYzNTk5ODIxMzY1LWVhNzQ4NzAxYzA5MjhjYTdlZTFlMmY3YmRhMjExZjEyZGYzNDQ2NDZjOGQ5Y2ExMjYyNDcyZGVkN2IzZmFjNzA" subtitle="Join our ML community in Slack, we'd love to help you out on your data science jorney" %}
 
