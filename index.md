@@ -14,7 +14,7 @@ hero:
 
 {% include videos.html columns="2" title="Video Tutorials" subtitle="Watch screencasts to get you started fast with ML" %}
 
-{% include faqs.html multiple="true" title="Frequently asked questions" category="presale" subtitle="Find quicke answers to frequent pre-sale questions asked by customers" %}
+{% include faqs.html multiple="true" title="Frequently asked questions" category="how-to-start" subtitle="Find quick answers to frequent data science questions asked by new-joiners" %}
 
 {% include team.html authors="victor, gwena, rex, kirill, andrew" title="We are here to help" subtitle="and accelerate the spread of ML knowledge across borders" %}
 
