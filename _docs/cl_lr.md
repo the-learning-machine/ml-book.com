@@ -22,9 +22,7 @@ $$
 
 
 As you can see from formula (1), $$odds(p) \in [0 ; \infty]$$ given that $$p \in [0;1]$$.
-However, we want our model to take a real value number from $$[-\infty ; \infty]$$ (as our features can have any values), 
-and output a soft number in a range [0;1] to describe a probability. Logistic function (also called Sigmoid) possesses all of 
-these traits. It can be derived as an inverse of a log-odds function which is also called **logit**.
+However, we want our model to take a real value number from $$[-\infty ; \infty]$$ (as our features can have any values), and output a soft number in a range [0;1] to describe a probability. Logistic function (also called Sigmoid) possesses all of these traits. It can be derived as an inverse of a log-odds function which is also called **logit**.
 
 $$
 logit(p)=log(odds(p))=log(\frac{p}{1-p})\quad(2)
@@ -32,8 +30,7 @@ $$
 
 <img src="/uploads/doc/classification/lr_logit.png" align="middle" height="400" width="400">
 
-We can achieve the required properties by reflecting the logit function about the line $$y=x$$. This transformation can be performed 
-by calculating the inverse of expression (2) which is called a **logistic function**:
+We can achieve the required properties by reflecting the logit function about the line $$y=x$$. This transformation can be performed by calculating the inverse of expression (2) which is called a **logistic function**:
 
 $$
 logistic(y)=logit(p)^{-1}
@@ -70,9 +67,7 @@ where
 
 Coefficients $$\theta_i$$ indicate the effect of a one-unit change in the predictor variable on the log odds of "success"
 
-As our train data contains more than one observation, we will denote $$x$$ as a column vector of the predictors' values for 
-the particular observation (we will also add 1 as its first element to account for an intercept term) and $$\theta$$ as a 
-column vector of coefficients $$\theta_0...\theta_k$$:
+As our train data contains more than one observation, we will denote $$x$$ as a column vector of the predictors' values for the particular observation (we will also add 1 as its first element to account for an intercept term) and $$\theta$$ as a column vector of coefficients $$\theta_0...\theta_k$$:
 
 $$
 x=
@@ -92,9 +87,7 @@ Using this notation we can rewrite the expression (4) as follows:
 $$logit(p)=\theta^Tx\quad(5)$$
 
 
-If we plug in $$y=\theta^Tx$$ into formula (3), we will get an expression for the 
-probability of a random variable Y (that represents the predicted output) being 0 or 1 given experimental data $$x$$ and model 
-parameters $$\theta$$:
+If we plug in $$y=\theta^Tx$$ into formula (3), we will get an expression for the probability of a random variable Y (that represents the predicted output) being 0 or 1 given experimental data $$x$$ and model parameters $$\theta$$:
 
 $$
 Pr(Y=1 | x, \theta)=\frac{1}{1+e^{-\theta^Tx}}\quad(6)
@@ -121,10 +114,7 @@ Pr(Y | x, \theta) \to 1 - Pr(Y=1 | x, \theta) = Pr(Y=0 | x, \theta) \mathrm{\ gi
 $$
 
 
-Our goal is to determine the coefficients $$\theta=\theta_0$$...$$\theta_k\$$ from formula (4). 
-The intuition here is that for any given train observation we want these coefficients to maximize 
-the probability of observing a correct label. This sentence can be converted to the following 
-formula (assuming train data is independently distributed):
+Our goal is to determine the coefficients $$\theta=\theta_0$$...$$\theta_k\$$ from formula (4). The intuition here is that for any given train observation we want these coefficients to maximize the probability of observing a correct label. This sentence can be converted to the following formula (assuming train data is independently distributed):
 
 $$
 
