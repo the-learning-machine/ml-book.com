@@ -23,7 +23,7 @@ permalink:          /:title/
 url:                "https://the-learning-machine.github.io"
 
 # Site logo # e.g. logo.png, upload logo image file to /uploads/ folder
-logo:      
+logo:
 
 # Default author settings
 author:
