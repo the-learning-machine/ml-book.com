@@ -1,5 +1,5 @@
 ---
-title: Logistic Regression
+title: EXAMPLE IS HERE!
 subtitle: This document will cover something cool.
 author: victor
 tags: [mlmindmap, featured]
@@ -26,14 +26,14 @@ Some text
 
 
 Small pic
-<p>This is some text.<img src="/uploads/andrew.jpeg" alt="Smiley face" align="middle" height="200" width="200"> This is some text.</p>
+<img src="/uploads/andrew.jpeg" alt="Smiley face" align="middle" height="200" width="200">
 
 
 Medium pic
-<p>This is some text.<img src="/uploads/andrew.jpeg" alt="Smiley face" align="middle" height="300" width="300"> This is some text.</p>
+<img src="/uploads/andrew.jpeg" alt="Smiley face" align="middle" height="300" width="300">
 
 Big pic
-<p>This is some text.<img src="/uploads/andrew.jpeg" alt="Smiley face" align="middle" height="400" width="400"> This is some text.</p>
+<img src="/uploads/andrew.jpeg" alt="Smiley face" align="middle" height="400" width="400">
 
 
 Code example:
@@ -41,6 +41,14 @@ Code example:
   def function(a, b):
     h = 5
 ```
+THIS IS THE PIC WITH SOME TEXT AROUND: 
 
-<p>This is some text. This text is located on the left side of the picture, just to test if it will be looking cool and clean. Well, hence no need to read this stuff, until you like spending time on something completely useless!! <img src="/uploads/andrew.jpeg" alt="Smiley face" align="middle" height="400" width="400"> </p>
+<p>This is some text. This text is located on the left side of the picture, just to test if it will be looking cool and clean. Well, hence no need to read this stuff, until you like spending time on something completely useless!! <img src="/uploads/andrew.jpeg" alt="Smiley face" align="left" height="400" width="400" > </p>
 
+TABLES EXAMPLE:
+
+| Tables   |      Are      |  Cool |
+|----------|:-------------:|------:|
+| col 1 is |  left-aligned | $1600 |
+| col 2 is |    centered   |   $12 |
+| col 3 is | right-aligned |    $1 |
