@@ -3,7 +3,7 @@ layout: page
 width: expand
 hero:
     title: Welcome to ML Cookbook
-    subtitle: Search or browse in depth articles and code repositories on everything on ML, from A-Z theory explanation to model development and implementation
+    subtitle: Browse in depth articles and code repositories on everything in ML, from A-Z algorithm explanation to its model development and implementation
     image: knowledge.svg
     search: true
 ---
