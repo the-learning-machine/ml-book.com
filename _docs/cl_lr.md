@@ -1,13 +1,13 @@
 ---
 title: Naive Bayes Classifier
 subtitle: This document will cover something cool.
-author: victor
-tags: [featured]
+author: andrew
+tags: [naive]
 permalink:
 ---
 # 1. Introduction
 
-Logistic Regression despite the "regression" term in its name is used in classification problems when the dependent (target) variable has two possible outcomes. However, this model can be extended to tackle multiclass classification problems, and we will discuss it at the end of this article. 
+Logistic Regression despite the "regression" term in its name is used in **classification** problems when the dependent (target) variable has two possible outcomes. However, this model can be extended to tackle multiclass classification problems, and we will discuss it at the end of this article. 
 
 # 2. Key Terms
 
@@ -18,7 +18,7 @@ odds(p)=\frac{p}{1-p}=\frac{Prob(Class\ 1)}{Prob(Class\ 2)}=\frac{Prob(True)}{Pr
 $$
 
 
-<img src="/uploads/doc/classification/lr_odd.png" height="400" width="400">
+<img src="/uploads/doc/classification/lr_odd.png" align="middle" height="400" width="400">
 
 
 As you can see from formula (1), $$odds(p) \in [0 ; \infty]$$ given that $$p \in [0;1]$$.
@@ -30,10 +30,10 @@ $$
 logit(p)=log(odds(p))=log(\frac{p}{1-p})\quad(2)
 $$
 
-<img src="/uploads/doc/classification/lr_logit.png" height="400" width="400">
+<img src="/uploads/doc/classification/lr_logit.png" align="middle" height="400" width="400">
 
 We can achieve the required properties by reflecting the logit function about the line y=x. This transformation can be performed 
-by calculating the inverse of expression (2) which is called a logistic function:
+by calculating the inverse of expression (2) which is called a **logistic function**:
 
 $$
 logistic(y)=logit(p)^{-1}
@@ -53,7 +53,7 @@ $$
 logistic(y)=\frac{1}{1+e^{-y}}\quad(3)
 $$
 
-<img src="/uploads/doc/classification/lr_logistic.png" height="400" width="400">
+<img src="/uploads/doc/classification/lr_logistic.png" align="middle" height="400" width="400">
 
 # Model Training
 
@@ -159,7 +159,7 @@ $$
 
 By default the threshold is set up to 0.5, but you can adjust it based on your needs (usually based on the True Positive Rate and False Positive Rate trade-off).
 
-<img src="/uploads/doc/classification/lr_pic1.png" height="400" width="400">
+<img src="/uploads/doc/classification/lr_pic1.png" align="middle" height="400" width="400">
 
 # 5. Regularization
 
@@ -195,6 +195,6 @@ It is important to normalize the data before performing regularized logistic reg
 
 Logistic regression can be generalized to handle problems with more than two possible outcomes. The most popular approach is called "One-vs-Rest" logistic regression where we split our multinomial problem with M classes into M binary classification problems (see Figure 5). 
 
-<img src="/uploads/doc/classification/lr_1vsall.png" height="400" width="400"> 
+<img src="/uploads/doc/classification/lr_1vsall.png" align="middle" height="400" width="400"> 
 
 In this case we generate different coefficients $$\theta$$ for each binary classification problem (basically we train M separate Logistic Regression models). When we have to classify a new observation, we calculate the probabilities of the data belonging to each class (which are the outputs of our models) and select the class that has the highest probability.
