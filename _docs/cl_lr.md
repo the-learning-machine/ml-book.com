@@ -22,7 +22,7 @@ $$
 
 
 As you can see from formula (1), $$odds(p) \in [0 ; \infty]$$ given that $$p \in [0;1]$$.
-However, we want our model to take a real value number from $$[-$\infty$ ; $\infty$]$$ (as our features can have any values), 
+However, we want our model to take a real value number from $$[-\infty ; \infty]$$ (as our features can have any values), 
 and output a soft number in a range [0;1] to describe a probability. Logistic function (also called Sigmoid) possesses all of 
 these traits. It can be derived as an inverse of a log-odds function which is also called **logit**.
 
@@ -32,7 +32,7 @@ $$
 
 <img src="/uploads/doc/classification/lr_logit.png" align="middle" height="400" width="400">
 
-We can achieve the required properties by reflecting the logit function about the line y=x. This transformation can be performed 
+We can achieve the required properties by reflecting the logit function about the line $$y=x$$. This transformation can be performed 
 by calculating the inverse of expression (2) which is called a **logistic function**:
 
 $$
@@ -49,6 +49,7 @@ $$
 
 
 Thus, the expression for logistic function (sigmoid function) is the following:
+
 $$
 logistic(y)=\frac{1}{1+e^{-y}}\quad(3)
 $$
@@ -100,7 +101,7 @@ Pr(Y=1 | x, \theta)=\frac{1}{1+e^{-\theta^Tx}}\quad(6)
 $$
 
 
-As we are dealing with two class problem, the probability $$Pr(Y=0 | x, \theta)$$ can be expressed as follows:
+As we are dealing with two class problem, the probability $$Pr(Y=0 \| x, \theta)$$ can be expressed as follows:
 
 $$
 Pr(Y=0 | x, \theta)=1-Pr(Y=1 | x, \theta)\quad(7)
@@ -115,7 +116,7 @@ $$
 One can notice that:
 
 $$
-Pr(Y | x, \theta) \to Pr(Y=1 | x, \theta) \mathrm{\ given\ Y=1},\ \mathrm{and}
+Pr(Y | x, \theta) \to Pr(Y=1 | x, \theta) \mathrm{\ given\ Y=1},\ \mathrm{and} \\
 Pr(Y | x, \theta) \to 1 - Pr(Y=1 | x, \theta) = Pr(Y=0 | x, \theta) \mathrm{\ given\ Y=0}.
 $$
 
@@ -127,7 +128,7 @@ formula (assuming train data is independently distributed):
 
 $$
 
-L(\theta | x) = Pr(Y | x,\theta) \to max,
+L(\theta | x) = Pr(Y | x,\theta) \to max, \\
 \mathrm{where}\  Pr(Y | x,\theta) = \prod_{i=1}^{n}Pr(y_i | x_i,\theta)=\prod_{i=1}^{n}Pr(y_i=1 | x_i, \theta)^{y_i}(1-Pr(y_i=1 | x_i, \theta))^{1-y_i}
 $$
 
@@ -138,13 +139,13 @@ This expression can be maximized through various optimization techniques such as
 Now as we have the vector of model parameters $$\theta$$ we can calculate the predicted value of the logit function for any new observation $$x$$ (we will use hat symbol for predicted values):
 
 $$
-logit(p)=\^{y}=\theta^Tx
+logit(p)=\hat{y}=\theta^Tx
 $$
 
 Then we plug this value into logistic function in order to determine the probability of the data belonging to Class 1 (True, "Yes", etc):
 
 $$
-\hat{p}=\^{p(Class\ 1)}=logistic(\hat{y})=\frac{1}{1+e^{-\hat{y}}}
+\hat{p}=\hat{p(Class\ 1)}=logistic(\hat{y})=\frac{1}{1+e^{-\hat{y}}}
 $$
 
 The last step is to set up a threshold T \(\in\) [0;1] that will be used in order to make a prediction:
