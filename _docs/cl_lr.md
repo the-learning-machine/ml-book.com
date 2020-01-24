@@ -74,7 +74,27 @@ More columns:
 | col 3 is | right-aligned |    $1 |  $3400  |  $16 |
 
 
-# Equation Examples:
+### Equation Examples: 
+
+Example 1:
+
+$$
+\begin{equation}
+  /sum_{n=1}^i (\frac{x_i(p-0.5}{x_j(p+0.5})
+\end{equation}
+$$
+
+Actual code (LateX):
+
+```yaml
+$$
+\begin{equation}
+  /sum_{n=1}^i (\frac{x_i(p-0.5}{x_j(p+0.5})
+\end{equation}
+$$
+```
+
+Example 2:
 
 $$
 \begin{align*}
