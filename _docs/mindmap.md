@@ -33,18 +33,3 @@ Unsupervised learning is divided into two types of algorithms:
 - **Clustering algorithms**: algorithms that group data based on common characterists that the model
 would find in the dataset. Examples can be, an algorithm segmenting customers in a market.
 - **Generation algorithms**: algorithms that generates data, it mostly related to Natural Language Processing, e.g. generating text. 
-
-
-
-Here is the code example: 
-```yaml
-  - title: About
-    url: /about/
-```
-
-More code:
-```yaml
-  - title: Contact
-    url: /contact/
-    button: success
-```
