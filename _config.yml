@@ -19,7 +19,7 @@ permalink:          /:title/
 url:                "https://the-learning-machine.github.io"
 
 # Site logo # e.g. logo.png, upload logo image file to /uploads/ folder
-logo: "/uploads/logo.png"
+logo: "logo.png"
 
 navbar:
     sticky:         true
