@@ -26,9 +26,11 @@ However, we want our model to take a real value number from $$[-\infty ; \infty]
 
 $$
 logit(p)=log(odds(p))=log(\frac{p}{1-p})\quad(2)
-$$
 
-<img src="/uploads/doc/classification/lr_logit.png" align="center" height="400" width="400">
+$$
+<p align="center">
+    <img src="/uploads/doc/classification/lr_logit.png" height="400" width="400">
+</p>
 
 We can achieve the required properties by reflecting the logit function about the line $$y=x$$. This transformation can be performed by calculating the inverse of expression (2) which is called a **logistic function**:
 
@@ -51,8 +53,9 @@ $$
 logistic(y)=\frac{1}{1+e^{-y}}\quad(3)
 $$
 
-<img src="/uploads/doc/classification/lr_logistic.png" align="middle" height="400" width="400">
-
+<p align="center">
+    <img src="/uploads/doc/classification/lr_logistic.png" height="400" width="400">
+</p>
 # Model Training
 
 Logistic Regression represents logit function as a linear combination of predictors plus the intercept:
@@ -150,7 +153,9 @@ $$
 
 By default the threshold is set up to 0.5, but you can adjust it based on your needs (usually based on the True Positive Rate and False Positive Rate trade-off).
 
-<img src="/uploads/doc/classification/lr_pic1.png" align="middle" height="400" width="400">
+<p align="center">
+    <img src="/uploads/doc/classification/lr_pic1.png" height="400" width="400">
+</p>
 
 # 5. Regularization
 
@@ -186,6 +191,8 @@ It is important to normalize the data before performing regularized logistic reg
 
 Logistic regression can be generalized to handle problems with more than two possible outcomes. The most popular approach is called "One-vs-Rest" logistic regression where we split our multinomial problem with M classes into M binary classification problems (see Figure 5). 
 
-<img src="/uploads/doc/classification/lr_1vsall.png" align="middle" height="400" width="400"> 
+<p align="center">
+    <img src="/uploads/doc/classification/lr_1vsall.png" height="400" width="400"> 
+</p>
 
 In this case we generate different coefficients $$\theta$$ for each binary classification problem (basically we train M separate Logistic Regression models). When we have to classify a new observation, we calculate the probabilities of the data belonging to each class (which are the outputs of our models) and select the class that has the highest probability.
