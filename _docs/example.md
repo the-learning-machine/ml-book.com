@@ -89,7 +89,7 @@ Actual code (LateX):
 ```yaml
 $$
 \begin{equation}
-  /sum_{n=1}^i (\frac{x_i(p-0.5}{x_j(p+0.5})
+  \sum_{n=1}^i (\frac{x_i(p-0.5}{x_j(p+0.5})
 \end{equation}
 $$
 ```
