@@ -61,3 +61,12 @@ This is some text. This text is located under the picture. BlaBla BlaBlaBla BlaB
 | col 1 is |  left-aligned | $1600 |
 | col 2 is |    centered   |   $12 |
 | col 3 is | right-aligned |    $1 |
+
+
+More columns: 
+
+| Tables   |      Are      |  Cool | So am I |  !   |
+|----------|:-------------:|------:|--------:|-----:|
+| col 1 is |  left-aligned | $1600 |   $1900 |  $16 |
+| col 2 is |    centered   |   $12 |  $2200  | $16  |
+| col 3 is | right-aligned |    $1 |  $3400  |  $16 |
