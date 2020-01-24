@@ -8,6 +8,8 @@ permalink:
 
 This is a ML Mind Map:
 
+<img src="/uploads/doc/getting_started/mindmap.png" align="middle">
+
 Here is the code example: 
 ```yaml
   - title: About
