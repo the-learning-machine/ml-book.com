@@ -2,7 +2,7 @@
 title: ML Mind Map
 subtitle: The high-level picture of the ML world.
 author: andrew
-tags: [mlmindmap]
+tags: [how-to-start]
 permalink:
 ---
 
