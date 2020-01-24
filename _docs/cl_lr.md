@@ -26,8 +26,8 @@ However, we want our model to take a real value number from $$[-\infty ; \infty]
 
 $$
 logit(p)=log(odds(p))=log(\frac{p}{1-p})\quad(2)
-
 $$
+
 <p align="center">
     <img src="/uploads/doc/classification/lr_logit.png" height="400" width="400">
 </p>
