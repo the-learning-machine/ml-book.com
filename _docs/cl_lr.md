@@ -18,7 +18,7 @@ odds(p)=\frac{p}{1-p}=\frac{Prob(Class\ 1)}{Prob(Class\ 2)}=\frac{Prob(True)}{Pr
 $$
 
 
-<img src="/uploads/doc/classification/lr_odd.png" align="middle" height="400" width="400">
+<p><img src="/uploads/doc/classification/lr_odd.png" align="middle" height="400" width="400"><p/>
 
 
 As you can see from formula (1), $$odds(p) \in [0 ; \infty]$$ given that $$p \in [0;1]$$.
