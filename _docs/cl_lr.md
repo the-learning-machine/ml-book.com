@@ -18,10 +18,10 @@ odds(p)=\frac{p}{1-p}=\frac{Prob(Class\ 1)}{Prob(Class\ 2)}=\frac{Prob(True)}{Pr
 $$
 
 
-<img src="/uploads/classification/lr_odd.png" height="400" width="400">
+<img src="/uploads/doc/classification/lr_odd.png" height="400" width="400">
 
 
-As you can see from formula (1), $$odds(p) \in [0 ; \(\infty\) ]$$ given that $$p \(\in\) [0;1]$$.
+As you can see from formula (1), $$odds(p) \in [0 ; \infty]$$ given that $$p \in [0;1]$$.
 However, we want our model to take a real value number from $$[-$\infty$ ; $\infty$]$$ (as our features can have any values), 
 and output a soft number in a range [0;1] to describe a probability. Logistic function (also called Sigmoid) possesses all of 
 these traits. It can be derived as an inverse of a log-odds function which is also called **logit**.
@@ -30,7 +30,7 @@ $$
 logit(p)=log(odds(p))=log(\frac{p}{1-p})\quad(2)
 $$
 
-<img src="/uploads/classification/lr_logit.png" height="400" width="400">
+<img src="/uploads/doc/classification/lr_logit.png" height="400" width="400">
 
 We can achieve the required properties by reflecting the logit function about the line y=x. This transformation can be performed 
 by calculating the inverse of expression (2) which is called a logistic function:
@@ -41,6 +41,7 @@ $$
 
 
 In order to calculate that we should solve the equation: 
+
 $$
 logit(p)=y \to log(\frac{p}{1-p})=y \to \frac{p}{1-p}=e^y \to p=e^y(1-p) \to p(e^y+1)=e^y \\
 p=\frac{e^y}{e^y+1}=\frac{1}{1+e^{-y}}
@@ -49,11 +50,10 @@ $$
 
 Thus, the expression for logistic function (sigmoid function) is the following:
 $$
-\begin{equation}
-    logistic(y)=\frac{1}{1+e^{-y}}\quad(3)
-\end{equation}
+logistic(y)=\frac{1}{1+e^{-y}}\quad(3)
+$$
 
-<img src="/uploads/classification/lr_logistic.png" height="400" width="400">
+<img src="/uploads/doc/classification/lr_logistic.png" height="400" width="400">
 
 # Model Training
 
@@ -100,7 +100,7 @@ Pr(Y=1 | x, \theta)=\frac{1}{1+e^{-\theta^Tx}}\quad(6)
 $$
 
 
-As we are dealing with two class problem, the probability $$Pr(Y=0 $|$ x, \theta)$$ can be expressed as follows:
+As we are dealing with two class problem, the probability $$Pr(Y=0 | x, \theta)$$ can be expressed as follows:
 
 $$
 Pr(Y=0 | x, \theta)=1-Pr(Y=1 | x, \theta)\quad(7)
@@ -115,8 +115,8 @@ $$
 One can notice that:
 
 $$
-\[Pr(Y | x, \theta) \to Pr(Y=1 | x, \theta) \mathrm{\ given\ Y=1},\ \mathrm{and}\]
-\[Pr(Y | x, \theta) \to 1 - Pr(Y=1 | x, \theta) = Pr(Y=0 | x, \theta) \mathrm{\ given\ Y=0}.\]
+Pr(Y | x, \theta) \to Pr(Y=1 | x, \theta) \mathrm{\ given\ Y=1},\ \mathrm{and}
+Pr(Y | x, \theta) \to 1 - Pr(Y=1 | x, \theta) = Pr(Y=0 | x, \theta) \mathrm{\ given\ Y=0}.
 $$
 
 
@@ -127,15 +127,15 @@ formula (assuming train data is independently distributed):
 
 $$
 
-\[L(\theta | x) = Pr(Y | x,\theta) \to max,\]
-\[\mathrm{where}\  Pr(Y | x,\theta) = \prod_{i=1}^{n}Pr(y_i | x_i,\theta)=\prod_{i=1}^{n}Pr(y_i=1 | x_i, \theta)^{y_i}(1-Pr(y_i=1 | x_i, \theta))^{1-y_i}\]
+L(\theta | x) = Pr(Y | x,\theta) \to max,
+\mathrm{where}\  Pr(Y | x,\theta) = \prod_{i=1}^{n}Pr(y_i | x_i,\theta)=\prod_{i=1}^{n}Pr(y_i=1 | x_i, \theta)^{y_i}(1-Pr(y_i=1 | x_i, \theta))^{1-y_i}
 $$
 
 This expression can be maximized through various optimization techniques such as Newton-Raphson algorithm or a gradient descent (which is usually applied to log-likelihood).
 
 # Making Predictions
 
-Now as we have the vector of model parameters \(\theta\) we can calculate the predicted value of the logit function for any new observation $x$ (we will use hat symbol for predicted values):
+Now as we have the vector of model parameters $$\theta$$ we can calculate the predicted value of the logit function for any new observation $$x$$ (we will use hat symbol for predicted values):
 
 $$
 logit(p)=\^{y}=\theta^Tx
@@ -144,22 +144,22 @@ $$
 Then we plug this value into logistic function in order to determine the probability of the data belonging to Class 1 (True, "Yes", etc):
 
 $$
-\[\^{p}=\^{p(Class\ 1)}=logistic(\^{y})=\frac{1}{1+e^{-\^{y}}}\]
+\hat{p}=\^{p(Class\ 1)}=logistic(\hat{y})=\frac{1}{1+e^{-\hat{y}}}
 $$
 
 The last step is to set up a threshold T \(\in\) [0;1] that will be used in order to make a prediction:
 
 $$
-\[\mathrm{Model\ Output} = 
+\mathrm{Model\ Output} = 
     \begin{cases}
-        \mathrm{Class\ 1\ \ if}  & \^{p}\ge T\\
-        \mathrm{Class\ 2\ \ if}  & \^{p}<T
-    \end{cases}\]
+        \mathrm{Class\ 1\ \ if}  & \hat{p}\ge T\\
+        \mathrm{Class\ 2\ \ if}  & \hat{p}<T
+    \end{cases}
 $$
 
 By default the threshold is set up to 0.5, but you can adjust it based on your needs (usually based on the True Positive Rate and False Positive Rate trade-off).
 
-<img src="/uploads/classification/lr_pic1.png" height="400" width="400">
+<img src="/uploads/doc/classification/lr_pic1.png" height="400" width="400">
 
 # 5. Regularization
 
@@ -168,20 +168,20 @@ Regularization means making the model less complex which can allow it to general
 As was mentioned above, the coefficients of logistic regression are usually fitted by maximizing the log-likelihood. As many optimization techniques are aimed at finding the minimum of a function we can redefine our goal as minimizing the negative log-likelihood:
 
 $$
-\[\hat\theta=\min\limits_{\theta}[-log(L(\theta | x))]\]
+\hat\theta=\min\limits_{\theta}[-log(L(\theta | x))]
 $$
 
 We can penalize the model of having coefficients that are far from zero by adding a regularization term $$R(\theta)$$ multiplied by parameter $$\lambda$$ which is called regularization strength:
 
 $$
-\[\hat\theta=\min\limits_{\theta}[-log(L(\theta | x))+\lambda R(\theta)]\]
+\hat\theta=\min\limits_{\theta}[-log(L(\theta | x))+\lambda R(\theta)]
 $$
 
 The two most popular regularizations are L1 and L2:
 
 $$
-\[L1: R(\theta)=\sum_{i=0}^{K}|\theta_i|\]
-\[L2: R(\theta)=\frac{1}{2}\sum_{i=0}^{K}\theta_i^2\]
+L1: R(\theta)=\sum_{i=0}^{K}|\theta_i|
+L2: R(\theta)=\frac{1}{2}\sum_{i=0}^{K}\theta_i^2
 $$
 
 The factor $$\frac{1}{2}$$ in L2 regularization is used to simplify the derivative calculations. Through $$\lambda$$ we can control the impact of the regularization term. Higher values of $$\lambda$$ lead to smaller coefficients (less regularization), but too high values can lead to underfitting.
@@ -195,6 +195,6 @@ It is important to normalize the data before performing regularized logistic reg
 
 Logistic regression can be generalized to handle problems with more than two possible outcomes. The most popular approach is called "One-vs-Rest" logistic regression where we split our multinomial problem with M classes into M binary classification problems (see Figure 5). 
 
-<img src="/uploads/classification/lr_1vsall.png" height="400" width="400"> 
+<img src="/uploads/doc/classification/lr_1vsall.png" height="400" width="400"> 
 
 In this case we generate different coefficients $$\theta$$ for each binary classification problem (basically we train M separate Logistic Regression models). When we have to classify a new observation, we calculate the probabilities of the data belonging to each class (which are the outputs of our models) and select the class that has the highest probability.
