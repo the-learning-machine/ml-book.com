@@ -14,7 +14,6 @@
   docs:
   - reg_nb
   - reg_lasso_ridge_elastic
-  - cl_dt_cart
   - reg_multi
   - cl_1lr
 #  - boxes
