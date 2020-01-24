@@ -1,6 +1,6 @@
 ---
 title: ML Mind Map
-subtitle: This document covers the ML mind map.
+subtitle: The high-level picture of the ML world.
 author: andrew
 tags: [mlmindmap]
 permalink:
@@ -20,14 +20,14 @@ To get a little bit ahead, let's view on the ML Mindmap, and further dissect it!
 <img src="/uploads/doc/getting_started/mindmap.png" align="middle">
 
 
-## Supervised Learning
+# Supervised Learning
 Supervised learning is divided into two types of algorithms:
 - **Classification algorithms**: algorithms that predict a **category**. Examples can be, an algorithm predicting a movie rating: "Best", "Good", "Bad", "Worst"; an algorithm predicting a fruit: 'Banana', 'Apple', 'Orange'; 
  an algorithm predicting any simple yes-no question: "Yes" or "No", etc.
 - **Regression algorithms**: algorithms that predict a continuous value, such as “dollars” or “weight”. Examples can be, an algorithm predicting a price for the appartment;
 an algorithm predicting a weight of a person.
 
-## Unsupervised Learning
+# Unsupervised Learning
 Unsupervised learning is divided into two types of algorithms:
 - **Clustering algorithms**: algorithms that group data based on common characterists that the model
 would find in the dataset. Examples can be, an algorithm segmenting customers in a market.
