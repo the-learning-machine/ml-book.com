@@ -30,7 +30,6 @@
 - title: Classification
   docs:
   - cl_nb
-  - cl_lr2
   - cl_rf
   - cl_lr
   - cl_dt_id3
