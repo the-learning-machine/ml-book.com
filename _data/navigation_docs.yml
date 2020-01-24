@@ -16,7 +16,7 @@
   - reg_lasso_ridge_elastic
   - cl_dt_cart
   - reg_multi
-  - cl_1lr.html
+  - cl_1lr
 #  - boxes
 #  - featured
 #  - videos
