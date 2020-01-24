@@ -9,12 +9,4 @@ useMath: true
 
 Hey. This is an example Blog.
 
-<div class="math">
-\begin{equation}
-  \sum (x_i + 24) = /inf - 1
-\end{equation}
-</div>
-
-Another go: 
-
-$ \sum (x_i + 24) = /inf - 1 $ 
+<img src="/uploads/andrew.jpeg" alt="Smiley face" align="middle">
