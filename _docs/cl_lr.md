@@ -43,9 +43,10 @@ Code example:
 ```
 THIS IS THE PIC WITH SOME TEXT AROUND: 
 
-<p>This is some text. This text is located on the left side of the picture, just to test if it will be looking cool and clean. Well, hence no need to read this stuff, until you like spending time on something completely useless!! <img src="/uploads/andrew.jpeg" alt="Smiley face" align="left" height="400" width="400" > </p>
+This is some text. This text is located on the left side of the picture, just to test if it will be looking cool and clean. Well, hence no need to read this stuff, until you like spending time on something completely useless!!
 
-TABLES EXAMPLE:
+<img src="/uploads/andrew.jpeg" alt="Smiley face" align="left" height="400" width="400" > This is some text. This text is located on the left side of the picture, just to test if it will be looking cool and clean. Well, hence no need to read this stuff, until you like spending time on something completely useless!!
+TABLES EXAMPLE: blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla blablablablablablablablablablablablablablablablablabla blablablablablablablablablablablabla 
 
 | Tables   |      Are      |  Cool |
 |----------|:-------------:|------:|
