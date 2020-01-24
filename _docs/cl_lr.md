@@ -1,6 +1,6 @@
 ---
-title: Naive Bayes Classifier
-subtitle: This document will cover something cool.
+title: Logistic Regression
+subtitle: Logistic regression and how it works.
 author: andrew
 tags: [naive]
 permalink:
@@ -17,9 +17,9 @@ $$
 odds(p)=\frac{p}{1-p}=\frac{Prob(Class\ 1)}{Prob(Class\ 2)}=\frac{Prob(True)}{Prob(False)}=\frac{Prob("Yes")}{Prob("No")}\quad(1)
 $$
 
-
-<p><img src="/uploads/doc/classification/lr_odd.png" align="middle" height="400" width="400"><p/>
-
+<p align="center">
+    <img src="/uploads/doc/classification/lr_odd.png" height="400" width="400">
+</p>
 
 As you can see from formula (1), $$odds(p) \in [0 ; \infty]$$ given that $$p \in [0;1]$$.
 However, we want our model to take a real value number from $$[-\infty ; \infty]$$ (as our features can have any values), and output a soft number in a range [0;1] to describe a probability. Logistic function (also called Sigmoid) possesses all of these traits. It can be derived as an inverse of a log-odds function which is also called **logit**.
@@ -28,7 +28,7 @@ $$
 logit(p)=log(odds(p))=log(\frac{p}{1-p})\quad(2)
 $$
 
-<img src="/uploads/doc/classification/lr_logit.png" align="middle" height="400" width="400">
+<img src="/uploads/doc/classification/lr_logit.png" align="center" height="400" width="400">
 
 We can achieve the required properties by reflecting the logit function about the line $$y=x$$. This transformation can be performed by calculating the inverse of expression (2) which is called a **logistic function**:
 
