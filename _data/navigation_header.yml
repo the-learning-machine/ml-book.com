@@ -10,12 +10,6 @@ left:
   - title: Blog
     url: /blog/
 
-  - title: Hi
-    url: /hi/
-
-  - title: Hello
-    url: /hello/
-
   - title: Changelogs
     dropdown:
       - title: Timeline Style

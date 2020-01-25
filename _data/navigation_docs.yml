@@ -2,42 +2,42 @@
   docs:
   - example
   - mindmap
-  - setup
-  - navigation
-  - footer
-  - posts
-  - docs
-  - comments
-  - analytics
+#  - setup
+#  - navigation
+#  - footer
+#  - posts
+#  - docs
+#  - comments
+#  - analytics
 
 - title: Regression
   docs:
-#  - reg_nb
-#  - reg_lasso_ridge_elastic
-#  - reg_multi
-  - boxes
-  - featured
-  - videos
-  - faq
-  - team
-  - cta
-  - changelog
-  - contact
-  - media
-  - toc
-  - alerts
+  - reg_nb
+  - reg_lasso_ridge_elastic
+  - reg_multi
+#  - boxes
+#  - featured
+#  - videos
+#  - faq
+#  - team
+#  - cta
+#  - changelog
+#  - contact
+#  - media
+#  - toc
+#  - alerts
 
 - title: Classification
   docs:
-#  - cl_nb
-#  - cl_rf
-#  - cl_lr
-#  - cl_dt_id3
-#  - cl_dt_cart
-  - translation
-  - customize
-  - development
-  - sources
+  - cl_nb
+  - cl_rf
+  - cl_lr
+  - cl_dt_id3
+  - cl_dt_cart
+#  - translation
+#  - customize
+#  - development
+#  - sources
 
 - title: Clustering
   docs:
