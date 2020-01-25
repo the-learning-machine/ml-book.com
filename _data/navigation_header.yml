@@ -21,9 +21,9 @@ left:
 # Navbar right menu navigation links
 
 right:
-  - title: Changelog
-    url: /changelog-timeline/
-    button: primary-outline
+#  - title: Changelog
+#    url: /changelog-timeline/
+#    button: primary-outline
 
   - title: Contact
     url: /contact/
