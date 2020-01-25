@@ -1,0 +1,5 @@
+- title: Regression
+  hi:
+  - reg_nb
+  - reg_lasso_ridge_elastic
+  - reg_multi
