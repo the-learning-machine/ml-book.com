@@ -11,10 +11,10 @@ title: Hello
           {% for section in site.data.navigation_hello %}
           <h5>{{ section.title }}</h5>
           <ul class="uk-nav uk-nav-default doc-nav">
-            {% for doc in section.docs %} {% assign doc_url = doc |
-            prepend:"/docs/" | append:"/" %} {% assign p = site.docs |
-            where:"url", doc_url | first %}
-            <li class="{% if doc_url == page.url %}uk-active{% endif %}">
+            {% for hello in section.hello %} {% assign hello_url = hello |
+            prepend:"/hello/" | append:"/" %} {% assign p = site.hello |
+            where:"url", hello_url | first %}
+            <li class="{% if hello_url == page.url %}uk-active{% endif %}">
               <a href="{{ p.url }}">{{ p.title }}</a>
             </li>
             {% endfor %}
