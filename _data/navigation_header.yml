@@ -10,6 +10,9 @@ left:
   - title: Blog
     url: /blog/
 
+  - title: Doc2
+    url: /blog/
+
   - title: Changelogs
     dropdown:
 
