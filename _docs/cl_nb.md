@@ -64,7 +64,7 @@ Use Bayes' Formula to calculate the posterior probability for each class. The cl
 In formula above ’c’ denotes class and ’x’ denotes features. Next, let’s look at P(x). As you can see, the denominator contains the only term that is a function of the data (features) - it is not a function of the class we are currently looking at. Thus, it will be the same for all the classes. Traditionally in Naive Bayes Classification, we drop this denominator as it does not impact the final outcome of the classifier in order to make the prediction:
 
 $$
-P(x &#124 x) -> P(x \ c)P(c)\quad(1)
+P(x $$|$$ x) -> P(x &#124 c)P(c)\quad(1)
 $$
 
 To make it more interesting, let’s assume we have an the additional feature - Wind:
