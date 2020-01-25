@@ -41,7 +41,7 @@ The terms Likelihood, Marginal Likelihood, and Prior Probability (or Class Prior
 </p>
 
 So, we can now see that:
-- Likelihood = P (Feature $$\|$$ Class)
+- Likelihood = P (Feature $$|$$ Class)
 - Marginal Likelihood = P (Feature)
 - Prior Likelihood = P (Class)
 
