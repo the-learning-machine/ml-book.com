@@ -31,7 +31,7 @@ Below I have a training data set of weather and corresponding target variable â€
 Let's go over the first two steps. These steps will also help us understand prior probability, likelihood and marginal likelihood.
 
 <p align="center">
-    <img src="/uploads/doc/classification/nb_table1.png" height=1000" width="1000">
+    <img src="/uploads/doc/classification/nb_table1.png" height="1000" width="1000">
 </p>
 
 The terms Likelihood, Marginal Likelihood, and Prior Probability (or Class Prior Probability, as it is related to classes "Yes" or "No") that were mentioned above are shown below
