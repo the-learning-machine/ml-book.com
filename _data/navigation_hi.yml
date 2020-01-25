@@ -1,12 +1,12 @@
 - title: Regression
-  hello:
+  hi:
   - reg_nb
   - reg_lasso_ridge_elastic
   - reg_multi
 
 
 - title: Classification
-  hello:
+  hi:
   - reg_nb
   - reg_lasso_ridge_elastic
   - reg_multi
