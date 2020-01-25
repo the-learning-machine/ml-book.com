@@ -31,31 +31,25 @@ Below I have a training data set of weather and corresponding target variable �
 Let's go over the first two steps. These steps will also help us understand prior probability, likelihood and marginal likelihood.
 
 <p align="center">
-    <img src="/uploads/doc/classification/nb_table1.png" height="400" width="400">
+    <img src="/uploads/doc/classification/nb_table1.png" height="800" width="800">
 </p>
 
 The terms Likelihood, Marginal Likelihood, and Prior Probability (or Class Prior Probability, as it is related to classes "Yes" or "No") that were mentioned above are shown below
 
 <p align="center">
-    <img src="/uploads/doc/classification/nb_table2.png" height="400" width="400">
+    <img src="/uploads/doc/classification/nb_table2.png" height="800" width="800">
 </p>
 
 So, we can now see that:
-- Likelihood = P (Feature | Class)
+- Likelihood = P (Feature $$\|$$ Class)
 - Marginal Likelihood = P (Feature)
 - Prior Likelihood = P (Class)
 
-Likelihood is just a probability of a feature within a class. For example, if we want to calculate P(Sunny | "Yes"), where Sunny is a feature, and "Yes" is a class, we will count all "Yes"es, or all times we went to Play, (and ignore "No"s) when we had "Sunny" weather, divided by the overall observed days in our data set. 
-
-​
+Likelihood is just a probability of a feature within a class. For example, if we want to calculate P(Sunny $$\|$$ "Yes"), where Sunny is a feature, and "Yes" is a class, we will count all "Yes"es, or all times we went to Play, (and ignore "No"s) when we had "Sunny" weather, divided by the overall observed days in our data set. 
 
 Marginal Likelihood is a probability of a feature. For example, if we want to calculate P(Sunny), we will count all the Sunny days divided by the overall observed days in our data set.
 
-​
-
 Prior Likelihood or Class Prior Probability is a probability of a class. For example, if we want to calculate P("No"), we will count all the "No"s, or, the days we did not go to Play, divided by the overall observed days in our data set.
-
-​
 
 Posterior probability is the revised probability of an event occurring after taking into consideration new information. It will be discussed in more details later in this article.
 
@@ -70,7 +64,7 @@ Use Bayes' Formula to calculate the posterior probability for each class. The cl
 In formula above ’c’ denotes class and ’x’ denotes features. Next, let’s look at P(x). As you can see, the denominator contains the only term that is a function of the data (features) - it is not a function of the class we are currently looking at. Thus, it will be the same for all the classes. Traditionally in Naive Bayes Classification, we drop this denominator as it does not impact the final outcome of the classifier in order to make the prediction:
 
 $$
-P(x \| x) -> P(x \| c)P(c)\quad(1)
+P(x \ x) -> P(x \ c)P(c)\quad(1)
 $$
 
 To make it more interesting, let’s assume we have an the additional feature - Wind:
