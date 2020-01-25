@@ -1,6 +1,6 @@
 - title: Getting Started
   docs:
-  - example
+#  - example
   - mindmap
 #  - setup
 #  - navigation
@@ -29,7 +29,7 @@
 
 - title: Classification
   docs:
-  - cl_nb
+#  - cl_nb
   - cl_rf
   - cl_lr
   - cl_dt_id3

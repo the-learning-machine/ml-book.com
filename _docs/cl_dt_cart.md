@@ -6,4 +6,4 @@ tags: [mlmindmap]
 permalink:
 ---
 
-Hey. This is an example Blog.
+Hey. We are still getting ready this section. In the meantime, you can read some cool stuff from our other project - [The Learning Machine](www.thelearningmachine.ai)
