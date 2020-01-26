@@ -1,7 +1,3 @@
-# Docs is a premium documentation Jekyll theme
-
-Desk was developed by [Ivan Chromjak](https://ivanchromjak.com) for [jekyll.plus](https://jekyll.plus/), theme [live demo](https://docs.jekyll.plus/) available.
-
 ## Installation
 
 Install the dependencies with [Bundler](http://bundler.io/):
@@ -15,39 +11,8 @@ Run the following to generate your site:
 bundle exec jekyll serve
 ```
 
-You can find more on [Deployment Methods](https://jekyllrb.com/docs/deployment-methods/) page on Jekyll website.
+You can find more on [Deployment Methods](https://jekyllrb.com/docs/deployment-methods/) page on Jekyll website.'
 
-## Setup
-
-### Site and author details
-Add your site and author details in `_config.yml`:
-```yaml
-# Site title and description
-title:              Docs
-description:        Documentation Jekyll theme.
-lang:               en
-
-# Site subpath, e.g. /blog
-baseurl:            ""
-
-# Permalink URLs structure, for permalink style options see: https://jekyllrb.com/docs/permalinks/
-permalink:          /:title/
-
-# Site base hostname & protocol, e.g. http://example.com
-url:                "https://docs.jekyll.plus"
-
-# Site logo # e.g. logo.png, upload logo image file to /uploads/ folder
-logo:               
-
-navbar:
-  search:           true;
-  
-# Default author settings
-author:
-    name:           Pete Seth
-    title:          Lead Developer  
-    avatar:         avatar-tom.png
-```
 
 ## Customization
 
