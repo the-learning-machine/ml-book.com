@@ -5,7 +5,7 @@ tags: [features]
 author: alex
 ---
 
-### Adding imagess
+### Adding images
 To add an image to a post or page use the following codes:
 Local image from `/uploads/` directory:
 {% raw %}

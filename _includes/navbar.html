@@ -10,6 +10,7 @@
                     {% elsif current_url[1] == 'projects' %}
                             <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas-projects" data-uk-navbar-toggle-icon data-uk-toggle></a>
                     {% endif %}
+
                     <ul class="uk-navbar-nav uk-visible@m">
                         {% for link in site.data.navigation_header.left %}
                             {% if link.url contains 'http' %}
@@ -137,8 +138,8 @@
                             {% endif %}
                         {% endfor %}
                     </ul>
-                    <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas" data-uk-navbar-toggle-icon data-uk-toggle></a>
 
+                    <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas" data-uk-navbar-toggle-icon data-uk-toggle></a>
 
                 </div>
             </div>

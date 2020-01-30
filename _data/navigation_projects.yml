@@ -1,38 +1,15 @@
 - title: Getting Started
   projects:
-#  - example
   - mindmap
-#  - setup
-#  - navigation
-#  - footer
-#  - posts
-#  - docs
-#  - comments
-#  - analytics
+
 
 - title: Regression
   projects:
   - media
-#  - boxes
-#  - featured
-#  - videos
-#  - faq
-#  - team
-#  - cta
-#  - changelog
-#  - contact
-#  - media
-#  - toc
-#  - alerts
 
 - title: Classification
   projects:
-#  - cl_nb
     - navigation
-#  - translation
-#  - customize
-#  - development
-#  - sources
 
 - title: Clustering
   projects:

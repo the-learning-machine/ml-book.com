@@ -5,26 +5,27 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Begin Jekyll SEO tag v2.3.0 -->
-<title>Understanding company billing and accounts | Docs</title>
-<meta property="og:title" content="Understanding company billing and accounts" />
-<meta name="author" content="evan" />
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Choosing the right hyperparameters | ML Cookbook</title>
+<meta name="generator" content="Jekyll v3.4.1" />
+<meta property="og:title" content="Choosing the right hyperparameters" />
+<meta name="author" content="kirill" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Musce libero nunc, dignissim quis turpis quis, semper vehicula dolor. Suspendisse tincidunt consequat quam, ac posuere leo dapibus id. Cras fringilla convallis elit, at eleifend mi interam." />
-<meta property="og:description" content="Musce libero nunc, dignissim quis turpis quis, semper vehicula dolor. Suspendisse tincidunt consequat quam, ac posuere leo dapibus id. Cras fringilla convallis elit, at eleifend mi interam." />
+<meta name="description" content="This is going to be cool stuff." />
+<meta property="og:description" content="This is going to be cool stuff." />
 <link rel="canonical" href="http://localhost:4000/post2/" />
 <meta property="og:url" content="http://localhost:4000/post2/" />
-<meta property="og:site_name" content="Docs" />
+<meta property="og:site_name" content="ML Cookbook" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-05-25T00:00:00-04:00" />
+<meta property="article:published_time" content="2018-06-20T00:00:00+05:30" />
 <script type="application/ld+json">
-{"name":null,"description":"Musce libero nunc, dignissim quis turpis quis, semper vehicula dolor. Suspendisse tincidunt consequat quam, ac posuere leo dapibus id. Cras fringilla convallis elit, at eleifend mi interam.","author":{"@type":"Person","name":"evan"},"@type":"BlogPosting","url":"http://localhost:4000/post2/","publisher":null,"image":null,"headline":"Understanding company billing and accounts","dateModified":"2017-05-25T00:00:00-04:00","datePublished":"2017-05-25T00:00:00-04:00","sameAs":null,"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/post2/"},"@context":"http://schema.org"}</script>
+{"datePublished":"2018-06-20T00:00:00+05:30","dateModified":"2018-06-20T00:00:00+05:30","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/post2/"},"url":"http://localhost:4000/post2/","author":{"@type":"Person","name":"kirill"},"description":"This is going to be cool stuff.","@type":"BlogPosting","headline":"Choosing the right hyperparameters","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="http://localhost:4000/uploads/"/>
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="shortcut icon" type="image/png" href="/uploads/favicon.png" >
-  <link rel="alternate" type="application/rss+xml" title="Docs" href="/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="ML Cookbook" href="/feed.xml">
   <script src="/assets/js/main.js"></script>
   
     <script>
@@ -127,19 +128,18 @@ function searchResults(form) {
   
   
   
-<script src="http://127.0.0.1:35729/livereload.js"></script></head>
+</head>
 
     <body>
 
     
-        <div data-uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent; top: 200">
+        
+<div  data-uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent; top: 200">
     <nav class="uk-navbar-container">
         <div class="uk-container">
             <div data-uk-navbar>
                 <div class="uk-navbar-left">
-                    <a class="uk-navbar-item uk-logo uk-visible@m" href="/">Docs</a>
-                    
-                        <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas-docs" data-uk-toggle><span data-uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Docs</span></a>
+                    <a class="uk-navbar-item uk-logo uk-visible@m" href="/">ML Cookbook</a>
                     
 
                     <ul class="uk-navbar-nav uk-visible@m">
@@ -150,7 +150,7 @@ function searchResults(form) {
                                 
                                     
                                         <li><a href="/" >Home</a></li>
-                                                                                                        
+                                    
                                 
                             
                         
@@ -159,8 +159,8 @@ function searchResults(form) {
                             
                                 
                                     
-                                        <li><a href="/docs/installation/" >Docs</a></li>
-                                                                                                        
+                                        <li><a href="/docs/mindmap/" >Docs</a></li>
+                                    
                                 
                             
                         
@@ -170,44 +170,14 @@ function searchResults(form) {
                                 
                                     
                                         <li><a href="/blog/" >Blog</a></li>
-                                                                                                        
-                                
-                            
-                        
-                            
-                            
-                            
-                                
                                     
-                                        <li><a href="#">Changelogs</a>
-                                        
-                                            <div class="uk-navbar-dropdown">
-                                                <ul class="uk-nav uk-navbar-dropdown-nav">
-                                                    
-                                                    
-                                                        
-                                                        
-                                                        <li><a href="/changelog-timeline/">Timeline Style</a></li>
-                                                    
-                                                    
-                                                    
-                                                        
-                                                        
-                                                        <li><a href="/changelog-posts/">Post Style</a></li>
-                                                    
-                                                    
-                                                </ul>
-                                            </div>
-                                        
-                                        </li>
-                                                                                                        
                                 
                             
                         
                     </ul>
                 </div>
                 <div class="uk-navbar-center uk-hidden@m">
-                    <a class="uk-navbar-item uk-logo" href="/">Docs</a>
+                    <a class="uk-navbar-item uk-logo" href="/">ML Cookbook</a>
                 </div>
                 <div class="uk-navbar-right">
                     
@@ -240,7 +210,7 @@ function searchResults(form) {
                             
                             
                                 
-                                    <li><div class="uk-navbar-item"><a class="uk-button uk-button-primary-outline" href="/changelog-timeline/" >Changelog</a></div></li>
+                                    <li><div class="uk-navbar-item"><a class="uk-button uk-button-primary-outline" href="/projects/mindmap" >Projects</a></div></li>
                                 
                             
                         
@@ -254,9 +224,7 @@ function searchResults(form) {
                         
                     </ul>
 
-                    
-                        <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas" data-uk-toggle><span data-uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu</span></a>
-                    
+                    <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas" data-uk-navbar-toggle-icon data-uk-toggle></a>
 
                 </div>
             </div>
@@ -269,76 +237,34 @@ function searchResults(form) {
     <div class="uk-container uk-container-xsmall">
         <article class="uk-article">
 
-            <h1 class="uk-article-title">Understanding company billing and accounts</h1>
+            <h1 class="uk-article-title">Choosing the right hyperparameters</h1>
 
             <div class="uk-article-meta uk-margin-top uk-margin-medium-bottom uk-flex uk-flex-middle">
                 
 
 
   
-  <img class="uk-border-circle avatar" src="http://localhost:4000/uploads/avatar-evan.png" alt="Evan Wells">
+  <img class="uk-border-circle avatar" src="http://localhost:4000/uploads/kirill.jpeg" alt="Kirill Zaznobin">
 
 
 <div>
   
-    Written by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Evan Wells</span></span><br>
+    Written by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Kirill Zaznobin</span></span><br>
   
-  <time datetime="2017-05-25T00:00:00-04:00" itemprop="datePublished">
+  <time datetime="2018-06-20T00:00:00+05:30" itemprop="datePublished">
     
-    May 25, 2017
+    Jun 20, 2018
   </time>
 </div>
             </div>
 
             <div class="article-content link-primary">
-                <p>Musce libero nunc, dignissim quis turpis quis, semper vehicula dolor. Suspendisse tincidunt consequat quam, ac posuere leo dapibus id. Cras fringilla convallis elit, at eleifend mi interam.</p>
-
-<p>Nulla non sollicitudin. Morbi sit amet laoreet ipsum, vel pretium mi. Morbi varius, tellus in accumsan blandit, elit ligula eleifend velit, luctus mattis ante nulla condimentum nulla. Etiam vestibulum risus vel arcu elementum eleifend. Cras at dolor eget urna varius faucibus tempus in elit.</p>
-
-<h2 id="image-lightbox-example">Image Lightbox Example</h2>
-<p>Nunc porta malesuada porta. Etiam tristique vestibulum dolor at ultricies. Proin hendrerit sapien sed erat fermentum, at commodo velit consectetur.</p>
-
-<figure data-uk-lightbox="animation: slide">
-    <a class="uk-inline" href="http://localhost:4000/uploads/image1.png" caption="Image in lightbox">
-        <img src="http://localhost:4000/uploads/image1.png" alt="Alt for image" />
-        <div class="uk-position-center">
-            <span data-uk-overlay-icon=""></span>
-        </div>
-    </a>
-    <figcaption data-uk-grid="" class="uk-flex-right"><span class="uk-width-auto">Image in lightbox</span></figcaption>
-</figure>
-
-<p>Etiam vestibulum risus vel arcu elementum eleifend. Cras at dolor eget urna varius faucibus tempus in elit. Cras a dui imperdiet, tempus metus quis, pharetra turpis. Phasellus at massa sit amet ante semper fermentum sed eget lectus. Quisque id dictum magna, et dapibus turpis.</p>
-
-<h2 id="example-of-code-block">Example Of Code Block</h2>
-<p>In accumsan lacus ac neque maximus dictum. Phasellus eleifend leo id mattis bibendum. Curabitur et purus turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
-
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
-  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/assets/css/main.css"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"shortcut icon"</span> <span class="na">type=</span><span class="s">"image/png"</span> <span class="na">href=</span><span class="s">"/assets/img/favicon.png"</span> <span class="nt">&gt;</span>
-  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/assets/js/main.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
-</code></pre>
-</div>
-
-<h2 id="text-and-quote">Text and Quote</h2>
-<p>Cras at dolor eget urna varius faucibus tempus in elit. Cras a dui imperdiet, tempus metus quis, pharetra turpis. Phasellus at massa sit amet ante semper fermentum sed eget lectus. Quisque id dictum magna turpis.</p>
-
-<blockquote>
-  <p>Etiam vestibulum risus vel arcu elementum eleifend. Cras at dolor eget urna varius faucibus tempus in elit. Cras a dui imperdiet</p>
-</blockquote>
-
-<p>In accumsan lacus ac neque maximus dictum. Phasellus eleifend leo id mattis bibendum. Curabitur et purus turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
-
-<p>Etiam in fermentum mi. Sed et tempor felis, eu aliquet nisi. Nam eget ullamcorper arcu. Nunc porttitor nisl a dolor blandit, eget consequat sem maximus. Phasellus lacinia quam porta orci malesuada, vel tincidunt.</p>
+                <p>This is going to be cool stuff.</p>
 
                 
                     <div class="share uk-text-center uk-margin-medium-top">
     
-        <a class="uk-link-muted" href="https://twitter.com/intent/tweet?text=Understanding company billing and accounts&url=http://localhost:4000/post2/&via=&related=" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+        <a class="uk-link-muted" href="https://twitter.com/intent/tweet?text=Choosing the right hyperparameters&url=http://localhost:4000/post2/&via=&related=" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
     
     
         <a class="uk-link-muted uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fpost2%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
@@ -354,16 +280,12 @@ function searchResults(form) {
     <div class="uk-child-width-expand@s uk-grid-large uk-pagi" data-uk-grid>
         <div>
             
-                <h4>Setting up new domain and page</h4>
+                <h4>Getting a JavaScript console error</h4>
                 <div class="uk-visible@s uk-text-muted uk-text-small"><p>Musce libero nunc, dignissim quis turpis quis, semper vehicula dolor. Suspendisse ti...</div>
-                <div><a class="remove-underline hvr-back" href="/post1/">&larr; Previous</a></div>
+                <div><a class="remove-underline hvr-back" href="/post7/">&larr; Previous</a></div>
             
         </div>
         <div>
-            
-                <h4>Updating your billing credit card</h4>
-                <div class="uk-visible@s uk-text-muted uk-text-small"><p>Musce libero nunc, dignissim quis turpis quis, semper vehicula dolor. Suspendisse ti...</div>
-                <div class="uk-text-right"><a class="remove-underline hvr-forward" href="/post3/">Next &rarr;</a></div>
             
         </div>
     </div>
@@ -386,52 +308,29 @@ function searchResults(form) {
     
 
     
+
+    
+
+    
+    
+
+    
+
+    
         <li><a href="/post7/">Getting a JavaScript console error</a></li>
         
         
     
 
     
-
-    
-    
-
-    
-
-    
-        <li><a href="/post63/">Selecting the right fonts and colors</a></li>
-        
-        
-    
-
-    
-
-    
-    
-
-    
-
-    
-        <li><a href="/post62/">Design tips for choosing great images</a></li>
-        
-        
-    
-
-    
-
-    
-    
-
-    
-
-    
-        <li><a href="/post61/">Upgrading to paid service</a></li>
-        
-        
-            
     </ul>
 </div>
 
+
+            
+                
+
+            
 
             
         </article>
@@ -448,141 +347,14 @@ function searchResults(form) {
 </div>
 
 
-    <div id="offcanvas-docs" data-uk-offcanvas="overlay: true">
-    <div class="uk-offcanvas-bar">
+    
 
-        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
-
-        
-        <h5 class="uk-margin-top">Getting Started</h5>
-        <ul class="uk-nav uk-nav-default doc-nav">
-        
-          
-          
-          <li class=""><a href="/docs/installation/">Theme installation</a></li>
-        
-          
-          
-          <li class=""><a href="/docs/setup/">Basic theme setup</a></li>
-        
-          
-          
-          <li class=""><a href="/docs/navigation/">Navigation bar</a></li>
-        
-          
-          
-          <li class=""><a href="/docs/footer/">Footer options</a></li>
-        
-          
-          
-          <li class=""><a href="/docs/posts/">Creating your first post in Jekyll</a></li>
-        
-          
-          
-          <li class=""><a href="/docs/docs/">Creating docs posts</a></li>
-        
-          
-          
-          <li class=""><a href="/docs/comments/">Enabling comments (via Disqus)</a></li>
-        
-          
-          
-          <li class=""><a href="/docs/analytics/">Google Analytics</a></li>
-        
-        </ul>
-        
-        <h5 class="uk-margin-top">Theme Features</h5>
-        <ul class="uk-nav uk-nav-default doc-nav">
-        
-          
-          
-          <li class=""><a href="/docs/hero/">Hero page header</a></li>
-        
-          
-          
-          <li class=""><a href="/docs/boxes/">Category boxes section</a></li>
-        
-          
-          
-          <li class=""><a href="/docs/featured/">Fearured docs section</a></li>
-        
-          
-          
-          <li class=""><a href="/docs/videos/">Video lightbox boxes section</a></li>
-        
-          
-          
-          <li class=""><a href="/docs/faq/">Frequently asked questions section</a></li>
-        
-          
-          
-          <li class=""><a href="/docs/team/">Team members section</a></li>
-        
-          
-          
-          <li class=""><a href="/docs/cta/">Call to action section</a></li>
-        
-          
-          
-          <li class=""><a href="/docs/changelog/">Creating a changelog</a></li>
-        
-          
-          
-          <li class=""><a href="/docs/contact/">Contact form (via FormSpree)</a></li>
-        
-          
-          
-          <li class=""><a href="/docs/media/">Adding media to post and doc content</a></li>
-        
-          
-          
-          <li class=""><a href="/docs/toc/">Adding table of contents to docs</a></li>
-        
-          
-          
-          <li class=""><a href="/docs/alerts/">Adding alerts to content</a></li>
-        
-        </ul>
-        
-        <h5 class="uk-margin-top">Customization</h5>
-        <ul class="uk-nav uk-nav-default doc-nav">
-        
-          
-          
-          <li class=""><a href="/docs/translation/">Translation</a></li>
-        
-          
-          
-          <li class=""><a href="/docs/customize/">Customization</a></li>
-        
-          
-          
-          <li class=""><a href="/docs/development/">Development</a></li>
-        
-          
-          
-          <li class=""><a href="/docs/sources/">Sources and credits</a></li>
-        
-        </ul>
-        
-        <h5 class="uk-margin-top">Help</h5>
-        <ul class="uk-nav uk-nav-default doc-nav">
-        
-          
-          
-          <li class=""><a href="/docs/support/">Contacting support</a></li>
-        
-        </ul>
-        
-
-    </div>
-</div>
-
+    
 
     <div id="offcanvas" data-uk-offcanvas="flip: true; overlay: true">
     <div class="uk-offcanvas-bar">
 
-        <a class="uk-logo uk-margin-small-bottom" href="/">Docs</a>
+        <a class="uk-logo uk-margin-small-bottom" href="/">ML Cookbook</a>
      
         <button class="uk-offcanvas-close" type="button" data-uk-close></button>
       
@@ -601,7 +373,15 @@ function searchResults(form) {
                 
 
                 
-                    <li><a href="/docs/installation/" >Docs</a></li>
+                    <li><a href="/docs/mindmap/" >Docs</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><a href="/projects/mindmap/" >Projects</a></li>
                 
             
                 
@@ -633,29 +413,21 @@ function searchResults(form) {
         <div class="uk-margin-top uk-text-center">
             <div data-uk-grid class="uk-child-width-auto uk-grid-small uk-flex-center uk-grid">
                 
-<div class="uk-first-column">
-    <a href="https://twitter.com/" data-uk-icon="icon: twitter" class="uk-icon-link uk-icon" target="_blank"></a>
-</div>
-
 
 <div>
-    <a href="https://www.facebook.com/" data-uk-icon="icon: facebook" class="uk-icon-link uk-icon" target="_blank"></a>
+    <a href="https://www.facebook.com/thelearningm" data-uk-icon="icon: facebook" class="uk-icon-link uk-icon" target="_blank"></a>
 </div>
 
 
 
 
 <div>
-    <a href="https://www.instagram.com/" data-uk-icon="icon: instagram" class="uk-icon-link uk-icon" target="_blank"></a>
+    <a href="https://www.instagram.com/thelearningm" data-uk-icon="icon: instagram" class="uk-icon-link uk-icon" target="_blank"></a>
 </div>
 
 
 
 
-
-<div>
-    <a href="https://vimeo.com/" data-uk-icon="icon: vimeo" class="uk-icon-link uk-icon" target="_blank"></a>
-</div>
 
 
 
@@ -699,29 +471,21 @@ function searchResults(form) {
         <div class="uk-margin-medium">
             <div data-uk-grid class="uk-child-width-auto uk-grid-small uk-flex-center uk-grid">
                 
-<div class="uk-first-column">
-    <a href="https://twitter.com/" data-uk-icon="icon: twitter" class="uk-icon-link uk-icon" target="_blank"></a>
-</div>
-
 
 <div>
-    <a href="https://www.facebook.com/" data-uk-icon="icon: facebook" class="uk-icon-link uk-icon" target="_blank"></a>
+    <a href="https://www.facebook.com/thelearningm" data-uk-icon="icon: facebook" class="uk-icon-link uk-icon" target="_blank"></a>
 </div>
 
 
 
 
 <div>
-    <a href="https://www.instagram.com/" data-uk-icon="icon: instagram" class="uk-icon-link uk-icon" target="_blank"></a>
+    <a href="https://www.instagram.com/thelearningm" data-uk-icon="icon: instagram" class="uk-icon-link uk-icon" target="_blank"></a>
 </div>
 
 
 
 
-
-<div>
-    <a href="https://vimeo.com/" data-uk-icon="icon: vimeo" class="uk-icon-link uk-icon" target="_blank"></a>
-</div>
 
 
 
@@ -730,10 +494,12 @@ function searchResults(form) {
 
             </div>
         </div>
-        <div class="uk-margin-medium uk-text-small copyright link-secondary">Made by a <a href="https://ivanchromjak.com/">human</a> somewhere on the planet earth.</div>
+        <div class="uk-margin-medium uk-text-small copyright link-secondary">Made by a <a href="https://5x12.github.io/">human</a> somewhere on the planet earth.</div>
 
     </div>
 </footer>
+
+    
 
     
 
