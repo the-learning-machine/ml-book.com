@@ -48,6 +48,10 @@ layout: default
 
                     {% include related-docs.html %}
 
+                    {% if site.commento.enabled %}
+                        {% include commento_comments.html %}
+                    {% endif %}
+
                     {% if site.disqus.shortname %}
                         {% include disqus_comments.html %}
                     {% endif %}

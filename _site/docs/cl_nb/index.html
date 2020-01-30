@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Naive Bayes Classifier | ML Cookbook</title>
+<meta name="generator" content="Jekyll v3.4.1" />
+<meta property="og:title" content="Naive Bayes Classifier" />
+<meta name="author" content="victor" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="1. Introduction" />
+<meta property="og:description" content="1. Introduction" />
+<link rel="canonical" href="http://localhost:4000/docs/cl_nb/" />
+<meta property="og:url" content="http://localhost:4000/docs/cl_nb/" />
+<meta property="og:site_name" content="ML Cookbook" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-01-30T17:00:10+05:30" />
+<script type="application/ld+json">
+{"datePublished":"2020-01-30T17:00:10+05:30","dateModified":"2020-01-30T17:00:10+05:30","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/docs/cl_nb/"},"url":"http://localhost:4000/docs/cl_nb/","author":{"@type":"Person","name":"victor"},"description":"1. Introduction","@type":"BlogPosting","headline":"Naive Bayes Classifier","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta property="og:image" content="http://localhost:4000/uploads/"/>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="shortcut icon" type="image/png" href="/uploads/favicon.png" >
+  <link rel="alternate" type="application/rss+xml" title="ML Cookbook" href="/feed.xml">
+  <script src="/assets/js/main.js"></script>
+  
+    <script>
+function searchResults(form) {
+
+    var currentItem = null;
+    var search = document.getElementById(form);
+    var results = document.getElementById(form + "-results");
+    var toggle = document.getElementById(form + "-toggle");
+
+    function removeActive() {
+        for (i = 0; i < results.children.length; i++) {
+            results.children[i].classList.remove("uk-background-muted");
+        }
+    }
+
+    // Detect all clicks on the document
+    document.addEventListener("click", function(event) {
+
+        var isClickSearch = false;
+        var isClickResults = false;
+        var isClickSearchToggle = false;
+
+        if (search !== null) {
+            isClickSearch = search.contains(event.target);
+        }
+
+        if (results !== null) {
+            isClickResults = results.contains(event.target);
+        }
+
+        if (toggle !== null) {
+            isClickSearchToggle = toggle.contains(event.target);
+        }
+
+        if (isClickSearch || isClickSearchToggle) {
+            results.style.display = "block";
+        }        
+
+        if (!isClickResults && !isClickSearch && !isClickSearchToggle) {
+            results.style.display = "none";
+        }        
+        
+    });    
+
+    results.addEventListener("mouseover", function(event) {
+
+        removeActive();
+        event.target.parentElement.classList.add("uk-background-muted");
+        currentItem = null;
+
+    });
+
+    results.addEventListener("mouseout", function(event) {
+        event.target.parentElement.classList.remove("uk-background-muted");
+    });
+
+
+    search.addEventListener("keyup", function(event) {
+
+        var resultItems = results.children;
+        var resultCount = results.children.length;
+                                
+        if (event.keyCode === 40) {
+
+            if (currentItem < (resultCount - 1)) {
+                if (currentItem === null) {
+                    currentItem = 0;
+                } else {
+                    removeActive();
+                    currentItem++;
+                }
+                removeActive();
+                resultItems[currentItem].classList.add("uk-background-muted");
+            }
+            
+        } else if (event.keyCode === 38) {
+
+            if (currentItem > 0) {
+                if (currentItem === null) {
+                    currentItem = 0;
+                } else {
+                    removeActive();
+                    currentItem--;
+                }
+                removeActive();
+                resultItems[currentItem].classList.add("uk-background-muted");
+            }
+
+        } else if (event.keyCode === 13) {
+
+            resultItems[currentItem].children[0].click();
+
+        }
+
+    });
+
+}
+</script>
+  
+  
+  
+</head>
+
+    <body>
+
+    
+        
+<div  data-uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent; top: 200">
+    <nav class="uk-navbar-container">
+        <div class="uk-container">
+            <div data-uk-navbar>
+                <div class="uk-navbar-left">
+                    <a class="uk-navbar-item uk-logo uk-visible@m" href="/">ML Cookbook</a>
+                    
+                        <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas-docs" data-uk-navbar-toggle-icon data-uk-toggle></a>
+                    
+                    <ul class="uk-navbar-nav uk-visible@m">
+                        
+                            
+                            
+                            
+                                
+                                    
+                                        <li><a href="/" >Home</a></li>
+                                    
+                                
+                            
+                        
+                            
+                            
+                            
+                                
+                                    
+                                        <li><a href="/docs/mindmap/" >Docs</a></li>
+                                    
+                                
+                            
+                        
+                            
+                            
+                            
+                                
+                                    
+                                        <li><a href="/blog/" >Blog</a></li>
+                                    
+                                
+                            
+                        
+                    </ul>
+                </div>
+                <div class="uk-navbar-center uk-hidden@m">
+                    <a class="uk-navbar-item uk-logo" href="/">ML Cookbook</a>
+                </div>
+                <div class="uk-navbar-right">
+                    
+                        
+                            <div>
+                                <a id="search-navbar-toggle" class="uk-navbar-toggle" uk-search-icon href="#"></a>
+                                <div class="uk-drop uk-background-default uk-border-rounded" uk-drop="mode: click; pos: left-center; offset: 0">
+                                    <form class="uk-search uk-search-navbar uk-width-1-1" onsubmit="return false;">
+                                        <input id="search-navbar" class="uk-search-input" type="search" placeholder="Search for answers" autofocus autocomplete="off">
+                                    </form>
+                                    <ul id="search-navbar-results" class="uk-position-absolute uk-width-1-1 uk-list"></ul>
+                                </div>
+                            </div>
+                            <script>
+                            SimpleJekyllSearch({
+                                searchInput: document.getElementById('search-navbar'),
+                                resultsContainer: document.getElementById('search-navbar-results'),
+                                noResultsText: '<li class="no-results">No results found</li>',
+                                searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+                                json: '/search.json'
+                            });
+                            searchResults("search-navbar");
+                            </script>
+                        
+                    
+
+                    <ul class="uk-navbar-nav uk-visible@m">
+                        
+                            
+                            
+                            
+                                
+                                    <li><div class="uk-navbar-item"><a class="uk-button uk-button-primary-outline" href="/projects/mindmap" >Projects</a></div></li>
+                                
+                            
+                        
+                            
+                            
+                            
+                                
+                                    <li><div class="uk-navbar-item"><a class="uk-button uk-button-success" href="/contact/" >Contact</a></div></li>
+                                
+                            
+                        
+                    </ul>
+                    <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas" data-uk-navbar-toggle-icon data-uk-toggle></a>
+
+
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+    
+
+    <div class="uk-section">
+    <div class="uk-container">
+        <div class="uk-grid-large" data-uk-grid>
+
+            <div class="sidebar-fixed-width uk-visible@m">
+                <div class="sidebar-docs uk-position-fixed uk-margin-top">
+                    
+                    <h5>Getting Started</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                    
+                      
+                      
+                      <li class=""><a href="/docs/mindmap/">ML Mind Map</a></li>
+                    
+                    </ul>
+                    
+                    <h5>Regression</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                    
+                      
+                      
+                      <li class=""><a href="/docs/reg_nb/">Naive Bayes Regressor</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/reg_lasso_ridge_elastic/">Lasso, Ridge & Elastic Net</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/reg_multi/">Multivariate Regression</a></li>
+                    
+                    </ul>
+                    
+                    <h5>Classification</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                    
+                      
+                      
+                      <li class=""><a href="/docs/cl_rf/">Random Forest</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/cl_lr/">Logistic Regression</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/cl_dt_id3/">Decision Tree (ID3)</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/cl_dt_cart/">Decision Tree (CART)</a></li>
+                    
+                    </ul>
+                    
+                    <h5>Clustering</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                    
+                      
+                      
+                      <li class=""><a href="/docs/example/">EXAMPLE IS HERE!</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/support/">Contacting support</a></li>
+                    
+                    </ul>
+                    
+                </div>
+            </div>
+
+            <div class="uk-width-1-1 uk-width-expand@m">
+
+                <article class="uk-article">
+
+                    <h1 class="uk-article-title">Naive Bayes Classifier</h1>
+
+                    <p class="uk-text-lead uk-text-muted">This document will cover something cool.</p>
+
+                    <div class="uk-article-meta uk-margin-top uk-margin-medium-bottom uk-flex uk-flex-middle">
+                        
+
+
+  
+  <img class="uk-border-circle avatar" src="http://localhost:4000/uploads/victor.jpeg" alt="Victor Popov">
+
+
+<div>
+  
+    Written by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Victor Popov</span></span><br>
+  
+  <time datetime="2020-01-30T17:00:10+05:30" itemprop="datePublished">
+    
+    Jan 30, 2020
+  </time>
+</div>
+                    </div>
+
+                    <div class="article-content link-primary">
+                        <h1 id="1-introduction">1. Introduction</h1>
+
+<p>Naive Bayes is so ‘naive’ because it assumes that all of the features in a data set are equally important and independent. These assumptions are rarely true in real world scenario, however Naive Bayes algorithm sometimes performs surprisingly well. This is the supervised learning algorithm used for both classification and regression. Its advantage is that it requires very small computational power and as a result works fast even with large data.</p>
+
+<h1 id="2-key-terms">2. Key Terms</h1>
+
+<ul>
+  <li>Prior probability is the proportion of dependent variable (target) in the data set.</li>
+  <li>Likelihood is the probability of particular classification a given observation in presence of some other variable.</li>
+  <li>Marginal likelihood is the proportion of independent variable (predictor) in the data set.</li>
+</ul>
+
+<p>These terms might not be clear to you. Let’s dive into an example that shows what exactly Naive Bayes does, with an indication of these terms.</p>
+
+<h1 id="3-example-with-explanation">3. Example with Explanation</h1>
+
+<p>Below I have a training data set of weather and corresponding target variable ‘Play’ (suggesting possibilities of playing). Now, we need to classify whether players will play or not based on weather condition. Let’s follow the below steps to perform Naive Bayes:</p>
+
+<ul>
+  <li>Step 1: Convert the data set into a frequency table (also called contingency table)</li>
+  <li>Step 2: Create Likelihood table.</li>
+  <li>Step 3: Use Naive Bayesian equation to calculate the posterior probability for each class. The class with the highest posterior probability is the outcome of prediction.</li>
+</ul>
+
+<h2 id="31-step-1-and-step-2">3.1. Step 1 and Step 2</h2>
+
+<p>Let’s go over the first two steps. These steps will also help us understand prior probability, likelihood and marginal likelihood.</p>
+
+<p align="center">
+    <img src="/uploads/doc/classification/nb_table1.png" height="1000" width="1000" />
+</p>
+
+<p>The terms Likelihood, Marginal Likelihood, and Prior Probability (or Class Prior Probability, as it is related to classes “Yes” or “No”) that were mentioned above are shown below</p>
+
+<p align="center">
+    <img src="/uploads/doc/classification/nb_table2.png" height="1000" width="1000" />
+</p>
+
+<p>So, we can now see that:</p>
+<ul>
+  <li>Likelihood = P (Feature &amp;#124 Class)</li>
+  <li>Marginal Likelihood = P (Feature)</li>
+  <li>Prior Likelihood = P (Class)</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Likelihood is just a probability of a feature within a class. For example, if we want to calculate P(Sunny $$</td>
+      <td>$$ “Yes”), where Sunny is a feature, and “Yes” is a class, we will count all “Yes”es, or all times we went to Play, (and ignore “No”s) when we had “Sunny” weather, divided by the overall observed days in our data set.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Marginal Likelihood is a probability of a feature. For example, if we want to calculate P(Sunny), we will count all the Sunny days divided by the overall observed days in our data set.</p>
+
+<p>Prior Likelihood or Class Prior Probability is a probability of a class. For example, if we want to calculate P(“No”), we will count all the “No”s, or, the days we did not go to Play, divided by the overall observed days in our data set.</p>
+
+<p>Posterior probability is the revised probability of an event occurring after taking into consideration new information. It will be discussed in more details later in this article.</p>
+
+<h2 id="32-step-3">3.2. Step 3</h2>
+
+<p>Use Bayes’ Formula to calculate the posterior probability for each class. The class with the highest posterior probability is the outcome of prediction.</p>
+
+<p align="center">
+    <img src="/uploads/doc/classification/nb_table3.png" height="400" width="400" />
+</p>
+
+<p>In formula above ’c’ denotes class and ’x’ denotes features. Next, let’s look at P(x). As you can see, the denominator contains the only term that is a function of the data (features) - it is not a function of the class we are currently looking at. Thus, it will be the same for all the classes. Traditionally in Naive Bayes Classification, we drop this denominator as it does not impact the final outcome of the classifier in order to make the prediction:</p>
+
+<p><script type="math/tex">P(x</script>|<script type="math/tex">x) -> P(x</script>|<script type="math/tex">c)P(c)\quad(1)</script></p>
+
+<p>To make it more interesting, let’s assume we have an the additional feature - Wind:</p>
+
+<p align="center">
+    <img src="/uploads/doc/classification/nb_table4.png" height="400" width="400" />
+</p>
+
+<p>Let’s assume we want to predict the class for the data with the following features:</p>
+
+<script type="math/tex; mode=display">Wind = Moderate \\
+Weather = Sunny</script>
+
+<p>In order to make a prediction we need to compare posterior probabilities for each class after observing the input data. For this purpose we will use the expression (1). Do not forget, that Naive Bayes assumes independence of features. In order not to inflate our formulas we will use the following notation: ’X1’ for ’Weather’, ’X2’ for ’Wind’ and ’C’ for ’Class’</p>
+
+<p>First, we estimate the probability for going to Play (i.e. the class = “Yes”) for Wind = Moderate, Weather = Sunny:</p>
+
+<p>TBD….</p>
+
+                        
+                            <div class="share uk-text-center uk-margin-medium-top">
+    
+        <a class="uk-link-muted" href="https://twitter.com/intent/tweet?text=Naive Bayes Classifier&url=http://localhost:4000/docs/cl_nb/&via=&related=" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+    
+    
+        <a class="uk-link-muted uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fdocs%2Fcl_nb%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
+    
+</div>
+
+                        
+                    </div>
+
+                    
+
+                    <hr class="uk-margin-medium">
+
+                    
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+
+                    <div class="uk-margin-large-top">
+    <h3>Related Docs</h3>
+
+    
+    
+    
+
+    <ul class="uk-list link-secondary">
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+        <li><a href="/docs/cl_rf/">Random Forest</a></li>
+        
+        
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+        <li><a href="/docs/example/">EXAMPLE IS HERE!</a></li>
+        
+        
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+        <li><a href="/docs/reg_lasso_ridge_elastic/">Lasso, Ridge & Elastic Net</a></li>
+        
+        
+    
+
+    
+
+    
+    
+
+    
+
+    
+        <li><a href="/docs/reg_multi/">Multivariate Regression</a></li>
+        
+        
+            
+    </ul>
+</div>
+
+
+                    
+                        
+  <div id="commento" class="uk-margin-xlarge-top"></div>
+  <script src="https://cdn.commento.io/js/commento.js"></script>
+  <noscript>Please enable JavaScript to view the comments powered by Commento.</noscript>
+
+
+                    
+
+                    
+                </article>
+
+                <script>
+                    // Table of contents scroll to
+                    UIkit.scroll('#markdown-toc a', {
+                        duration: 400,
+                        offset: 120
+                    });
+                </script>
+                <!-- Mathjax Support -->
+                <script type="text/javascript" async
+                        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+                </script>
+            </div>
+
+    </div>
+</div>
+
+
+    
+        <div id="offcanvas-docs" data-uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+
+        
+        <h5 class="uk-margin-top">Getting Started</h5>
+        <ul class="uk-nav uk-nav-default doc-nav">
+        
+          
+          
+          <li class=""><a href="/docs/mindmap/">ML Mind Map</a></li>
+        
+        </ul>
+        
+        <h5 class="uk-margin-top">Regression</h5>
+        <ul class="uk-nav uk-nav-default doc-nav">
+        
+          
+          
+          <li class=""><a href="/docs/reg_nb/">Naive Bayes Regressor</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/reg_lasso_ridge_elastic/">Lasso, Ridge & Elastic Net</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/reg_multi/">Multivariate Regression</a></li>
+        
+        </ul>
+        
+        <h5 class="uk-margin-top">Classification</h5>
+        <ul class="uk-nav uk-nav-default doc-nav">
+        
+          
+          
+          <li class=""><a href="/docs/cl_rf/">Random Forest</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/cl_lr/">Logistic Regression</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/cl_dt_id3/">Decision Tree (ID3)</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/cl_dt_cart/">Decision Tree (CART)</a></li>
+        
+        </ul>
+        
+        <h5 class="uk-margin-top">Clustering</h5>
+        <ul class="uk-nav uk-nav-default doc-nav">
+        
+          
+          
+          <li class=""><a href="/docs/example/">EXAMPLE IS HERE!</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/support/">Contacting support</a></li>
+        
+        </ul>
+        
+
+    </div>
+</div>
+
+    
+
+    
+
+    <div id="offcanvas" data-uk-offcanvas="flip: true; overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <a class="uk-logo uk-margin-small-bottom" href="/">ML Cookbook</a>
+     
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+      
+        <ul class="uk-nav uk-nav-primary uk-margin-top">
+            
+                
+
+                
+
+                
+                    <li><a href="/" >Home</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><a href="/docs/mindmap/" >Docs</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><a href="/projects/mindmap/" >Projects</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><a href="/blog/" >Blog</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><a href="/changelog-timeline/" >Changelog</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><div class="uk-navbar-item"><a class="uk-button uk-button-success" href="/contact/" >Contact</a></div></li>
+                
+            
+        </ul>
+
+        <div class="uk-margin-top uk-text-center">
+            <div data-uk-grid class="uk-child-width-auto uk-grid-small uk-flex-center uk-grid">
+                
+
+<div>
+    <a href="https://www.facebook.com/thelearningm" data-uk-icon="icon: facebook" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+
+
+
+
+<div>
+    <a href="https://www.instagram.com/thelearningm" data-uk-icon="icon: instagram" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+
+    </body>
+
+</html>

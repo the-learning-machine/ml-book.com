@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Logistic Regression | ML Cookbook</title>
+<meta name="generator" content="Jekyll v3.4.1" />
+<meta property="og:title" content="Logistic Regression" />
+<meta name="author" content="andrew" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="1. Introduction" />
+<meta property="og:description" content="1. Introduction" />
+<link rel="canonical" href="http://localhost:4000/docs/cl_lr/" />
+<meta property="og:url" content="http://localhost:4000/docs/cl_lr/" />
+<meta property="og:site_name" content="ML Cookbook" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-01-30T17:00:10+05:30" />
+<script type="application/ld+json">
+{"datePublished":"2020-01-30T17:00:10+05:30","dateModified":"2020-01-30T17:00:10+05:30","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/docs/cl_lr/"},"url":"http://localhost:4000/docs/cl_lr/","author":{"@type":"Person","name":"andrew"},"description":"1. Introduction","@type":"BlogPosting","headline":"Logistic Regression","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta property="og:image" content="http://localhost:4000/uploads/"/>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="shortcut icon" type="image/png" href="/uploads/favicon.png" >
+  <link rel="alternate" type="application/rss+xml" title="ML Cookbook" href="/feed.xml">
+  <script src="/assets/js/main.js"></script>
+  
+    <script>
+function searchResults(form) {
+
+    var currentItem = null;
+    var search = document.getElementById(form);
+    var results = document.getElementById(form + "-results");
+    var toggle = document.getElementById(form + "-toggle");
+
+    function removeActive() {
+        for (i = 0; i < results.children.length; i++) {
+            results.children[i].classList.remove("uk-background-muted");
+        }
+    }
+
+    // Detect all clicks on the document
+    document.addEventListener("click", function(event) {
+
+        var isClickSearch = false;
+        var isClickResults = false;
+        var isClickSearchToggle = false;
+
+        if (search !== null) {
+            isClickSearch = search.contains(event.target);
+        }
+
+        if (results !== null) {
+            isClickResults = results.contains(event.target);
+        }
+
+        if (toggle !== null) {
+            isClickSearchToggle = toggle.contains(event.target);
+        }
+
+        if (isClickSearch || isClickSearchToggle) {
+            results.style.display = "block";
+        }        
+
+        if (!isClickResults && !isClickSearch && !isClickSearchToggle) {
+            results.style.display = "none";
+        }        
+        
+    });    
+
+    results.addEventListener("mouseover", function(event) {
+
+        removeActive();
+        event.target.parentElement.classList.add("uk-background-muted");
+        currentItem = null;
+
+    });
+
+    results.addEventListener("mouseout", function(event) {
+        event.target.parentElement.classList.remove("uk-background-muted");
+    });
+
+
+    search.addEventListener("keyup", function(event) {
+
+        var resultItems = results.children;
+        var resultCount = results.children.length;
+                                
+        if (event.keyCode === 40) {
+
+            if (currentItem < (resultCount - 1)) {
+                if (currentItem === null) {
+                    currentItem = 0;
+                } else {
+                    removeActive();
+                    currentItem++;
+                }
+                removeActive();
+                resultItems[currentItem].classList.add("uk-background-muted");
+            }
+            
+        } else if (event.keyCode === 38) {
+
+            if (currentItem > 0) {
+                if (currentItem === null) {
+                    currentItem = 0;
+                } else {
+                    removeActive();
+                    currentItem--;
+                }
+                removeActive();
+                resultItems[currentItem].classList.add("uk-background-muted");
+            }
+
+        } else if (event.keyCode === 13) {
+
+            resultItems[currentItem].children[0].click();
+
+        }
+
+    });
+
+}
+</script>
+  
+  
+  
+</head>
+
+    <body>
+
+    
+        
+<div  data-uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent; top: 200">
+    <nav class="uk-navbar-container">
+        <div class="uk-container">
+            <div data-uk-navbar>
+                <div class="uk-navbar-left">
+                    <a class="uk-navbar-item uk-logo uk-visible@m" href="/">ML Cookbook</a>
+                    
+                        <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas-docs" data-uk-navbar-toggle-icon data-uk-toggle></a>
+                    
+                    <ul class="uk-navbar-nav uk-visible@m">
+                        
+                            
+                            
+                            
+                                
+                                    
+                                        <li><a href="/" >Home</a></li>
+                                    
+                                
+                            
+                        
+                            
+                            
+                            
+                                
+                                    
+                                        <li><a href="/docs/mindmap/" >Docs</a></li>
+                                    
+                                
+                            
+                        
+                            
+                            
+                            
+                                
+                                    
+                                        <li><a href="/blog/" >Blog</a></li>
+                                    
+                                
+                            
+                        
+                    </ul>
+                </div>
+                <div class="uk-navbar-center uk-hidden@m">
+                    <a class="uk-navbar-item uk-logo" href="/">ML Cookbook</a>
+                </div>
+                <div class="uk-navbar-right">
+                    
+                        
+                            <div>
+                                <a id="search-navbar-toggle" class="uk-navbar-toggle" uk-search-icon href="#"></a>
+                                <div class="uk-drop uk-background-default uk-border-rounded" uk-drop="mode: click; pos: left-center; offset: 0">
+                                    <form class="uk-search uk-search-navbar uk-width-1-1" onsubmit="return false;">
+                                        <input id="search-navbar" class="uk-search-input" type="search" placeholder="Search for answers" autofocus autocomplete="off">
+                                    </form>
+                                    <ul id="search-navbar-results" class="uk-position-absolute uk-width-1-1 uk-list"></ul>
+                                </div>
+                            </div>
+                            <script>
+                            SimpleJekyllSearch({
+                                searchInput: document.getElementById('search-navbar'),
+                                resultsContainer: document.getElementById('search-navbar-results'),
+                                noResultsText: '<li class="no-results">No results found</li>',
+                                searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+                                json: '/search.json'
+                            });
+                            searchResults("search-navbar");
+                            </script>
+                        
+                    
+
+                    <ul class="uk-navbar-nav uk-visible@m">
+                        
+                            
+                            
+                            
+                                
+                                    <li><div class="uk-navbar-item"><a class="uk-button uk-button-primary-outline" href="/projects/mindmap" >Projects</a></div></li>
+                                
+                            
+                        
+                            
+                            
+                            
+                                
+                                    <li><div class="uk-navbar-item"><a class="uk-button uk-button-success" href="/contact/" >Contact</a></div></li>
+                                
+                            
+                        
+                    </ul>
+                    <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas" data-uk-navbar-toggle-icon data-uk-toggle></a>
+
+
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+    
+
+    <div class="uk-section">
+    <div class="uk-container">
+        <div class="uk-grid-large" data-uk-grid>
+
+            <div class="sidebar-fixed-width uk-visible@m">
+                <div class="sidebar-docs uk-position-fixed uk-margin-top">
+                    
+                    <h5>Getting Started</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                    
+                      
+                      
+                      <li class=""><a href="/docs/mindmap/">ML Mind Map</a></li>
+                    
+                    </ul>
+                    
+                    <h5>Regression</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                    
+                      
+                      
+                      <li class=""><a href="/docs/reg_nb/">Naive Bayes Regressor</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/reg_lasso_ridge_elastic/">Lasso, Ridge & Elastic Net</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/reg_multi/">Multivariate Regression</a></li>
+                    
+                    </ul>
+                    
+                    <h5>Classification</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                    
+                      
+                      
+                      <li class=""><a href="/docs/cl_rf/">Random Forest</a></li>
+                    
+                      
+                      
+                      <li class="uk-active"><a href="/docs/cl_lr/">Logistic Regression</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/cl_dt_id3/">Decision Tree (ID3)</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/cl_dt_cart/">Decision Tree (CART)</a></li>
+                    
+                    </ul>
+                    
+                    <h5>Clustering</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                    
+                      
+                      
+                      <li class=""><a href="/docs/example/">EXAMPLE IS HERE!</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/support/">Contacting support</a></li>
+                    
+                    </ul>
+                    
+                </div>
+            </div>
+
+            <div class="uk-width-1-1 uk-width-expand@m">
+
+                <article class="uk-article">
+
+                    <h1 class="uk-article-title">Logistic Regression</h1>
+
+                    <p class="uk-text-lead uk-text-muted">Logistic regression and how it works.</p>
+
+                    <div class="uk-article-meta uk-margin-top uk-margin-medium-bottom uk-flex uk-flex-middle">
+                        
+
+
+  
+  <img class="uk-border-circle avatar" src="http://localhost:4000/uploads/andrew.jpeg" alt="Andrew Wolf">
+
+
+<div>
+  
+    Written by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Andrew Wolf</span></span><br>
+  
+  <time datetime="2020-01-30T17:00:10+05:30" itemprop="datePublished">
+    
+    Jan 30, 2020
+  </time>
+</div>
+                    </div>
+
+                    <div class="article-content link-primary">
+                        <h1 id="1-introduction">1. Introduction</h1>
+
+<p>Logistic Regression despite the “regression” term in its name is used in <strong>classification</strong> problems when the dependent (target) variable has two possible outcomes. However, this model can be extended to tackle multiclass classification problems, and we will discuss it at the end of this article.</p>
+
+<h1 id="2-key-terms">2. Key Terms</h1>
+
+<p><script type="math/tex">Odds</script> are used in Logistic Regression algorithm to model probabilities:</p>
+
+<script type="math/tex; mode=display">odds(p)=\frac{p}{1-p}=\frac{Prob(Class\ 1)}{Prob(Class\ 2)}=\frac{Prob(True)}{Prob(False)}=\frac{Prob("Yes")}{Prob("No")}\quad(1)</script>
+
+<p align="center">
+    <img src="/uploads/doc/classification/lr_odd.png" height="400" width="400" />
+</p>
+
+<p>As you can see from formula (1), <script type="math/tex">odds(p) \in [0 ; \infty]</script> given that <script type="math/tex">p \in [0;1]</script>.
+However, we want our model to take a real value number from <script type="math/tex">[-\infty ; \infty]</script> (as our features can have any values), and output a soft number in a range [0;1] to describe a probability. Logistic function (also called Sigmoid) possesses all of these traits. It can be derived as an inverse of a log-odds function which is also called <strong>logit</strong>.</p>
+
+<script type="math/tex; mode=display">logit(p)=log(odds(p))=log(\frac{p}{1-p})\quad(2)</script>
+
+<p align="center">
+    <img src="/uploads/doc/classification/lr_logit.png" height="400" width="400" />
+</p>
+
+<p>We can achieve the required properties by reflecting the logit function about the line <script type="math/tex">y=x</script>. This transformation can be performed by calculating the inverse of expression (2) which is called a <strong>logistic function</strong>:</p>
+
+<script type="math/tex; mode=display">logistic(y)=logit(p)^{-1}</script>
+
+<p>In order to calculate that we should solve the equation:</p>
+
+<script type="math/tex; mode=display">logit(p)=y \to log(\frac{p}{1-p})=y \to \frac{p}{1-p}=e^y \to p=e^y(1-p) \to p(e^y+1)=e^y \\
+p=\frac{e^y}{e^y+1}=\frac{1}{1+e^{-y}}</script>
+
+<p>Thus, the expression for logistic function (sigmoid function) is the following:</p>
+
+<script type="math/tex; mode=display">logistic(y)=\frac{1}{1+e^{-y}}\quad(3)</script>
+
+<p align="center">
+    <img src="/uploads/doc/classification/lr_logistic.png" height="400" width="400" />
+</p>
+<h1 id="model-training">Model Training</h1>
+
+<p>Logistic Regression represents logit function as a linear combination of predictors plus the intercept:</p>
+
+<script type="math/tex; mode=display">logit(p)=\theta_0+\theta_1X_1+\theta_2X_2+...+\theta_k X_k,\quad(4)</script>
+
+<p>where</p>
+<ul>
+  <li><script type="math/tex">X_i</script> is the value of <script type="math/tex">i^{th}</script> predictor</li>
+  <li><script type="math/tex">\theta_i</script> is the generated coefficient</li>
+</ul>
+
+<p>Coefficients <script type="math/tex">\theta_i</script> indicate the effect of a one-unit change in the predictor variable on the log odds of “success”</p>
+
+<p>As our train data contains more than one observation, we will denote <script type="math/tex">x</script> as a column vector of the predictors’ values for the particular observation (we will also add 1 as its first element to account for an intercept term) and <script type="math/tex">\theta</script> as a column vector of coefficients <script type="math/tex">\theta_0...\theta_k</script>:</p>
+
+<script type="math/tex; mode=display">x=
+\left[\begin{array}{ccc}
+1\\X_{1}\\X_{2}\\...\\X_{k}
+\end{array}\right];
+\qquad
+\theta=
+\left[\begin{array}{ccc}
+\theta_0\\\theta_1\\\theta_2\\...\\\theta_k
+\end{array}\right]</script>
+
+<p>Using this notation we can rewrite the expression (4) as follows:</p>
+
+<script type="math/tex; mode=display">logit(p)=\theta^Tx\quad(5)</script>
+
+<p>If we plug in <script type="math/tex">y=\theta^Tx</script> into formula (3), we will get an expression for the probability of a random variable Y (that represents the predicted output) being 0 or 1 given experimental data <script type="math/tex">x</script> and model parameters <script type="math/tex">\theta</script>:</p>
+
+<script type="math/tex; mode=display">Pr(Y=1 | x, \theta)=\frac{1}{1+e^{-\theta^Tx}}\quad(6)</script>
+
+<p>As we are dealing with two class problem, the probability <script type="math/tex">Pr(Y=0 \| x, \theta)</script> can be expressed as follows:</p>
+
+<script type="math/tex; mode=display">Pr(Y=0 | x, \theta)=1-Pr(Y=1 | x, \theta)\quad(7)</script>
+
+<p>We can combine probabilities used in expressions (6) and (7) into one formula:</p>
+
+<script type="math/tex; mode=display">Pr(Y | x, \theta)=Pr(Y=1 | x, \theta)^{Y}(1-Pr(Y=1 | x, \theta))^{1-Y}\quad(8)</script>
+
+<p>One can notice that:</p>
+
+<script type="math/tex; mode=display">Pr(Y | x, \theta) \to Pr(Y=1 | x, \theta) \mathrm{\ given\ Y=1},\ \mathrm{and} \\
+Pr(Y | x, \theta) \to 1 - Pr(Y=1 | x, \theta) = Pr(Y=0 | x, \theta) \mathrm{\ given\ Y=0}.</script>
+
+<p>Our goal is to determine the coefficients <script type="math/tex">\theta=\theta_0</script>…<script type="math/tex">\theta_k\</script> from formula (4). The intuition here is that for any given train observation we want these coefficients to maximize the probability of observing a correct label. This sentence can be converted to the following formula (assuming train data is independently distributed):</p>
+
+<script type="math/tex; mode=display">L(\theta | x) = Pr(Y | x,\theta) \to max, \\
+\mathrm{where}\  Pr(Y | x,\theta) = \prod_{i=1}^{n}Pr(y_i | x_i,\theta)=\prod_{i=1}^{n}Pr(y_i=1 | x_i, \theta)^{y_i}(1-Pr(y_i=1 | x_i, \theta))^{1-y_i}</script>
+
+<p>This expression can be maximized through various optimization techniques such as Newton-Raphson algorithm or a gradient descent (which is usually applied to log-likelihood).</p>
+
+<h1 id="making-predictions">Making Predictions</h1>
+
+<p>Now as we have the vector of model parameters <script type="math/tex">\theta</script> we can calculate the predicted value of the logit function for any new observation <script type="math/tex">x</script> (we will use hat symbol for predicted values):</p>
+
+<script type="math/tex; mode=display">logit(p)=\hat{y}=\theta^Tx</script>
+
+<p>Then we plug this value into logistic function in order to determine the probability of the data belonging to Class 1 (True, “Yes”, etc):</p>
+
+<script type="math/tex; mode=display">\hat{p}=\hat{p(Class\ 1)}=logistic(\hat{y})=\frac{1}{1+e^{-\hat{y}}}</script>
+
+<p>The last step is to set up a threshold T (\in) [0;1] that will be used in order to make a prediction:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\mathrm{Model\ Output} = 
+    \begin{cases}
+        \mathrm{Class\ 1\ \ if}  & \hat{p}\ge T\\
+        \mathrm{Class\ 2\ \ if}  & \hat{p}<T
+    \end{cases} %]]></script>
+
+<p>By default the threshold is set up to 0.5, but you can adjust it based on your needs (usually based on the True Positive Rate and False Positive Rate trade-off).</p>
+
+<p align="center">
+    <img src="/uploads/doc/classification/lr_pic1.png" height="400" width="400" />
+</p>
+
+<h1 id="5-regularization">5. Regularization</h1>
+
+<p>Regularization means making the model less complex which can allow it to generalize better (i.e. avoid overfitting) and perform better on a new data.</p>
+
+<p>As was mentioned above, the coefficients of logistic regression are usually fitted by maximizing the log-likelihood. As many optimization techniques are aimed at finding the minimum of a function we can redefine our goal as minimizing the negative log-likelihood:</p>
+
+<script type="math/tex; mode=display">\hat\theta=\min\limits_{\theta}[-log(L(\theta | x))]</script>
+
+<p>We can penalize the model of having coefficients that are far from zero by adding a regularization term <script type="math/tex">R(\theta)</script> multiplied by parameter <script type="math/tex">\lambda</script> which is called regularization strength:</p>
+
+<script type="math/tex; mode=display">\hat\theta=\min\limits_{\theta}[-log(L(\theta | x))+\lambda R(\theta)]</script>
+
+<p>The two most popular regularizations are L1 and L2:</p>
+
+<script type="math/tex; mode=display">L1: R(\theta)=\sum_{i=0}^{K}|\theta_i|
+L2: R(\theta)=\frac{1}{2}\sum_{i=0}^{K}\theta_i^2</script>
+
+<p>The factor <script type="math/tex">\frac{1}{2}</script> in L2 regularization is used to simplify the derivative calculations. Through <script type="math/tex">\lambda</script> we can control the impact of the regularization term. Higher values of <script type="math/tex">\lambda</script> lead to smaller coefficients (less regularization), but too high values can lead to underfitting.</p>
+
+<p>In scikit-learn package L2 regularization is used by default. Instead of regularization strength <script type="math/tex">\lambda</script>, its inverse is used: the C parameter (the default is C=1.0). Similarly to <script type="math/tex">\lambda</script>: smaller values of C leads to smaller coefficients, but too high values can lead to underfitting.</p>
+
+<p>It is important to normalize the data before performing regularized logistic regression to ensure that the regularization term <script type="math/tex">\lambda</script> affects the coefficients in a similar manner.</p>
+
+<h1 id="logistic-regression-for-multinomial-problems">Logistic Regression For Multinomial Problems</h1>
+
+<p>Logistic regression can be generalized to handle problems with more than two possible outcomes. The most popular approach is called “One-vs-Rest” logistic regression where we split our multinomial problem with M classes into M binary classification problems (see Figure 5).</p>
+
+<p align="center">
+    <img src="/uploads/doc/classification/lr_1vsall.png" height="400" width="400" /> 
+</p>
+
+<p>In this case we generate different coefficients <script type="math/tex">\theta</script> for each binary classification problem (basically we train M separate Logistic Regression models). When we have to classify a new observation, we calculate the probabilities of the data belonging to each class (which are the outputs of our models) and select the class that has the highest probability.</p>
+
+                        
+                            <div class="share uk-text-center uk-margin-medium-top">
+    
+        <a class="uk-link-muted" href="https://twitter.com/intent/tweet?text=Logistic Regression&url=http://localhost:4000/docs/cl_lr/&via=&related=" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+    
+    
+        <a class="uk-link-muted uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fdocs%2Fcl_lr%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
+    
+</div>
+
+                        
+                    </div>
+
+                    
+
+                    <hr class="uk-margin-medium">
+
+                    
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="uk-margin-large-top paginate-post">
+        <div class="uk-child-width-expand@s uk-grid-large uk-pagi" data-uk-grid>
+            <div>
+                
+                  
+                  
+                  
+                    <h5>Random Forest</h5>
+                    <div><a class="remove-underline hvr-back" href="/docs/cl_rf/">&larr; Previous</a></div>
+                
+            </div>
+            <div>
+                
+                  
+                  
+                  
+                    <h5 class="uk-text-right">Decision Tree (ID3)</h5>
+                    <div class="uk-text-right"><a class="remove-underline hvr-forward" href="/docs/cl_dt_id3/">Next &rarr;</a></div>
+                
+            </div>
+        </div>
+    </div>
+    
+
+
+                    <div class="uk-margin-large-top">
+    <h3>Related Docs</h3>
+
+    
+    
+    
+
+    <ul class="uk-list link-secondary">
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+    </ul>
+</div>
+
+
+                    
+                        
+  <div id="commento" class="uk-margin-xlarge-top"></div>
+  <script src="https://cdn.commento.io/js/commento.js"></script>
+  <noscript>Please enable JavaScript to view the comments powered by Commento.</noscript>
+
+
+                    
+
+                    
+                </article>
+
+                <script>
+                    // Table of contents scroll to
+                    UIkit.scroll('#markdown-toc a', {
+                        duration: 400,
+                        offset: 120
+                    });
+                </script>
+                <!-- Mathjax Support -->
+                <script type="text/javascript" async
+                        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+                </script>
+            </div>
+
+    </div>
+</div>
+
+
+    
+        <div id="offcanvas-docs" data-uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+
+        
+        <h5 class="uk-margin-top">Getting Started</h5>
+        <ul class="uk-nav uk-nav-default doc-nav">
+        
+          
+          
+          <li class=""><a href="/docs/mindmap/">ML Mind Map</a></li>
+        
+        </ul>
+        
+        <h5 class="uk-margin-top">Regression</h5>
+        <ul class="uk-nav uk-nav-default doc-nav">
+        
+          
+          
+          <li class=""><a href="/docs/reg_nb/">Naive Bayes Regressor</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/reg_lasso_ridge_elastic/">Lasso, Ridge & Elastic Net</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/reg_multi/">Multivariate Regression</a></li>
+        
+        </ul>
+        
+        <h5 class="uk-margin-top">Classification</h5>
+        <ul class="uk-nav uk-nav-default doc-nav">
+        
+          
+          
+          <li class=""><a href="/docs/cl_rf/">Random Forest</a></li>
+        
+          
+          
+          <li class="uk-active"><a href="/docs/cl_lr/">Logistic Regression</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/cl_dt_id3/">Decision Tree (ID3)</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/cl_dt_cart/">Decision Tree (CART)</a></li>
+        
+        </ul>
+        
+        <h5 class="uk-margin-top">Clustering</h5>
+        <ul class="uk-nav uk-nav-default doc-nav">
+        
+          
+          
+          <li class=""><a href="/docs/example/">EXAMPLE IS HERE!</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/support/">Contacting support</a></li>
+        
+        </ul>
+        
+
+    </div>
+</div>
+
+    
+
+    
+
+    <div id="offcanvas" data-uk-offcanvas="flip: true; overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <a class="uk-logo uk-margin-small-bottom" href="/">ML Cookbook</a>
+     
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+      
+        <ul class="uk-nav uk-nav-primary uk-margin-top">
+            
+                
+
+                
+
+                
+                    <li><a href="/" >Home</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><a href="/docs/mindmap/" >Docs</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><a href="/projects/mindmap/" >Projects</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><a href="/blog/" >Blog</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><a href="/changelog-timeline/" >Changelog</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><div class="uk-navbar-item"><a class="uk-button uk-button-success" href="/contact/" >Contact</a></div></li>
+                
+            
+        </ul>
+
+        <div class="uk-margin-top uk-text-center">
+            <div data-uk-grid class="uk-child-width-auto uk-grid-small uk-flex-center uk-grid">
+                
+
+<div>
+    <a href="https://www.facebook.com/thelearningm" data-uk-icon="icon: facebook" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+
+
+
+
+<div>
+    <a href="https://www.instagram.com/thelearningm" data-uk-icon="icon: instagram" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+
+    </body>
+
+</html>

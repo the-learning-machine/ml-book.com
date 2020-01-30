@@ -29,7 +29,7 @@ navbar:
 author:
     name:           Andrew Wolf
     title:          Founder
-    avatar:         andrew.png
+    avatar:         andrew.jpeg
 
 # Author settings, displayed on post and doc pages if front matter references author name e.g. author: peter
 authors:
@@ -85,6 +85,10 @@ footer:
 disqus:
     shortname:      # 1234
 
+# Check to enable Commento comments on the site.
+commento:
+    enabled:        true
+
 # Google analytics code, get your code here https://www.google.com/analytics/
 google_analytics:
 
@@ -121,6 +125,8 @@ collections:
     output:         false
   changelogs:
     output:         false
+  projects:
+    output:         true
 
 # Defaults
 defaults:
@@ -136,4 +142,11 @@ defaults:
       type:         docs
     values:
       layout:       doc
+  # _projects
+  - scope:
+      path:         ""
+      type:         projects
+    values:
+      layout:       project
+
 

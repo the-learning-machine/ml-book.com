@@ -1,0 +1,32 @@
+{% assign projects = site.data.navigation_projects | map: 'projects' | join: ',' | split: ',' %}
+
+{% for single_project in projects %}
+  {% assign project_url = single_project | prepend:"/projects/" | append:"/" %}
+  {% if project_url == page.url %}
+    <div class="uk-margin-large-top paginate-post">
+        <div class="uk-child-width-expand@s uk-grid-large uk-pagi" data-uk-grid>
+            <div>
+                {% if forloop.first %}
+                {% else %}
+                  {% assign previous = forloop.index0 | minus: 1 %}
+                  {% assign previous_page = projects[previous] | prepend:"/projects/" | append:"/" %}
+                  {% assign previous_project = site.projects | where:"url", previous_page | first %}
+                    <h5>{{previous_project.title}}</h5>
+                    <div><a class="remove-underline hvr-back" href="{{previous_page}}">&larr; {{ site.data.translation[site.lang].previous | default: "Previous" }}</a></div>
+                {% endif %}
+            </div>
+            <div>
+                {% if forloop.last %}
+                {% else %}
+                  {% assign next = forloop.index0 | plus: 1 %}
+                  {% assign next_page = projects[next] | prepend:"/projects/" | append:"/" %}
+                  {% assign next_project = site.projects | where:"url", next_page | first %}
+                    <h5 class="uk-text-right">{{next_project.title}}</h5>
+                    <div class="uk-text-right"><a class="remove-underline hvr-forward" href="{{next_page}}">{{ site.data.translation[site.lang].next | default: "Next" }} &rarr;</a></div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% break %}
+  {% endif %}
+{% endfor %}

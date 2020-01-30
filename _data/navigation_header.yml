@@ -10,6 +10,12 @@ left:
   - title: Blog
     url: /blog/
 
+#  - title: Blog
+#    dropdown:
+#      - title: Blog
+#        url: /blog/
+
+
 #  - title: Changelogs
 #    dropdown:
 #      - title: Timeline Style
@@ -24,6 +30,10 @@ right:
 #  - title: Changelog
 #    url: /changelog-timeline/
 #    button: primary-outline
+
+  - title: Projects
+    url: /projects/mindmap
+    button: primary-outline
 
   - title: Contact
     url: /contact/

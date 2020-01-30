@@ -5,7 +5,7 @@
       "category" : "",
       "tags"     : "features",
       "url"      : "/docs/alerts/",
-      "date"     : "2019-04-02 18:49:05 -0400"
+      "date"     : "2020-01-30 17:00:10 +0530"
     } ,
   
     {
@@ -13,7 +13,7 @@
       "category" : "",
       "tags"     : "",
       "url"      : "/docs/analytics/",
-      "date"     : "2019-04-02 18:49:05 -0400"
+      "date"     : "2020-01-30 17:00:10 +0530"
     } ,
   
     {
@@ -21,7 +21,7 @@
       "category" : "",
       "tags"     : "features",
       "url"      : "/docs/boxes/",
-      "date"     : "2019-04-02 18:49:05 -0400"
+      "date"     : "2020-01-30 17:00:10 +0530"
     } ,
   
     {
@@ -29,7 +29,47 @@
       "category" : "",
       "tags"     : "setup",
       "url"      : "/docs/changelog/",
-      "date"     : "2019-04-02 18:49:05 -0400"
+      "date"     : "2020-01-30 17:00:10 +0530"
+    } ,
+  
+    {
+      "title"    : "Decision Tree (CART)",
+      "category" : "",
+      "tags"     : "mlmindmap",
+      "url"      : "/docs/cl_dt_cart/",
+      "date"     : "2020-01-30 17:00:10 +0530"
+    } ,
+  
+    {
+      "title"    : "Decision Tree (ID3)",
+      "category" : "",
+      "tags"     : "mlmindmap",
+      "url"      : "/docs/cl_dt_id3/",
+      "date"     : "2020-01-30 17:00:10 +0530"
+    } ,
+  
+    {
+      "title"    : "Logistic Regression",
+      "category" : "",
+      "tags"     : "naive",
+      "url"      : "/docs/cl_lr/",
+      "date"     : "2020-01-30 17:00:10 +0530"
+    } ,
+  
+    {
+      "title"    : "Naive Bayes Classifier",
+      "category" : "",
+      "tags"     : "featured",
+      "url"      : "/docs/cl_nb/",
+      "date"     : "2020-01-30 17:00:10 +0530"
+    } ,
+  
+    {
+      "title"    : "Random Forest",
+      "category" : "",
+      "tags"     : "featured",
+      "url"      : "/docs/cl_rf/",
+      "date"     : "2020-01-30 17:00:10 +0530"
     } ,
   
     {
@@ -37,7 +77,7 @@
       "category" : "",
       "tags"     : "",
       "url"      : "/docs/comments/",
-      "date"     : "2019-04-02 18:49:05 -0400"
+      "date"     : "2020-01-30 17:00:10 +0530"
     } ,
   
     {
@@ -45,7 +85,7 @@
       "category" : "",
       "tags"     : "setup",
       "url"      : "/docs/contact/",
-      "date"     : "2019-04-02 18:49:05 -0400"
+      "date"     : "2020-01-30 17:00:10 +0530"
     } ,
   
     {
@@ -53,7 +93,7 @@
       "category" : "",
       "tags"     : "features",
       "url"      : "/docs/cta/",
-      "date"     : "2019-04-02 18:49:05 -0400"
+      "date"     : "2020-01-30 17:00:10 +0530"
     } ,
   
     {
@@ -61,7 +101,7 @@
       "category" : "",
       "tags"     : "customize",
       "url"      : "/docs/customize/",
-      "date"     : "2019-04-02 18:49:05 -0400"
+      "date"     : "2020-01-30 17:00:10 +0530"
     } ,
   
     {
@@ -69,7 +109,7 @@
       "category" : "",
       "tags"     : "customize",
       "url"      : "/docs/development/",
-      "date"     : "2019-04-02 18:49:05 -0400"
+      "date"     : "2020-01-30 17:00:10 +0530"
     } ,
   
     {
@@ -77,15 +117,23 @@
       "category" : "",
       "tags"     : "setup",
       "url"      : "/docs/docs/",
-      "date"     : "2019-04-02 18:49:05 -0400"
+      "date"     : "2020-01-30 17:00:10 +0530"
+    } ,
+  
+    {
+      "title"    : "EXAMPLE IS HERE!",
+      "category" : "",
+      "tags"     : "mlmindmap, featured",
+      "url"      : "/docs/example/",
+      "date"     : "2020-01-30 17:00:10 +0530"
     } ,
   
     {
       "title"    : "Frequently asked questions section",
       "category" : "",
-      "tags"     : "features, featured",
+      "tags"     : "",
       "url"      : "/docs/faq/",
-      "date"     : "2019-04-02 18:49:05 -0400"
+      "date"     : "2020-01-30 17:00:10 +0530"
     } ,
   
     {
@@ -93,7 +141,7 @@
       "category" : "",
       "tags"     : "features",
       "url"      : "/docs/featured/",
-      "date"     : "2019-04-02 18:49:05 -0400"
+      "date"     : "2020-01-30 17:00:10 +0530"
     } ,
   
     {
@@ -101,7 +149,7 @@
       "category" : "",
       "tags"     : "setup",
       "url"      : "/docs/footer/",
-      "date"     : "2019-04-02 18:49:05 -0400"
+      "date"     : "2020-01-30 17:00:10 +0530"
     } ,
   
     {
@@ -109,7 +157,7 @@
       "category" : "",
       "tags"     : "features",
       "url"      : "/docs/hero/",
-      "date"     : "2019-04-02 18:49:05 -0400"
+      "date"     : "2020-01-30 17:00:10 +0530"
     } ,
   
     {
@@ -117,15 +165,23 @@
       "category" : "",
       "tags"     : "setup",
       "url"      : "/docs/installation/",
-      "date"     : "2019-04-02 18:49:05 -0400"
+      "date"     : "2020-01-30 17:00:10 +0530"
     } ,
   
     {
       "title"    : "Adding media to post and doc content",
       "category" : "",
-      "tags"     : "features, featured",
+      "tags"     : "features",
       "url"      : "/docs/media/",
-      "date"     : "2019-04-02 18:49:05 -0400"
+      "date"     : "2020-01-30 17:00:10 +0530"
+    } ,
+  
+    {
+      "title"    : "ML Mind Map",
+      "category" : "",
+      "tags"     : "how-to-start",
+      "url"      : "/docs/mindmap/",
+      "date"     : "2020-01-30 17:00:10 +0530"
     } ,
   
     {
@@ -133,7 +189,7 @@
       "category" : "",
       "tags"     : "setup",
       "url"      : "/docs/navigation/",
-      "date"     : "2019-04-02 18:49:05 -0400"
+      "date"     : "2020-01-30 17:00:10 +0530"
     } ,
   
     {
@@ -141,15 +197,39 @@
       "category" : "",
       "tags"     : "othertag",
       "url"      : "/docs/pages/",
-      "date"     : "2019-04-02 18:49:05 -0400"
+      "date"     : "2020-01-30 17:00:10 +0530"
     } ,
   
     {
       "title"    : "Creating your first post in Jekyll",
       "category" : "",
-      "tags"     : "featured",
+      "tags"     : "",
       "url"      : "/docs/posts/",
-      "date"     : "2019-04-02 18:49:05 -0400"
+      "date"     : "2020-01-30 17:00:10 +0530"
+    } ,
+  
+    {
+      "title"    : "Lasso, Ridge &amp; Elastic Net",
+      "category" : "",
+      "tags"     : "featured",
+      "url"      : "/docs/reg_lasso_ridge_elastic/",
+      "date"     : "2020-01-30 17:00:10 +0530"
+    } ,
+  
+    {
+      "title"    : "Multivariate Regression",
+      "category" : "",
+      "tags"     : "featured",
+      "url"      : "/docs/reg_multi/",
+      "date"     : "2020-01-30 17:00:10 +0530"
+    } ,
+  
+    {
+      "title"    : "Naive Bayes Regressor",
+      "category" : "",
+      "tags"     : "featured",
+      "url"      : "/docs/reg_nb/",
+      "date"     : "2020-01-30 17:00:10 +0530"
     } ,
   
     {
@@ -157,7 +237,7 @@
       "category" : "",
       "tags"     : "setup",
       "url"      : "/docs/setup/",
-      "date"     : "2019-04-02 18:49:05 -0400"
+      "date"     : "2020-01-30 17:00:10 +0530"
     } ,
   
     {
@@ -165,7 +245,7 @@
       "category" : "",
       "tags"     : "customize",
       "url"      : "/docs/sources/",
-      "date"     : "2019-04-02 18:49:05 -0400"
+      "date"     : "2020-01-30 17:00:10 +0530"
     } ,
   
     {
@@ -173,7 +253,7 @@
       "category" : "",
       "tags"     : "help, customize",
       "url"      : "/docs/support/",
-      "date"     : "2019-04-02 18:49:05 -0400"
+      "date"     : "2020-01-30 17:00:10 +0530"
     } ,
   
     {
@@ -181,7 +261,7 @@
       "category" : "",
       "tags"     : "features",
       "url"      : "/docs/team/",
-      "date"     : "2019-04-02 18:49:05 -0400"
+      "date"     : "2020-01-30 17:00:10 +0530"
     } ,
   
     {
@@ -189,7 +269,7 @@
       "category" : "",
       "tags"     : "features",
       "url"      : "/docs/toc/",
-      "date"     : "2019-04-02 18:49:05 -0400"
+      "date"     : "2020-01-30 17:00:10 +0530"
     } ,
   
     {
@@ -197,15 +277,51 @@
       "category" : "",
       "tags"     : "customize",
       "url"      : "/docs/translation/",
-      "date"     : "2019-04-02 18:49:05 -0400"
+      "date"     : "2020-01-30 17:00:10 +0530"
     } ,
   
     {
       "title"    : "Video lightbox boxes section",
       "category" : "",
-      "tags"     : "features, featured",
+      "tags"     : "features",
       "url"      : "/docs/videos/",
-      "date"     : "2019-04-02 18:49:05 -0400"
+      "date"     : "2020-01-30 17:00:10 +0530"
     } 
+  
+  
+  ,
+  
+  
+  {
+  "title"    : "Adding media to post and doc content",
+  "category" : "",
+  "tags"     : "features",
+  "url"      : "/projects/media/",
+  "date"     : "2020-01-30 17:00:10 +0530"
+  } ,
+  
+  {
+  "title"    : "ML Mind Map",
+  "category" : "",
+  "tags"     : "how-to-start",
+  "url"      : "/projects/mindmap/",
+  "date"     : "2020-01-30 17:00:10 +0530"
+  } ,
+  
+  {
+  "title"    : "Navigation bar",
+  "category" : "",
+  "tags"     : "setup",
+  "url"      : "/projects/navigation/",
+  "date"     : "2020-01-30 17:00:10 +0530"
+  } ,
+  
+  {
+  "title"    : "Updating your billing credit card",
+  "category" : "",
+  "tags"     : "othertag",
+  "url"      : "/projects/pages/",
+  "date"     : "2020-01-30 17:00:10 +0530"
+  } 
   
 ]

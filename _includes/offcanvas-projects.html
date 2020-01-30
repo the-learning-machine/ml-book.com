@@ -1,0 +1,18 @@
+<div id="offcanvas-projects" data-uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+
+        {% for section in site.data.navigation_projects %}
+        <h5 class="uk-margin-top">{{ section.title }}</h5>
+        <ul class="uk-nav uk-nav-default doc-nav">
+        {% for project in section.projects %}
+          {% assign project_url = project | prepend:"/projects/" | append:"/" %}
+          {% assign p = site.projects | where:"url", project_url | first %}
+          <li class="{% if project_url == page.url %}uk-active{% endif %}"><a href="{{ p.url }}">{{ p.title }}</a></li>
+        {% endfor %}
+        </ul>
+        {% endfor %}
+
+    </div>
+</div>
