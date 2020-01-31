@@ -1,4 +1,6 @@
-window.onload = particlesJS.load('particles-js', 'particles.json');
+window.onload = () => {
+    particlesJS.load('particles-js', 'particles.json');
+}
 
 (function(global, factory) {
     typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory() : typeof define === "function" && define.amd ? define("uikit", factory) : (global = global || self,
