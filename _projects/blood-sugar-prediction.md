@@ -7,7 +7,7 @@ permalink:
 ---
 # About
 
-- **Goal:** *build a model that predicts fasting blood sugar of a patient is > 120 mg/dl*
+- **Goal:** build a model that *build a model that predicts fasting blood sugar of a patient is > 120 mg/dl*
 - **Level of difficulty:** 7/10
 - **Datasets:** *fbs1.xlsx, fbs2.xlsx*
 
