@@ -5,6 +5,7 @@ author: andrew
 tags: [projects:classification]
 permalink:
 ---
+
 # Description
 
 - **Goal:** build a model that *predicts (a probability of) a heart disease of a patient*
