@@ -32,7 +32,7 @@ right:
 #    button: primary-outline
 
   - title: Projects
-    url: /projects/about
+    url: /projects/about/
     button: primary-outline
 
   - title: Contact
