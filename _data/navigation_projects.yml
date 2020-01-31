@@ -1,16 +1,16 @@
 - title: Getting Started
   projects:
-  - mindmap
+  - about
 
 
 - title: Regression
   projects:
-  - media
+  - car-price-prediction
 
 - title: Classification
   projects:
-    - navigation
-
-- title: Clustering
-  projects:
-  - pages
+  - heart-disease-prediction
+  - blood-sugar-prediction
+#- title: Clustering
+#  projects:
+#  -
