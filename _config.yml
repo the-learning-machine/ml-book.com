@@ -24,7 +24,7 @@ logo:
 navbar:
     sticky:         true
     search:         true
-  
+
 # Default author settings
 author:
     name:           Andrew Wolf
@@ -74,7 +74,7 @@ social:
 share:
     post:           true # Display share buttons on a post page
     doc:            true # Display share buttons on a doc page
-    twitter:        username # Enable by adding Twitter handle 
+    twitter:        username # Enable by adding Twitter handle
     facebook:       true # Enable by setting true (Facebook handle not required)
 
 # Default footer image settings
@@ -113,10 +113,13 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
-  - node_modules
+  # - node_modules
 
 sass:
   style:            compressed
+  load_paths:
+    - _sass
+    - node_modules
 
 collections:
   docs:
