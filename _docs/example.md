@@ -2,7 +2,7 @@
 title: EXAMPLE IS HERE!
 subtitle: This document will cover something cool.
 author: victor
-tags: [mlmindmap, featured]
+tags:
 permalink:
 useMath: true
 ---
