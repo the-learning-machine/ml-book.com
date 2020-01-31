@@ -1,15 +1,15 @@
 - title: Getting Started
   projects:
-  - about
+    - about
 
 - title: Regression
   projects:
-  - car-price-prediction
+    - car-price-prediction
 
 - title: Classification
   projects:
-  - heart-disease-prediction
-  - blood-sugar-prediction
+    - heart-disease-prediction
+    - blood-sugar-prediction
 
 #- title: Clustering
 #  projects:
