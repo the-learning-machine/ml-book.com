@@ -5,12 +5,6 @@ permalink: /thanks/
 width: small
 ---
 
-### This is a redirect page for Formspree contact form
+### Your message is on its way!
 
-Varius tempor. Nulla non sollicitudin tortor. Morbi sit amet laoreet ipsum, vel pretium mi. Morbi varius, tellus in accumsan blandit, elit ligula eleifend velit, luctus mattis ante nulla condimentum nulla.
-
-Ut malesuada varius tempor. Nulla non sollicitudin tortor. Morbi sit amet laoreet ipsum, vel pretium mi. Morbi varius, tellus in accumsan blandit, elit ligula eleifend velit, luctus mattis ante nulla condimentum nulla.
-
-Mesuada varius tempor. Nulla non sollicitudin tortor. Morbi sit amet laoreet ipsum, vel pretium mi. Morbi varius, tellus in accumsan blandit, elit ligula eleifend velit, luctus mattis ante nulla condimentum nulla.
-
-Varius tempor. Nulla non sollicitudin tortor. Morbi sit amet laoreet ipsum, vel pretium mi. Morbi varius, tellus in accumsan blandit, elit ligula eleifend velit, luctus mattis ante nulla condimentum nulla.
+We are flattered by your interest to us. We will get back to you as soon as we can.
