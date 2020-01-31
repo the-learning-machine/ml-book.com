@@ -6,11 +6,11 @@
   doc: mindmap
 
 - title: ML Projects
-  desc: Start with real projects we've prepped for you to excel your skills
-  icon: settings
-  doc:
-
-- title: Implementation
-  desc: Get started with Python implementation of ML algorithms
+  desc: Start with real projects we've prepped for you to excel your Python skills
   icon: code
-  doc:
+  project: about
+
+- title: Blog
+  desc: Read our blog, we publish some cool stuff you might want to learn about!
+  icon: album
+  blog:
