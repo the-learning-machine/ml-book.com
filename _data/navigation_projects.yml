@@ -2,7 +2,6 @@
   projects:
   - about
 
-
 - title: Regression
   projects:
   - car-price-prediction
@@ -11,6 +10,7 @@
   projects:
   - heart-disease-prediction
   - blood-sugar-prediction
+
 #- title: Clustering
 #  projects:
 #  -

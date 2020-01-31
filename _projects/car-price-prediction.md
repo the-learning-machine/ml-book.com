@@ -5,7 +5,7 @@ author: andrew
 tags: [projects:regression]
 permalink:
 ---
-# About
+# Description
 
 - **Goal:** build a model that *predicts a car price based on its independent variables*.
 - **Level of difficulty:** 1/10

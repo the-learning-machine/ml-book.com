@@ -5,7 +5,7 @@ author: andrew
 tags: [projects:classification]
 permalink:
 ---
-# About
+# Description
 
 - **Goal:** build a model that *build a model that predicts fasting blood sugar of a patient is > 120 mg/dl*
 - **Level of difficulty:** 7/10

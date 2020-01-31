@@ -5,7 +5,7 @@ author: andrew
 tags: [projects:classification]
 permalink:
 ---
-# About
+# Description
 
 - **Goal:** build a model that *predicts (a probability of) a heart disease of a patient*
 - **Level of difficulty:** 4/10
