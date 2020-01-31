@@ -2,7 +2,7 @@
 title: Car Price Prediction
 subtitle: Predicting prices of cars based on their properties
 author: andrew
-tags: [projects]
+tags: [projects:regression]
 permalink:
 ---
 # About
@@ -11,7 +11,7 @@ permalink:
 - **Level of difficulty:** 1/10
 - **Datasets:** *automobile_data1.csv, automobile_data2.csv, automobile_data3.csv*
 
-*6 sections with step-by-step instructions of what to do:*
+6 sections with step-by-step instructions of what to do:
 
 1. Import the libratries
 2. Import the datasets

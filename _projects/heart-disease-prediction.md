@@ -2,7 +2,7 @@
 title: Heart Disease Prediction
 subtitle: Predicting the probability of a heart disease of a patient
 author: andrew
-tags: [projects]
+tags: [projects:classification]
 permalink:
 ---
 # About
@@ -11,7 +11,7 @@ permalink:
 - **Level of difficulty:** 4/10
 - **Datasets:** *heart1.csv, heart2.csv*
 
-*7 sections with step-by-step instructions of what to do:*
+7 sections with step-by-step instructions of what to do:
 
 1. Import the libratries
 2. Import the datasets
