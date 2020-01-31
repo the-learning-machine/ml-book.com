@@ -2,7 +2,7 @@
 title: Heart Disease Prediction
 subtitle: Predicting the probability of a heart disease of a patient
 author: andrew
-tags: [projects:classification]
+tags: [projects, classification]
 permalink:
 ---
 

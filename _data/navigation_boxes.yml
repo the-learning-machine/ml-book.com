@@ -4,13 +4,16 @@
   desc: Don't know where to start? Start here
   icon: cog
   doc: mindmap
+  url: /docs/mindmap
 
 - title: ML Projects
   desc: Start with real projects we've prepped for you to excel your Python skills
   icon: code
   project: about
+  url: /projects/about
 
 - title: Blog
   desc: Read our blog, we publish some cool stuff you might want to learn about!
   icon: album
+  url: /blog/
   blog:

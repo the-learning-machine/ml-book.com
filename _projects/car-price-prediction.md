@@ -2,7 +2,7 @@
 title: Car Price Prediction
 subtitle: Predicting prices of cars based on their properties
 author: andrew
-tags: [projects:regression]
+tags: [projects, regression]
 permalink:
 ---
 
@@ -25,7 +25,7 @@ permalink:
 - knowledge of **syntax** *(e.g. for/while loops and if statements)*
 - knowledge of **pandas** *(e.g. load the data, delete/insert column, change column name, slice/filter/merge/split a table etc.)*
 - knowledge of **data types** *(e.g. object/string/int/float)*
-- knowledge of what jupyter notebook is and how it works 
+- knowledge of what jupyter notebook is and how it works
 - presence of jupyter notebook instance on your machine
 
 # Download repo
