@@ -21,3 +21,16 @@
 // Other vendor styles
 // @import "syntax-highlighting/cld";
 @import "syntax-highlighting/bw";
+
+canvas {
+  display: block;
+}
+
+#particles-js {
+	background: transparent;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -2;
+}
