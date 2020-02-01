@@ -12,8 +12,8 @@
 
 - title: Regression
   docs:
-  - reg_nb
-  - reg_lasso_ridge_elastic
+#  - reg_nb
+#  - reg_lasso_ridge_elastic
   - reg_multi
 #  - boxes
 #  - featured
@@ -30,8 +30,8 @@
 - title: Classification
   docs:
 #  - cl_nb
-  - cl_rf
   - cl_lr
+  - cl_rf
   - cl_dt_id3
   - cl_dt_cart
 #  - translation
@@ -41,5 +41,5 @@
 
 - title: Clustering
   docs:
-  - example
-  - support
+#  - example
+#  - support
