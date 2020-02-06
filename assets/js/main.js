@@ -1,5 +1,7 @@
 window.onload = () => {
-    particlesJS.load('particles-js', 'particles.json');
+    if (window.location.pathname ==  "/")  {
+        particlesJS.load('particles-js', 'particles.json');
+    }
 }
 
 (function(global, factory) {
