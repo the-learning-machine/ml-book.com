@@ -6,7 +6,12 @@ title: Blog
 <div class="uk-section">
     <div class="uk-container uk-container-xsmall">
 
-        <h1 class="uk-article-title uk-text-center">{{ page.title | escape }}</h1>
+        <h1 class="uk-article-title uk-text-center">
+            {{ page.title | escape }}
+            <span style="text-decoration: none; font-weight: normal;">|
+                <a class="tags-link" href="/tags">Tags</a>
+            </span>
+        </h1>
 
         {% for post in paginator.posts %}
         <div class="uk-card uk-card-default uk-box-shadow-small uk-box-shadow-hover-medium card-post uk-inline border-radius-medium border-xlight uk-width-1-1 uk-margin">
@@ -29,8 +34,8 @@ title: Blog
                             <img class="uk-border-circle avatar" src="{{ domain }}{{ author.avatar }}" alt="{{ author.name }}">
                         </div>
                     {% endif %}
-                  
-                  
+
+
                     <div class="uk-width-expand">
                         <h3 class="uk-card-title uk-margin-remove-bottom">{{ post.title }}</h3>
                         <p class="uk-text-meta uk-margin-remove-top"><time datetime="{{ post.date | date_to_xmlschema }}">
