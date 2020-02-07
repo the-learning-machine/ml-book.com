@@ -24,7 +24,7 @@ logo:
 navbar:
     sticky:         true
     search:         true
-  
+
 # Default author settings
 author:
     name:           Andrew Wolf
@@ -74,7 +74,7 @@ social:
 share:
     post:           true # Display share buttons on a post page
     doc:            true # Display share buttons on a doc page
-    twitter:        username # Enable by adding Twitter handle 
+    twitter:        username # Enable by adding Twitter handle
     facebook:       true # Enable by setting true (Facebook handle not required)
 
 # Default footer image settings
@@ -110,10 +110,21 @@ gems:
   - jekyll-seo-tag
   - jekyll-gist
   - jekyll-avatar
+  - jekyll-archives
+
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
+
+jekyll-archives:
+  enabled:
+    - 'tags'
+  layout: tag-results
+  permalinks:
+    tag: '/tags/:name/'
+
+tag_dir: tags
 
 sass:
   style:            compressed

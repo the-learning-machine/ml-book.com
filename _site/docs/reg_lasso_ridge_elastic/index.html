@@ -11,15 +11,15 @@
 <meta property="og:title" content="Lasso, Ridge &amp; Elastic Net" />
 <meta name="author" content="victor" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Hey. We are still getting ready this section. In the meantime, you can read some cool stuff from our other project - The Learning Machine" />
-<meta property="og:description" content="Hey. We are still getting ready this section. In the meantime, you can read some cool stuff from our other project - The Learning Machine" />
+<meta name="description" content="1. Introduction to Lasso Regularization Term (L1)" />
+<meta property="og:description" content="1. Introduction to Lasso Regularization Term (L1)" />
 <link rel="canonical" href="https://ml-book.com/docs/reg_lasso_ridge_elastic/" />
 <meta property="og:url" content="https://ml-book.com/docs/reg_lasso_ridge_elastic/" />
 <meta property="og:site_name" content="ML Cookbook" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-02-01T03:36:51+05:30" />
+<meta property="article:published_time" content="2020-02-08T02:13:53+05:30" />
 <script type="application/ld+json">
-{"description":"Hey. We are still getting ready this section. In the meantime, you can read some cool stuff from our other project - The Learning Machine","@type":"BlogPosting","url":"https://ml-book.com/docs/reg_lasso_ridge_elastic/","headline":"Lasso, Ridge &amp; Elastic Net","datePublished":"2020-02-01T03:36:51+05:30","dateModified":"2020-02-01T03:36:51+05:30","mainEntityOfPage":{"@type":"WebPage","@id":"https://ml-book.com/docs/reg_lasso_ridge_elastic/"},"author":{"@type":"Person","name":"victor"},"@context":"https://schema.org"}</script>
+{"description":"1. Introduction to Lasso Regularization Term (L1)","@type":"BlogPosting","headline":"Lasso, Ridge &amp; Elastic Net","dateModified":"2020-02-08T02:13:53+05:30","datePublished":"2020-02-08T02:13:53+05:30","mainEntityOfPage":{"@type":"WebPage","@id":"https://ml-book.com/docs/reg_lasso_ridge_elastic/"},"url":"https://ml-book.com/docs/reg_lasso_ridge_elastic/","author":{"@type":"Person","name":"victor"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="https://ml-book.com/uploads/"/>
@@ -258,14 +258,6 @@ function searchResults(form) {
                     
                       
                       
-                      <li class=""><a href="/docs/reg_nb/">Naive Bayes Regressor</a></li>
-                    
-                      
-                      
-                      <li class="uk-active"><a href="/docs/reg_lasso_ridge_elastic/">Lasso, Ridge & Elastic Net</a></li>
-                    
-                      
-                      
                       <li class=""><a href="/docs/reg_multi/">Multivariate Regression</a></li>
                     
                     </ul>
@@ -275,11 +267,11 @@ function searchResults(form) {
                     
                       
                       
-                      <li class=""><a href="/docs/cl_rf/">Random Forest</a></li>
+                      <li class=""><a href="/docs/cl_lr/">Logistic Regression</a></li>
                     
                       
                       
-                      <li class=""><a href="/docs/cl_lr/">Logistic Regression</a></li>
+                      <li class=""><a href="/docs/cl_rf/">Random Forest</a></li>
                     
                       
                       
@@ -293,14 +285,6 @@ function searchResults(form) {
                     
                     <h5>Clustering</h5>
                     <ul class="uk-nav uk-nav-default doc-nav">
-                    
-                      
-                      
-                      <li class=""><a href="/docs/example/">EXAMPLE IS HERE!</a></li>
-                    
-                      
-                      
-                      <li class=""><a href="/docs/support/">Contacting support</a></li>
                     
                     </ul>
                     
@@ -327,15 +311,61 @@ function searchResults(form) {
   
     Written by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Victor Popov</span></span><br>
   
-  <time datetime="2020-02-01T03:36:51+05:30" itemprop="datePublished">
+  <time datetime="2020-02-08T02:13:53+05:30" itemprop="datePublished">
     
-    Feb 1, 2020
+    Feb 8, 2020
   </time>
 </div>
                     </div>
 
                     <div class="article-content link-primary">
-                        <p>Hey. We are still getting ready this section. In the meantime, you can read some cool stuff from our other project - <a href="www.thelearningmachine.ai">The Learning Machine</a></p>
+                        <h1 id="1-introduction-to-lasso-regularization-term-l1">1. Introduction to Lasso Regularization Term (L1)</h1>
+
+<p>LASSO - Least Absolute Shrinkage and Selection Operator - was first formulated by Robert Tibshirani in 1996. It is a powerful method that performs two main tasks: regularization and feature selection.</p>
+
+<p>Let’s look at the example of lasso regularization with linear models, where OLS method is used with its regularization term.</p>
+
+<p align="center">
+    <img src="/uploads/doc/regression/lasso_1.png" height="400" width="400" />
+</p>
+
+<p>The LASSO method puts a constraint on the sum of the absolute values of the model parameters, the sum has to be less than a fixed value (upper bound, or <script type="math/tex">t</script>):</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\sum^{k}_{j=1} |\beta_j|<t %]]></script>
+
+<p>–where t is the upper bound for the sum of the coefficients.</p>
+
+<p>In order to do so, the method applies a shrinking (regularization) process where it penalizes the coefficients of the regression variables shrinking some of them to zero. During features selection process the variables that still have a non-zero coefficient after the shrinking process are selected to be part of the model. The goal of this process is to minimize the prediction error.</p>
+
+<h1 id="2-parameter-alpha-alpha">2. Parameter alpha (<script type="math/tex">\alpha</script>)</h1>
+<p>In practice, the tuning parameter α that controls the strength of the penalty assumes great importance. Indeed, when α is sufficiently large, coefficients are forced to be exactly equal to zero. This way, dimensionality can be reduced. The larger the parameter α, the more the number of coefficients are shrunk to zero. On the other hand, if α = 0, we have just an OLS (Ordinary Least Squares) regression.</p>
+
+<h1 id="3-advantages">3. Advantages</h1>
+
+<p>There are many advantages of using the LASSO method.</p>
+<ul>
+  <li>First of all, it can provide a very good prediction accuracy, because shrinking and removing the coefficients can reduce variance without a substantial increase of the bias, this is especially useful when you have a small number of observation and a large number of features. In terms of the tuning parameter α we know that bias increases and variance decreases when α increases, indeed a trade-off between bias and variance has to be found.</li>
+  <li>Moreover, the LASSO helps to increase the model interpretability by eliminating irrelevant variables that are not associated with the response variable, this way also overfitting is reduced. This is the point where we are more interested in because in this paper the focus is on the feature selection task.</li>
+</ul>
+
+<h1 id="4-introduction-to-lasso-regression">4. Introduction to Lasso Regression</h1>
+
+<p>Lasso with linear models is called Lasso Regression. It is the model that describes the relationship between response variable Y and explanatory variables X. In the case of one explanatory variable, Lasso Regression is called Simple Lasso Regression while the case with two or more explanatory variables is called Multiple Lasso Regression.</p>
+
+<p>Lasso Regression holds all the assumptions of the Linear Regression, such as:</p>
+<ul>
+  <li>The response variable is normally distributed</li>
+  <li>There is a linear relationship between the response variable and the explanatory variables</li>
+  <li>The random errors are normally distributed, have constant (equal) variances at any point in X, and are independent</li>
+</ul>
+
+<p>To read more about Linear Regression assumptions, go to <a href="https://en.wikipedia.org/wiki/Linear_regression">Linear Regression</a>.</p>
+
+<h1 id="5-the-model">5. The Model</h1>
+
+<p>The LASSO minimizes the sum of squared errors, with an upper bound on the sum of the absolute values of the model parameters. The lasso estimate is defined by the solution to the L1 optimization problem:</p>
+
 
                         
                             <div class="share uk-text-center uk-margin-medium-top">
@@ -365,29 +395,16 @@ function searchResults(form) {
 
   
   
-    <div class="uk-margin-large-top paginate-post">
-        <div class="uk-child-width-expand@s uk-grid-large uk-pagi" data-uk-grid>
-            <div>
-                
-                  
-                  
-                  
-                    <h5>Naive Bayes Regressor</h5>
-                    <div><a class="remove-underline hvr-back" href="/docs/reg_nb/">&larr; Previous</a></div>
-                
-            </div>
-            <div>
-                
-                  
-                  
-                  
-                    <h5 class="uk-text-right">Multivariate Regression</h5>
-                    <div class="uk-text-right"><a class="remove-underline hvr-forward" href="/docs/reg_multi/">Next &rarr;</a></div>
-                
-            </div>
-        </div>
-    </div>
-    
+
+  
+  
+
+  
+  
+
+  
+  
+
 
 
                     <div class="uk-margin-large-top">
@@ -398,42 +415,6 @@ function searchResults(form) {
     
 
     <ul class="uk-list link-secondary">
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
     
 
     
@@ -485,141 +466,6 @@ function searchResults(form) {
         <li><a href="/docs/cl_rf/">Random Forest</a></li>
         
         
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
     
 
     
@@ -728,14 +574,6 @@ function searchResults(form) {
         
           
           
-          <li class=""><a href="/docs/reg_nb/">Naive Bayes Regressor</a></li>
-        
-          
-          
-          <li class="uk-active"><a href="/docs/reg_lasso_ridge_elastic/">Lasso, Ridge & Elastic Net</a></li>
-        
-          
-          
           <li class=""><a href="/docs/reg_multi/">Multivariate Regression</a></li>
         
         </ul>
@@ -745,11 +583,11 @@ function searchResults(form) {
         
           
           
-          <li class=""><a href="/docs/cl_rf/">Random Forest</a></li>
+          <li class=""><a href="/docs/cl_lr/">Logistic Regression</a></li>
         
           
           
-          <li class=""><a href="/docs/cl_lr/">Logistic Regression</a></li>
+          <li class=""><a href="/docs/cl_rf/">Random Forest</a></li>
         
           
           
@@ -763,14 +601,6 @@ function searchResults(form) {
         
         <h5 class="uk-margin-top">Clustering</h5>
         <ul class="uk-nav uk-nav-default doc-nav">
-        
-          
-          
-          <li class=""><a href="/docs/example/">EXAMPLE IS HERE!</a></li>
-        
-          
-          
-          <li class=""><a href="/docs/support/">Contacting support</a></li>
         
         </ul>
         
