@@ -37,7 +37,7 @@ tags: index
     <ul>
       {% for tag in tags %}
         <li>
-          <a href="{{ site.baseurl }}/tags/{{tag | slugify }}/">{{ tag }} [{{ site.posts | where_exp:"post", "post.tags contains tag" | size }}]</a>
+          <a href="{{ site.baseurl }}/tags/{{tag}}">{{ tag }} [{{ site.posts | where_exp:"post", "post.tags contains tag" | size }}]</a>
         </li>
       {% endfor %}
     </ul>
