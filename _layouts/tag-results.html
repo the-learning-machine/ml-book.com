@@ -2,12 +2,14 @@
 layout: default
 ---
 
+{% assign filter_posts = site.posts | where_exp:"post", "post.tags contains page.title" %}
+
 <div class="uk-section">
   <div class="uk-container uk-container-xsmall">
     <a href="/tags"><- Back to Tags</a>
     <section class="background-dark usa-section section-intro">
       <div class="usa-grid">
-        {% assign numberof = page.posts | size %}
+        {% assign numberof = filter_posts | size %}
         <h2>{{ numberof }} {% if numberof == 1 %}post{% else %}posts{% endif %} with "{{ page.title }}" tag</h2>
       </div>
     </section>
@@ -16,8 +18,8 @@ layout: default
     <section class="usa-grid content-focus page-tag-results">
       {%
         include tag-results.html
-        posts=page.posts
-        tags=page.tags
+        posts=filter_posts
+        tag=page.title
         trim_padding=true
       %}
     </section>

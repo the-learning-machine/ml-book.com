@@ -105,26 +105,16 @@ uploads:            /uploads/
 markdown:           kramdown
 highlighter:        rouge
 
-gems:
+plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-gist
   - jekyll-avatar
-  - jekyll-archives
 
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
-
-jekyll-archives:
-  enabled:
-    - 'tags'
-  layout: tag-results
-  permalinks:
-    tag: '/tags/:name/'
-
-tag_dir: tags
 
 sass:
   style:            compressed
