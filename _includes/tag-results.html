@@ -1,9 +1,9 @@
-{% assign posts = include.posts %}
+{% assign filter_posts = include.posts %}
 
 <div class="blog-content" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
   <ul class="post-list{% if include.trim_padding %} post-list-no-padding{% endif %}">
-    {% if posts %}
-      {% for post in posts %}
+    {% if filter_posts %}
+      {% for post in filter_posts %}
         <div
           class="uk-card uk-card-default uk-box-shadow-small uk-box-shadow-hover-medium card-post uk-inline border-radius-medium border-xlight uk-width-1-1 uk-margin">
           <a class="uk-position-cover" href="{{ post.url | relative_url }}"></a>
