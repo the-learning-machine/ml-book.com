@@ -1,10 +1,10 @@
 # Navbar left menu navigation links
 
 left:
-  - title: Home
-    url: /
+#  - title: Home
+#    url: /
 
-  - title: Docs
+  - title: ML
     url: /docs/mindmap/
 
   - title: Blog
