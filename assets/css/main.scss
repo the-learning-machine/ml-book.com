@@ -46,10 +46,15 @@ canvas {
 
 @media only screen and (min-width: 1200px) {
   .sidebar-fixed-width {
-    width: 260px;
+    width: 220px;
 
     .sidebar-docs {
       padding-right: 0px;
+      width: 220px;
     }
+  }
+
+  .docs-container {
+    padding-left: 40px;
   }
 }
