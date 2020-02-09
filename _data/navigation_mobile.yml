@@ -1,9 +1,9 @@
 # Mobile menu navigation links
 
-- title: Home
-  url: /
+#- title: Home
+#  url: /
 
-- title: Docs
+- title: ML
   url: /docs/mindmap/
 
 - title: Projects
