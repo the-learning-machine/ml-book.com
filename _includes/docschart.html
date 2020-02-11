@@ -1,0 +1,33 @@
+<div id="docs-chart">
+  <div class="chart-heading">MACHINE LEARNING</div>
+  <div class="chart">
+    {% for section in site.data.docs_list %}
+      <section class="chart-sub-categories">
+        <a class="section-heading chart-sub-categories-title" href='{{section.url || prepend: "#"}}'>
+          {{ section.title | upcase }}
+        </a>
+
+        <div class="chart-sub-categories-subclass">
+          {% for subcategory in section.subcategories %}
+            <div class="chart-sub-categories-subclass-box">
+
+              <a class="section-heading chart-sub-categories-subclass-box-title" href='{{subcategory.url || prepend: "#"}}'>
+                {{ subcategory.title | upcase }}
+              </a>
+
+              {% for doc in subcategory.docs %}
+                {% assign doc_url = doc.url | prepend:"/docs/" | append:"/" %}
+                {% assign maindoc = site.docs | where:"url", doc_url | first %}
+
+                <a class="chart-sub-categories-subclass-box-doc {%unless maindoc%}disabled{%endunless%}" {% if maindoc %}href="{{ maindoc.url }}"{% endif %}>
+                  {{doc.title}}
+                </a>
+              {% endfor %}
+            </div>
+
+          {% endfor %}
+        </div>
+      </section>
+    {% endfor %}
+  </div>
+</div>
