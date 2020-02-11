@@ -2,6 +2,16 @@ window.onload = () => {
     if (window.location.pathname ==  "/")  {
         particlesJS.load('particles-js', 'particles.json');
     }
+
+    var userSelection = document.getElementsByClassName('section-heading');
+
+    for (let i = 0; i < userSelection.length; i++) {
+        userSelection[i].addEventListener("click", function (event) {
+            window.setTimeout(() => {
+                window.scrollBy(0, -80);
+            }, 10);
+        })
+    }
 }
 
 (function(global, factory) {

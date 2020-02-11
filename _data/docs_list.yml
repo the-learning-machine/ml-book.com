@@ -1,0 +1,75 @@
+- title: Supervised Learning
+  url: supervised-learning
+  subcategories:
+  - title: Regression
+    url: regression-algorithms
+    docs:
+    - title: KNN Regression
+      url: reg_knn
+    - title: Lasso, Ridge & Elastic Net
+      url: reg_lasso_ridge_elastic
+    - title: Linear Regression
+      url: reg_linear
+    - title: Neural Network Regressor
+      url: reg_nn
+    - title: Multivariate Regression
+      url: reg_multi
+    - title: Polynomial Regression
+      url: reg_poly
+    - title: Random Forest
+      url: reg_rf
+    - title: Naive Bayes
+      url: reg_nb
+    - title: Support Vector Regression
+      url: reg_sv
+    - title: Decision Tree (CART)
+      url: reg_dt_cart
+
+  - title: Classification
+    url: classification-algorithms
+    docs:
+    - title: Random Forest
+      url: cl_rf
+    - title: Decision Tree (ID3)
+      url: cl_dt_id3
+    - title: Logistic Regression
+      url: cl_lr
+    - title: Multiclass Classification
+      url: cl_multi
+    - title: Naive Bayes Classifier
+      url: cl_nb
+    - title: Decision Tree (CART)
+      url: cl_dt_cart
+    - title: Linear SVMs
+      url: cl_svm_linear
+    - title: Kernelized SVMs
+      url: cl_svm_kernalized
+    - title: Convulational Neural Nets
+      url: cl_cnn
+    - title: Gradient Boosted Machines
+      url: cl_gbm
+
+- title: Unsupervised Learning
+  url: unsupervised-learning
+  subcategories:
+  - title: Clustering
+    url: clustering-algorithms
+    docs:
+    - title: K-Medians
+      url: clus_kmedians
+    - title: K-Medoids
+      url: clus_kmedoids
+    - title: K-Means
+      url: clus_kmeans
+    - title: Fuzzy C-Means
+      url: clus_cmeans_fuzzy
+    - title: Hierarchial Clustering
+      url: clus_hierarchical
+
+  - title: Generation
+    url: generation-algorithms
+    docs:
+    - title: Hidden Markov Models
+      url: gen_hmm
+    - title: Recurrent Neural Nets
+      url: gen_rnn
