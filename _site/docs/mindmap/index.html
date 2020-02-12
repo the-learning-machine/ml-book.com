@@ -13,16 +13,16 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="Overview Machine Learning is divided by 2 sub-fields: supervised and unsupervised learning, both related to data you use to build a model." />
 <meta property="og:description" content="Overview Machine Learning is divided by 2 sub-fields: supervised and unsupervised learning, both related to data you use to build a model." />
-<link rel="canonical" href="https://ml-book.com/docs/mindmap/" />
-<meta property="og:url" content="https://ml-book.com/docs/mindmap/" />
+<link rel="canonical" href="http://localhost:4000/docs/mindmap/" />
+<meta property="og:url" content="http://localhost:4000/docs/mindmap/" />
 <meta property="og:site_name" content="ML Cookbook" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-02-09T00:32:35+05:30" />
+<meta property="article:published_time" content="2020-02-12T21:16:04+05:30" />
 <script type="application/ld+json">
-{"description":"Overview Machine Learning is divided by 2 sub-fields: supervised and unsupervised learning, both related to data you use to build a model.","@type":"BlogPosting","headline":"ML Mind Map","dateModified":"2020-02-09T00:32:35+05:30","url":"https://ml-book.com/docs/mindmap/","datePublished":"2020-02-09T00:32:35+05:30","mainEntityOfPage":{"@type":"WebPage","@id":"https://ml-book.com/docs/mindmap/"},"author":{"@type":"Person","name":"andrew"},"@context":"https://schema.org"}</script>
+{"description":"Overview Machine Learning is divided by 2 sub-fields: supervised and unsupervised learning, both related to data you use to build a model.","author":{"@type":"Person","name":"andrew"},"@type":"BlogPosting","url":"http://localhost:4000/docs/mindmap/","headline":"ML Mind Map","dateModified":"2020-02-12T21:16:04+05:30","datePublished":"2020-02-12T21:16:04+05:30","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/docs/mindmap/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-  <meta property="og:image" content="https://ml-book.com/uploads/"/>
+  <meta property="og:image" content="http://localhost:4000/uploads/"/>
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="shortcut icon" type="image/png" href="/uploads/favicon.png" >
   <link rel="alternate" type="application/rss+xml" title="ML Cookbook" href="/feed.xml">
@@ -152,17 +152,7 @@ function searchResults(form) {
                             
                                 
                                     
-                                        <li><a href="/" >Home</a></li>
-                                    
-                                
-                            
-                        
-                            
-                            
-                            
-                                
-                                    
-                                        <li class="uk-active"><a href="/docs/mindmap/" >Docs</a></li>
+                                        <li class="uk-active"><a href="/docs/mindmap/" >ML</a></li>
                                     
                                 
                             
@@ -291,7 +281,7 @@ function searchResults(form) {
                 </div>
             </div>
 
-            <div class="uk-width-1-1 uk-width-expand@m">
+            <div class="uk-width-1-1 uk-width-expand@m docs-container">
 
                 <article class="uk-article">
 
@@ -304,16 +294,16 @@ function searchResults(form) {
 
 
   
-  <img class="uk-border-circle avatar" src="https://ml-book.com/uploads/andrew.jpeg" alt="Andrew Wolf">
+  <img class="uk-border-circle avatar" src="http://localhost:4000/uploads/andrew.jpeg" alt="Andrew Wolf">
 
 
 <div>
   
     Written by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Andrew Wolf</span></span><br>
   
-  <time datetime="2020-02-09T00:32:35+05:30" itemprop="datePublished">
+  <time datetime="2020-02-12T21:16:04+05:30" itemprop="datePublished">
     
-    Feb 9, 2020
+    Feb 12, 2020
   </time>
 </div>
                     </div>
@@ -323,41 +313,305 @@ function searchResults(form) {
 <p>Machine Learning is divided by <strong>2</strong> sub-fields: <strong>supervised</strong> and <strong>unsupervised</strong> learning, both related to data you use to build a model.</p>
 
 <ul>
-  <li><strong>In supervised learning</strong>, the data you use is labelled, i.e. it has a target variable <script type="math/tex">Y</script> you need to predict, 
-given the response variables <script type="math/tex">X</script>. For example, predicting price of an apartment, given such variables as: squared 
+  <li><strong>In supervised learning</strong>, the data you use is labelled, i.e. it has a target variable <script type="math/tex">Y</script> you need to predict,
+given the response variables <script type="math/tex">X</script>. For example, predicting price of an apartment, given such variables as: squared
 footage, number of rooms, district, area, number of schools nearby, etc.</li>
-  <li><strong>In unsupervised learning</strong>, the data you use is unlabelled, i.e. it does not have a target variable Y. An example of supervised learning is 
+  <li><strong>In unsupervised learning</strong>, the data you use is unlabelled, i.e. it does not have a target variable Y. An example of supervised learning is
 grouping your customers by segment, based on their characteristics (response variables).</li>
 </ul>
 
 <p>To get a little bit ahead, let’s view on the ML Mindmap, and further dissect it!</p>
 
-<p><img src="/uploads/doc/getting_started/mindmap.png" align="middle" /></p>
+<div id="docs-chart">
+  <div class="chart-heading">MACHINE LEARNING</div>
+  <div class="chart">
+    
+      <section class="chart-sub-categories">
+        <a class="section-heading chart-sub-categories-title" href="#supervised-learning">
+          SUPERVISED LEARNING
+        </a>
+
+        <div class="chart-sub-categories-subclass">
+          
+            <div class="chart-sub-categories-subclass-box">
+
+              <a class="section-heading chart-sub-categories-subclass-box-title" href="#regression-algorithms">
+                REGRESSION
+              </a>
+
+              
+                
+                
+
+                <a class="chart-sub-categories-subclass-box-doc disabled">
+                  KNN Regression
+                </a>
+              
+                
+                
+
+                <a class="chart-sub-categories-subclass-box-doc " href="/docs/reg_lasso_ridge_elastic/">
+                  Lasso, Ridge &amp; Elastic Net
+                </a>
+              
+                
+                
+
+                <a class="chart-sub-categories-subclass-box-doc disabled">
+                  Linear Regression
+                </a>
+              
+                
+                
+
+                <a class="chart-sub-categories-subclass-box-doc disabled">
+                  Neural Network Regressor
+                </a>
+              
+                
+                
+
+                <a class="chart-sub-categories-subclass-box-doc " href="/docs/reg_multi/">
+                  Multivariate Regression
+                </a>
+              
+                
+                
+
+                <a class="chart-sub-categories-subclass-box-doc disabled">
+                  Polynomial Regression
+                </a>
+              
+                
+                
+
+                <a class="chart-sub-categories-subclass-box-doc disabled">
+                  Random Forest
+                </a>
+              
+                
+                
+
+                <a class="chart-sub-categories-subclass-box-doc " href="/docs/reg_nb/">
+                  Naive Bayes
+                </a>
+              
+                
+                
+
+                <a class="chart-sub-categories-subclass-box-doc disabled">
+                  Support Vector Regression
+                </a>
+              
+                
+                
+
+                <a class="chart-sub-categories-subclass-box-doc disabled">
+                  Decision Tree (CART)
+                </a>
+              
+            </div>
+
+          
+            <div class="chart-sub-categories-subclass-box">
+
+              <a class="section-heading chart-sub-categories-subclass-box-title" href="#classification-algorithms">
+                CLASSIFICATION
+              </a>
+
+              
+                
+                
+
+                <a class="chart-sub-categories-subclass-box-doc " href="/docs/cl_rf/">
+                  Random Forest
+                </a>
+              
+                
+                
+
+                <a class="chart-sub-categories-subclass-box-doc " href="/docs/cl_dt_id3/">
+                  Decision Tree (ID3)
+                </a>
+              
+                
+                
+
+                <a class="chart-sub-categories-subclass-box-doc " href="/docs/cl_lr/">
+                  Logistic Regression
+                </a>
+              
+                
+                
+
+                <a class="chart-sub-categories-subclass-box-doc disabled">
+                  Multiclass Classification
+                </a>
+              
+                
+                
+
+                <a class="chart-sub-categories-subclass-box-doc " href="/docs/cl_nb/">
+                  Naive Bayes Classifier
+                </a>
+              
+                
+                
+
+                <a class="chart-sub-categories-subclass-box-doc " href="/docs/cl_dt_cart/">
+                  Decision Tree (CART)
+                </a>
+              
+                
+                
+
+                <a class="chart-sub-categories-subclass-box-doc disabled">
+                  Linear SVMs
+                </a>
+              
+                
+                
+
+                <a class="chart-sub-categories-subclass-box-doc disabled">
+                  Kernelized SVMs
+                </a>
+              
+                
+                
+
+                <a class="chart-sub-categories-subclass-box-doc disabled">
+                  Convulational Neural Nets
+                </a>
+              
+                
+                
+
+                <a class="chart-sub-categories-subclass-box-doc disabled">
+                  Gradient Boosted Machines
+                </a>
+              
+            </div>
+
+          
+        </div>
+      </section>
+    
+      <section class="chart-sub-categories">
+        <a class="section-heading chart-sub-categories-title" href="#unsupervised-learning">
+          UNSUPERVISED LEARNING
+        </a>
+
+        <div class="chart-sub-categories-subclass">
+          
+            <div class="chart-sub-categories-subclass-box">
+
+              <a class="section-heading chart-sub-categories-subclass-box-title" href="#clustering-algorithms">
+                CLUSTERING
+              </a>
+
+              
+                
+                
+
+                <a class="chart-sub-categories-subclass-box-doc disabled">
+                  K-Medians
+                </a>
+              
+                
+                
+
+                <a class="chart-sub-categories-subclass-box-doc disabled">
+                  K-Medoids
+                </a>
+              
+                
+                
+
+                <a class="chart-sub-categories-subclass-box-doc disabled">
+                  K-Means
+                </a>
+              
+                
+                
+
+                <a class="chart-sub-categories-subclass-box-doc disabled">
+                  Fuzzy C-Means
+                </a>
+              
+                
+                
+
+                <a class="chart-sub-categories-subclass-box-doc disabled">
+                  Hierarchial Clustering
+                </a>
+              
+            </div>
+
+          
+            <div class="chart-sub-categories-subclass-box">
+
+              <a class="section-heading chart-sub-categories-subclass-box-title" href="#generation-algorithms">
+                GENERATION
+              </a>
+
+              
+                
+                
+
+                <a class="chart-sub-categories-subclass-box-doc disabled">
+                  Hidden Markov Models
+                </a>
+              
+                
+                
+
+                <a class="chart-sub-categories-subclass-box-doc disabled">
+                  Recurrent Neural Nets
+                </a>
+              
+            </div>
+
+          
+        </div>
+      </section>
+    
+  </div>
+</div>
+<!-- <img src="/uploads/doc/getting_started/mindmap.png" align="middle"> -->
 
 <h1 id="supervised-learning">Supervised Learning</h1>
 <p>Supervised learning is divided into two types of algorithms:</p>
 <ul>
-  <li><strong>Classification algorithms</strong>: algorithms that predict a <strong>category</strong>. Examples can be, an algorithm predicting a movie rating: “Best”, “Good”, “Bad”, “Worst”; an algorithm predicting a fruit: ‘Banana’, ‘Apple’, ‘Orange’; 
- an algorithm predicting any simple yes-no question: “Yes” or “No”, etc.</li>
-  <li><strong>Regression algorithms</strong>: algorithms that predict a <strong>continuous value</strong>, such as “dollars” or “weight”. Examples can be, an algorithm predicting a price for the appartment;
-an algorithm predicting a weight of a person.</li>
+  <li>
+    <h4 id="classification-algorithms">Classification algorithms:</h4>
+    <p>Algorithms that predict a <strong>category</strong>. Examples can be, an algorithm predicting a movie rating: “Best”, “Good”, “Bad”, “Worst”; an algorithm predicting a fruit: ‘Banana’, ‘Apple’, ‘Orange’; an algorithm predicting any simple yes-no question: “Yes” or “No”, etc.</p>
+  </li>
+  <li>
+    <h4 id="regression-algorithms">Regression algorithms:</h4>
+    <p>Algorithms that predict a <strong>continuous value</strong>, such as “dollars” or “weight”. Examples can be, an algorithm predicting a price for the appartment; an algorithm predicting a weight of a person.</p>
+  </li>
 </ul>
 
 <h1 id="unsupervised-learning">Unsupervised Learning</h1>
 <p>Unsupervised learning is divided into two types of algorithms:</p>
 <ul>
-  <li><strong>Clustering algorithms</strong>: algorithms that <strong>group</strong> data based on common characterists that the model
-would find in the dataset. Examples can be, an algorithm segmenting customers in a market.</li>
-  <li><strong>Generation algorithms</strong>: algorithms that <strong>generates</strong> data, it mostly related to Natural Language Processing, e.g. generating text.</li>
+  <li>
+    <h4 id="clustering-algorithms">Clustering algorithms:</h4>
+    <p>Algorithms that <strong>group</strong> data based on common characterists that the model would find in the dataset. Examples can be, an algorithm segmenting customers in a market.</p>
+  </li>
+  <li>
+    <h4 id="generation-algorithms">Generation algorithms:</h4>
+    <p>Algorithms that <strong>generates</strong> data, it mostly related to Natural Language Processing, e.g. generating text.</p>
+  </li>
 </ul>
 
                         
                             <div class="share uk-text-center uk-margin-medium-top">
     
-        <a class="uk-link-muted" href="https://twitter.com/intent/tweet?text=ML Mind Map&url=https://ml-book.com/docs/mindmap/&via=&related=" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+        <a class="uk-link-muted" href="https://twitter.com/intent/tweet?text=ML Mind Map&url=http://localhost:4000/docs/mindmap/&via=&related=" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
     
     
-        <a class="uk-link-muted uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fml-book.com%2Fdocs%2Fmindmap%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
+        <a class="uk-link-muted uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fdocs%2Fmindmap%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
     
 </div>
 
@@ -498,10 +752,6 @@ would find in the dataset. Examples can be, an algorithm segmenting customers in
 
                     
                         
-  <div id="commento" class="uk-margin-xlarge-top"></div>
-  <script src="https://cdn.commento.io/js/commento.js"></script>
-  <noscript>Please enable JavaScript to view the comments powered by Commento.</noscript>
-
 
                     
 
@@ -598,15 +848,7 @@ would find in the dataset. Examples can be, an algorithm segmenting customers in
                 
 
                 
-                    <li><a href="/" >Home</a></li>
-                
-            
-                
-
-                
-
-                
-                    <li class="uk-active"><a href="/docs/mindmap/" >Docs</a></li>
+                    <li class="uk-active"><a href="/docs/mindmap/" >ML</a></li>
                 
             
                 
