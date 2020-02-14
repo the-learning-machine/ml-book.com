@@ -5,7 +5,7 @@ author: andrew
 tags:
 permalink:
 ---
-<iframe src="http://3.126.29.245/tree" style="border:2px solid green;" height="300" width="800"></iframe> 
+<iframe src="https://py.ml-book.com:8888/tree" style="border:2px solid red;" height="300" width="800"></iframe> 
 # Purpose
 Projects section is for those who'd like to acquire practical (a.k.a coding) skills in ML.
 

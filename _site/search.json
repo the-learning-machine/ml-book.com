@@ -5,7 +5,7 @@
       "category" : "",
       "tags"     : "mlmindmap",
       "url"      : "/docs/cl_dt_cart/",
-      "date"     : "2020-02-12 21:16:04 +0530"
+      "date"     : "2020-02-14 20:18:58 +0530"
     } ,
   
     {
@@ -13,7 +13,7 @@
       "category" : "",
       "tags"     : "mlmindmap",
       "url"      : "/docs/cl_dt_id3/",
-      "date"     : "2020-02-12 21:16:04 +0530"
+      "date"     : "2020-02-14 20:18:58 +0530"
     } ,
   
     {
@@ -21,7 +21,7 @@
       "category" : "",
       "tags"     : "naive",
       "url"      : "/docs/cl_lr/",
-      "date"     : "2020-02-12 21:16:04 +0530"
+      "date"     : "2020-02-14 20:18:58 +0530"
     } ,
   
     {
@@ -29,7 +29,7 @@
       "category" : "",
       "tags"     : "featured",
       "url"      : "/docs/cl_nb/",
-      "date"     : "2020-02-12 21:16:04 +0530"
+      "date"     : "2020-02-14 20:18:58 +0530"
     } ,
   
     {
@@ -37,7 +37,7 @@
       "category" : "",
       "tags"     : "featured",
       "url"      : "/docs/cl_rf/",
-      "date"     : "2020-02-12 21:16:04 +0530"
+      "date"     : "2020-02-14 20:18:58 +0530"
     } ,
   
     {
@@ -45,7 +45,7 @@
       "category" : "",
       "tags"     : "",
       "url"      : "/docs/example/",
-      "date"     : "2020-02-12 21:16:04 +0530"
+      "date"     : "2020-02-14 20:18:58 +0530"
     } ,
   
     {
@@ -53,7 +53,7 @@
       "category" : "",
       "tags"     : "how-to-start",
       "url"      : "/docs/mindmap/",
-      "date"     : "2020-02-12 21:16:04 +0530"
+      "date"     : "2020-02-14 20:18:58 +0530"
     } ,
   
     {
@@ -61,7 +61,7 @@
       "category" : "",
       "tags"     : "featured",
       "url"      : "/docs/reg_lasso_ridge_elastic/",
-      "date"     : "2020-02-12 21:16:04 +0530"
+      "date"     : "2020-02-14 20:18:58 +0530"
     } ,
   
     {
@@ -69,7 +69,7 @@
       "category" : "",
       "tags"     : "featured",
       "url"      : "/docs/reg_multi/",
-      "date"     : "2020-02-12 21:16:04 +0530"
+      "date"     : "2020-02-14 20:18:58 +0530"
     } ,
   
     {
@@ -77,7 +77,7 @@
       "category" : "",
       "tags"     : "featured",
       "url"      : "/docs/reg_nb/",
-      "date"     : "2020-02-12 21:16:04 +0530"
+      "date"     : "2020-02-14 20:18:58 +0530"
     } 
   
   
@@ -89,7 +89,7 @@
   "category" : "",
   "tags"     : "",
   "url"      : "/projects/about/",
-  "date"     : "2020-02-12 21:16:04 +0530"
+  "date"     : "2020-02-14 20:18:58 +0530"
   } ,
   
   {
@@ -97,7 +97,7 @@
   "category" : "",
   "tags"     : "projects, classification",
   "url"      : "/projects/blood-sugar-prediction/",
-  "date"     : "2020-02-12 21:16:04 +0530"
+  "date"     : "2020-02-14 20:18:58 +0530"
   } ,
   
   {
@@ -105,7 +105,7 @@
   "category" : "",
   "tags"     : "projects, regression",
   "url"      : "/projects/car-price-prediction/",
-  "date"     : "2020-02-12 21:16:04 +0530"
+  "date"     : "2020-02-14 20:18:58 +0530"
   } ,
   
   {
@@ -113,7 +113,7 @@
   "category" : "",
   "tags"     : "projects, classification",
   "url"      : "/projects/heart-disease-prediction/",
-  "date"     : "2020-02-12 21:16:04 +0530"
+  "date"     : "2020-02-14 20:18:58 +0530"
   } 
   
 ]
