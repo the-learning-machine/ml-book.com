@@ -33,7 +33,7 @@ More precisely, Random Forest works as follows:
  
 **In case of a regression problem, for a new record, each tree in the forest predicts a value for Y (output). The final value can be calculated by taking the average of all the values predicted by all the trees in a forest. Or, in case of a classification problem, each tree in the forest predicts the category to which the new record belongs. Finally, the new record is assigned to the category that wins the majority vote.*
 
-$$Example:$$
+**Example:**
 James wants to decide what places he should visit during his one week stay in Paris. He goes to a friend who lived there one year and asks what he visited in the past and if he liked it or not. Based on his experience, he will give James some advice.
 
 This is a typical decision tree algorithm approach. James’ friend decided about what James should visit, based on his personal experience of a year.
@@ -43,7 +43,7 @@ Later, James starts asking more and more of his friends to advise him, and they 
 $$Thus, Random Forest is an algorithm that builds n decision trees by randomly selecting k out of the total of m features for every decision tree, and takes the mode (average, if regression) of the predicted outcomes.$$
 
 # 2.   Pros & Cons
-$$Advantages:$$
+**Advantages:**
 
 **1. Can be used for both classification and regression problems:** Random Forest works well when you have both categorical and numerical features.
 
@@ -51,7 +51,7 @@ $$Advantages:$$
 
 **3. Make a wrong prediction only when more than half of the base classifiers are wrong:** Random Forest is very stable - even if a new data point is introduced in the dataset, the overall algorithm is not affected much as new data may impact one tree, but it is very hard for it to impact all the trees.
 
-$$Disadvantages:$$
+**Disadvantages:**
 
 1. Random forests have been observed to overfit for some datasets with noisy classification/regression tasks.
 
@@ -62,7 +62,7 @@ $$Disadvantages:$$
 # 3.   Important Hyperparameters 
 The Hyperparameters in a random forest are either used to increase the predictive power of the model or to make the model faster. Below, hyperparameters of sklearn built-in random forest function is described:
 
-$$1.Increasing the Predictive Power$$
+**1.Increasing the Predictive Power**
 - **n_estimators:** the number of trees the algorithm builds before taking the maximum voting or taking averages of predictions. In general, a higher number of trees increases the performance and makes the predictions more stable, but it also slows down the computation.
 
 - **max_features:** the maximum number of features Random Forest is allowed to try in an individual tree. Sklearn provides several options, described in their documentation.
@@ -71,7 +71,7 @@ $$1.Increasing the Predictive Power$$
 
  
 
-$$2.Increasing the Models Speed$$
+**2.Increasing the Models Speed**
 
 - **n_jobs:** tells the engine how many processors it is allowed to use. If it has a value of 1, it can only use one processor. A value of “-1” means that there is no limit.
 
