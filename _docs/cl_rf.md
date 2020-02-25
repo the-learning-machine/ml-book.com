@@ -16,7 +16,7 @@ One of the common problems with decision trees, especially the ones that have a 
 
 - Categorical: *If the client is male, between 15 and 25, from the US, likes ice-cream, has a German friend, hates birds and ate pancakes on August 25th, 2012, - he is likely to download Pokemon Go.*
 
-- Continuous: <img src="/uploads/doc/classification/rf_contin.png" alt="Continuous Data" align="middle" height="200" width="200">
+- Continuous: <img src="/uploads/doc/classification/rf_contin.PNG" alt="Continuous Data" align="middle" height="200" width="200">
 
 Random Forest prevents this problem: it is an ensemble of multiple decision trees, not just one. And the more the number of these decision trees in Random Forest, the better the generalization.
  
