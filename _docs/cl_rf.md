@@ -16,17 +16,17 @@ One of the common problems with decision trees, especially the ones that have a 
 
 - Categorical: *If the client is male, between 15 and 25, from the US, likes ice-cream, has a German friend, hates birds and ate pancakes on August 25th, 2012, - he is likely to download Pokemon Go.*
 
-- Continuous: <img src="/uploads/doc/classification" alt="Continuous Data" align="middle" height="200" width="200">
+- Continuous: <img src="/uploads/doc/classification/rf_contin.png" alt="Continuous Data" align="middle" height="200" width="200">
 
 Random Forest prevents this problem: it is an ensemble of multiple decision trees, not just one. And the more the number of these decision trees in Random Forest, the better the generalization.
  
 More precisely, Random Forest works as follows:
 
-1. Selects k features (columns) from the dataset (table) with a total of m features randomly (where k<<m). Then, it builds a Decision Tree from those k features.
+1. Selects $$k$$ features (columns) from the dataset (table) with a total of $$m$$ features randomly (where $$k<<m$$). Then, it builds a Decision Tree from those $$k$$ features.
 
-2. Repeats n times so that you have n Decision Trees built from different random combinations of k features (or a different random sample of the data, called bootstrap sample).
+2. Repeats $$n$$ times so that you have $$n$$ Decision Trees built from different random combinations of $$k$$ features (or a different random sample of the data, called bootstrap sample).
 
-3. Takes each of the n built Decision Trees and passes a random variable to predict the outcome. Stores the predicted outcome (target), so that you have a total of n outcomes from the n Decision Trees.
+3. Takes each of the $$n$$ built Decision Trees and passes a random variable to predict the outcome. Stores the predicted outcome (target), so that you have a total of $$n$$ outcomes from the $$n$$ Decision Trees.
 
 4. Calculates the votes for each predicted target and takes the mode (most frequent target variable). In other words, considers the high voted predicted target as the final prediction from the random forest algorithm.
 
@@ -40,7 +40,7 @@ This is a typical decision tree algorithm approach. James’ friend decided abou
 
 Later, James starts asking more and more of his friends to advise him, and they recommend the places they have been to. Then James chooses the places that were recommend the most to him, which is the typical Random Forest algorithm approach.
  
-$$Thus, Random Forest is an algorithm that builds n decision trees by randomly selecting k out of the total of m features for every decision tree, and takes the mode (average, if regression) of the predicted outcomes.$$
+**Thus, Random Forest is an algorithm that builds n decision trees by randomly selecting k out of the total of m features for every decision tree, and takes the mode (average, if regression) of the predicted outcomes.**
 
 # 2.   Pros & Cons
 **Advantages:**
