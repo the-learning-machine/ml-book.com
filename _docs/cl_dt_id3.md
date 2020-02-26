@@ -21,7 +21,7 @@ Decision tree builds classification models in the form of a tree structure. It b
 A decision tree consists of the decision nodes and leaf nodes. A decision node (Outlook or Wind) has two or more branches (e.g., Sunny, Overcast and Rain). **Leaf node** (e.g., Play Golf) represents a classification (i.e. decision), and it is an endpoint (last node) of any branch (Yes, No, No, Yes). The topmost decision node in a tree which corresponds to the best predictor called **root node** (Outlook).
 
 <p align="center">
-    <img src="/uploads/doc/classification/dt_id3_2_diagrams.png" height="400" width="400">
+    <img src="/uploads/doc/classification/dt_id3_2_diagrams.PNG" height="400" width="400">
 </p>
 
 # 3. ID3 Algorithm
@@ -69,7 +69,7 @@ Let’s understand this with the help of an example outlined in the beginning.
 Consider a piece of data collected over the course of 14 days where the features are Outlook, Temperature, Humidity, Wind and the outcome variable is whether Golf was played on the day. Now, our job is to build a predictive model which takes in above 4 parameters and predicts whether Golf will be played on the day. We’ll build a decision tree to do that using ID3 algorithm.
 
 <p align="center">
-    <img src="/uploads/doc/classification/dt_id3_table.png" height="450" width="400">
+    <img src="/uploads/doc/classification/dt_id3_table.PNG" height="450" width="400">
 </p>
 
 ID3 Algorithm will perform following tasks recursively:
@@ -93,7 +93,7 @@ ID3 Algorithm will perform following tasks recursively:
 Now we’ll go ahead and grow the decision tree. The initial step is to calculate $$E(S)$$, the Entropy of the current state (i.e. existing outcomes at this stage). In the above example, we can see in total there are 9 Yes’s and 5 No’s.
 
 <p align="center">
-    <img src="/uploads/doc/classification/dt_id3_part.png" height="150" width="200">
+    <img src="/uploads/doc/classification/dt_id3_part.PNG" height="150" width="200">
 </p>
 
 Let's calculate $$E(S)$$ using the formula (1):
@@ -132,7 +132,7 @@ $$, which we have already calculated
 Amongst all the 14 examples we have 8 places where the wind is *Weak* and 6 where the wind is *Strong*.
 
 <p align="center">
-    <img src="/uploads/doc/classification/dt_id3_part2.png" height="150" width="200">
+    <img src="/uploads/doc/classification/dt_id3_part2.PNG" height="150" width="200">
 </p>
 
 Now out of the 8 Weak examples, 6 of them were ‘Yes’ for Play Golf and 2 of them were ‘No’ for ‘Play Golf’. So, let's calculate an entropy for *"Weak"* values of *Wind* attribute:
