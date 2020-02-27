@@ -21,7 +21,7 @@ Decision tree builds classification models in the form of a tree structure. It b
 A decision tree consists of the decision nodes and leaf nodes. A decision node (Outlook or Wind) has two or more branches (e.g., Sunny, Overcast and Rain). **Leaf node** (e.g., Play Golf) represents a classification (i.e. decision), and it is an endpoint (last node) of any branch (Yes, No, No, Yes). The topmost decision node in a tree which corresponds to the best predictor called **root node** (Outlook).
 
 <p align="center">
-    <img src="/uploads/doc/classification/dt_id3_2_diagrams.PNG" height="400" width="400">
+    <img src="/uploads/doc/classification/dt_id3_2_diagrams.PNG" height="800" width="850">
 </p>
 
 # 3. ID3 Algorithm
@@ -137,134 +137,96 @@ Amongst all the 14 examples we have 8 places where the wind is *Weak* and 6 wher
 
 Now out of the 8 Weak examples, 6 of them were ‘Yes’ for Play Golf and 2 of them were ‘No’ for ‘Play Golf’. So, let's calculate an entropy for *"Weak"* values of *Wind* attribute:
 
+$$
+E(S_weak) = -\fraq{6}{8}log_2(\fraq{6}{8})-\fraq{2}{8}log_2(\fraq{2}{8}) = 0.811
+$$
+<img src="/uploads/doc/classification/rf_contin.PNG" alt="Continuous Data" align="right" height="200" width="200">
 
 
-Similarly, out of 6 Strong examples, we have 3 examples where the outcome was ‘Yes’ for Play Golf and 3 where we had ‘No’ for Play Golf.
+Similarly, out of 6 *Strong* examples, we have 3 examples where the outcome was ‘Yes’ for Play Golf and 3 where we had ‘No’ for Play Golf.
 
-Wind
-
-Weak
-
-Strong
-
-Yes: 6
-
-No: 2
-
-Yes: 3
-
-No: 3
+$$
+E(S_strong) = -\fraq{3}{6}log_2(\fraq{3}{6})-\fraq{3}{6}log_2(\fraq{3}{6}) = 1.000
+$$
 
 Remember, here half items belong to one class while other half belong to other. Hence we have perfect randomness.
 
- 
-
 Now we have all the pieces required to calculate the Information Gain:
+
+$$
+IG(S,Wind) = E(S) - P(S_weak)*E(S_weak) - P(S_strong)*E(S_strong) \\
+= 0.940 - \fraq{8}{14}*0.811 - \fraq{6}{14}*1 \\
+= 0.048
+$$
 
 That tells us the Information Gain by considering ‘Wind’ as the attribute and gives us information gain of 0.048. Now the next step is to choose the attribute that gives us highest possible Information Gain which we’ll choose as the root node. Therefore, we must similarly calculate the Information Gain for all the other attributes and pick the one with the highest score.
 
+$$
+IG(S,Outlook) = 0.246 \\
+IG(S,Temperature) = 0.029 \\
+IG(S,Humidity) = 0.151 \\
+IG(S,Wind) = 0.048
+$$
 (calculated in a previous example)
 
-We can clearly see that IG(S, Outlook) has the highest information gain of 0.246, hence we chose Outlook attribute as the root node. At this point, the decision tree looks like:
+We can clearly see that IG(S, Outlook) has the highest information gain of **0.246**, hence we chose **Outlook** attribute as the root node. At this point, the decision tree looks like:
 
-Yes
+<p align="center">
+    <img src="/uploads/doc/classification/dt_id3_outlooktree.PNG" height="150" width="200">
+</p>
 
-Outlook
-
-Sunny
-
-Overcast
-
-Rain
-
-?
-
-?
-
-Here we observe that whenever the outlook at Overcast, Play Golf  is always ‘Yes’. That means, the entropy is 0 and we can leave "Yes" as a leaf node. The fact that Overcast is always yes is not a coincidence by any chance, the simple tree resulted due to the highest information gain, given by the attribute Outlook.
-
- 
+Here we observe that whenever the outlook at *Overcast*, *Play Golf*  is always ‘Yes’. That means, the entropy is 0 and we can leave "Yes" as a leaf node. The fact that Overcast is always yes is not a coincidence by any chance, the simple tree resulted due to the highest information gain, given by the attribute Outlook.
 
 Now how do we proceed from this point? We can simply apply recursion: you might want to look at the algorithm steps described earlier.
 
- 
-
-Now that we have used Outlook, we have got three of them remaining: Humidity, Temperature, and Wind. And, we had three possible values of Outlook: Sunny, Overcast, Rain. Where the Overcast node already ended up having leaf node ‘Yes’, so we’re left with two subtrees to compute: Sunny and Rain. Let's start with Sunny, and compute its entropy.
-
- 
+Now that we have used Outlook, we have got three of them remaining: *Humidity*, *Temperature*, and *Wind*. And, we had three possible values of Outlook: Sunny, Overcast, Rain. Where the Overcast node already ended up having leaf node ‘Yes’, so we’re left with two subtrees to compute: *Sunny* and *Rain*. Let's start with *Sunny*, and compute its entropy.
 
 Amongst all the 5 examples the attribute value of Outlook is Sunny, 2 of them were ‘Yes’ for Play Golf and 3 of them were ‘No’ for ‘Play Golf’.
 
+$$
+E(S_sunny) = -\fraq{3}{5}log_2(\fraq{3}{5})-\fraq{2}{5}log_2(\fraq{2}{5}) = 0.96
+$$
+
 In the similar fashion, we compute the following values:
 
-As we can see the highest Information Gain is given by Humidity. Proceeding in the same way with             will give us Wind as the one with highest information gain.
+$$
+IG(S_sunny,Humidity) = 0.963 \\
+IG(S_sunny,Temperature) = 0.570 \\
+IG(S_sunny,Wind) = 0.019 \\
+$$
 
- 
+As we can see the highest Information Gain is given by **Humidity**. Proceeding in the same way with $$S_rain$$ will give us *Wind* as the one with *highest information gain*.
 
 The final Decision Tree is going to be looked as such:
 
-Outlook
+<p align="center">
+    <img src="/uploads/doc/classification/dt_id3_outlooktree.PNG" height="250" width="250">
+</p>
 
-Sunny
-
-Rain
-
-Overcast
-
-Humidity
-
-Yes
-
-Wind
-
-High
-
-No
-
-Normal
-
-Yes
-
-Strong
-
-No
-
-Weak
-
-Yes
-
-6.   Summary
+#6.   Summary
 
 A decision tree is built top-down from a root node and involves partitioning the data into subsets that contain instances with similar values (homogenous). ID3 algorithm uses entropy to calculate the homogeneity of a sample. If the sample is completely homogeneous, the entropy is zero and if the sample is an equally divided it has an entropy of one. 
 
- 
-
 The information gain is based on the decrease in entropy after a dataset is split on an attribute. Constructing a decision tree is all about finding an attribute that returns the highest information gain (i.e. the most homogeneous branches, or the lowest entropy). After that, all the outcome instances that are possible are examined whether they belong to the same class or not. For the instances of the same class, a single name class is used to denote otherwise the instances are classified on the basis of splitting attribute.
 
- 
+#7.   Overfitting and Pruning
 
-7.   Overfitting and Pruning
+One of the most common problems with decision trees, especially the ones that have a table full of columns, is that they tend to **overfit** a lot. Sometimes it looks like the tree just *memorizes* the data. Here are the typical examples of decision trees that overfit, both for categorical and continuous data:
 
-One of the most common problems with decision trees, especially the ones that have a table full of columns, is that they tend to overfit a lot. Sometimes it looks like the tree just memorizes the data. Here are the typical examples of decision trees that overfit, both for categorical and continuous data:
+Categorical:*If the client is male, between 15 and 25, from the US, likes ice-cream, has a German friend, hates birds and ate pancakes on August 25th, 2012, - he is likely to download Pokemon Go.*
 
-Categorical:
+Continuous: <img src="/uploads/doc/classification/rf_contin.PNG" alt="Continuous Data" align="middle" height="250" width="250">
 
-If the client is male, between 15 and 25, from the US, likes ice-cream, has a German friend, hates birds and ate pancakes on August 25th, 2012, - he is likely to download Pokemon Go.
-
-Continuous:
-
-Screen Shot 2019-01-05 at 14.23.32.png
 There are two main ways to mitigate overfitting in Decision Trees:
 
-Using Random Forests
+1. Using Random Forests
 
-Pruning Decision Trees
+2. Pruning Decision Trees
 
-Random Forest prevents the problem of overfitting as it is an ensemble of (n) decision trees, not just one, with n results in the end. The final result of Random forest is the most frequent response variable (the mode) among n results (of n Decision Trees).
+Random Forest prevents the problem of overfitting as it is an ensemble of (n) decision trees, not just one, with *n* results in the end. The final result of Random forest is the most frequent response variable (the mode) among *n* results (of *n* Decision Trees).
+We will not explain this algorithm in this section. It is a separate algorithm and you can read the article on it [here](https://ml-book.com/docs/cl_rf/) in detail.
 
-We will not explain this algorithm in this section. It is a separate algorithm and you can read the article on it here in detail.
-
-Pruning involves the removal of nodes and branches in a decision tree to make it simpler so as to mitigate overfitting and improve performance. Ideally, we want the leaf nodes to be as little randomized as possible for high accuracy, but it is very easy to overfit, so much so, that in many cases, the leaf nodes may only have a single data point. We can mitigate this by pruning the decision tree by a method called cost-effective pruning.
+Pruning involves the removal of nodes and branches in a decision tree to make it simpler so as to mitigate overfitting and improve performance. Ideally, we want the leaf nodes to be as little randomized as possible for high accuracy, but it is very easy to overfit, so much so, that in many cases, the leaf nodes may only have a single data point. We can mitigate this by pruning the decision tree by a method called **cost-effective pruning**.
 
 The following algorithm takes place while applying cost-effective pruning: 
 
@@ -279,85 +241,26 @@ If the delta in performance is insignificant (that is, if validation set does no
 number of leaves
 
 Original tree T
-
-Validation Set
-
-Credit
-
-Excellent
-
-Poor
-
-Fair
-
-Safe
-
-Term
-
-Income
-
-0.81
-
-5 years
-
-3 years
-
-Low
-
-High
-
-Risky
-
-0.94
-
-Safe
-
-0.62
-
-Risky
-
-0.79
-
-Term
-
-3 years
-
-5 years
-
-Risky
-
-0.57
-
-Safe
-
-0.92
-
-Sub-tree t(1)
-
-Note that this method goes from the bottom of the tree. When you consider sub-trees to be replaced by a leaf node, this sub-tree should be the last one to a leaf node, as shown in the example.
-
  
-8.   Pros & Cons​
+#8.   Pros & Cons​
 
-Advantages of ID3  
+**Advantages of ID3**
 
-Easily visualized and interpreted. The training data is used to create understandable prediction rules.
+1. Easily visualized and interpreted. The training data is used to create understandable prediction rules.
 
-No feature normalization is typically needed.
+2. No feature normalization is typically needed.
 
-The calculation time of ID3 is the linear function of the product of the characteristic number and node number.
+3. The calculation time of ID3 is the linear function of the product of the characteristic number and node number.
 
-Works well with datasets using a mixture of feature types (continuous/categorical/binary)
+4. Works well with datasets using a mixture of feature types (continuous/categorical/binary)
 
-​
+**Disadvantages of ID3**
 
-Disadvantages of ID3  
+1. Data may be **overfitted** or **overclassified**.
 
-Data may be overfitted or overclassified.
+2. For making a decision, only one attribute is tested at an instant thus consuming a lot of time.
 
-For making a decision, only one attribute is tested at an instant thus consuming a lot of time.
+3. Classifying the continuous data may prove to be expensive in terms of computation, as many trees have to be generated to see where to break the continuum.  One disadvantage of ID3 is that when given a large number of input values, it is overly sensitive to features with a large number of values.
 
-Classifying the continuous data may prove to be expensive in terms of computation, as many trees have to be generated to see where to break the continuum.  One disadvantage of ID3 is that when given a large number of input values, it is overly sensitive to features with a large number of values.
-
-9.   Decision Tree in Python
+# 9.   Decision Tree in Python
 View/download a template of Decision Tree located in a git repository here .
