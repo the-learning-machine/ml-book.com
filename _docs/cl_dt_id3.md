@@ -138,7 +138,7 @@ Amongst all the 14 examples we have 8 places where the wind is *Weak* and 6 wher
 Now out of the 8 Weak examples, 6 of them were ‘Yes’ for Play Golf and 2 of them were ‘No’ for ‘Play Golf’. So, let's calculate an entropy for *"Weak"* values of *Wind* attribute:
 
 $$
-E(S_weak) = -\fraq{6}{8}log_2(\fraq{6}{8})-\fraq{2}{8}log_2(\fraq{2}{8}) = 0.811
+E(S_weak) = -\frac{6}{8}log_2(\frac{6}{8})-\frac{2}{8}log_2(\frac{2}{8}) = 0.811
 $$
 <img src="/uploads/doc/classification/rf_contin.PNG" alt="Continuous Data" align="right" height="200" width="200">
 
@@ -146,7 +146,7 @@ $$
 Similarly, out of 6 *Strong* examples, we have 3 examples where the outcome was ‘Yes’ for Play Golf and 3 where we had ‘No’ for Play Golf.
 
 $$
-E(S_strong) = -\fraq{3}{6}log_2(\fraq{3}{6})-\fraq{3}{6}log_2(\fraq{3}{6}) = 1.000
+E(S_strong) = -\frac{3}{6}log_2(\frac{3}{6})-\frac{3}{6}log_2(\frac{3}{6}) = 1.000
 $$
 
 Remember, here half items belong to one class while other half belong to other. Hence we have perfect randomness.
@@ -155,7 +155,7 @@ Now we have all the pieces required to calculate the Information Gain:
 
 $$
 IG(S,Wind) = E(S) - P(S_weak)*E(S_weak) - P(S_strong)*E(S_strong) \\
-= 0.940 - \fraq{8}{14}*0.811 - \fraq{6}{14}*1 \\
+= 0.940 - \frac{8}{14}*0.811 - \frac{6}{14}*1 \\
 = 0.048
 $$
 
@@ -184,7 +184,7 @@ Now that we have used Outlook, we have got three of them remaining: *Humidity*, 
 Amongst all the 5 examples the attribute value of Outlook is Sunny, 2 of them were ‘Yes’ for Play Golf and 3 of them were ‘No’ for ‘Play Golf’.
 
 $$
-E(S_sunny) = -\fraq{3}{5}log_2(\fraq{3}{5})-\fraq{2}{5}log_2(\fraq{2}{5}) = 0.96
+E(S_sunny) = -\frac{3}{5}log_2(\frac{3}{5})-\frac{2}{5}log_2(\frac{2}{5}) = 0.96
 $$
 
 In the similar fashion, we compute the following values:
