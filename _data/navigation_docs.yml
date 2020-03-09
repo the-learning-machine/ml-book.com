@@ -15,6 +15,7 @@
 #  - reg_nb
 #  - reg_lasso_ridge_elastic
   - reg_multi
+  - reg_linear
 #  - boxes
 #  - featured
 #  - videos

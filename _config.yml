@@ -53,6 +53,10 @@ authors:
       name:         Andrew Wolf
       title:        Founder
       avatar:       andrew.jpeg
+    shu:
+      name:         Shu Lee
+      title:        ML - Regressions
+      avatar:       shu.jpg
 
 # Social icons displayed in footer
 social:

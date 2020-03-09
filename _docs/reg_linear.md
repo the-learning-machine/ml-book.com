@@ -1,3 +1,11 @@
+---
+title: Linear Regression
+subtitle: Linear Regression with practical example.
+author: shu
+tags: [featured]
+permalink:
+---
+
 # Linear Regression
 Linear regression is a necessary tool in any data professional's toolbox. It is a widely used supervised learning approach. The goal of linear regression is to describe the relationship between input variables $$x_{1}, x_{2}, ... x_{n}$$ and an output variable $$y$$. Examples of this include predicting how height relates to weight, how age relates to income, or how the amount of time someone studies relates to their test score. 
 
