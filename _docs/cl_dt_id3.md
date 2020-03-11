@@ -140,7 +140,7 @@ Now out of the 8 Weak examples, 6 of them were ‘Yes’ for Play Golf and 2 of 
 $$
 E(S_weak) = -\frac{6}{8}log_2(\frac{6}{8})-\frac{2}{8}log_2(\frac{2}{8}) = 0.811
 $$
-<img src="/uploads/doc/classification/rf_contin.PNG" alt="Continuous Data" align="right" height="200" width="200">
+<img src="/uploads/doc/classification/dt_id3_2circles.PNG" alt="Continuous Data" align="right" height="200" width="200">
 
 
 Similarly, out of 6 *Strong* examples, we have 3 examples where the outcome was ‘Yes’ for Play Golf and 3 where we had ‘No’ for Play Golf.
@@ -200,20 +200,20 @@ As we can see the highest Information Gain is given by **Humidity**. Proceeding 
 The final Decision Tree is going to be looked as such:
 
 <p align="center">
-    <img src="/uploads/doc/classification/dt_id3_outlooktree.PNG" height="250" width="250">
+    <img src="/uploads/doc/classification/dt_id3_outlooktree2.PNG" height="350" width="350">
 </p>
 
-#6.   Summary
+# 6. Summary
 
 A decision tree is built top-down from a root node and involves partitioning the data into subsets that contain instances with similar values (homogenous). ID3 algorithm uses entropy to calculate the homogeneity of a sample. If the sample is completely homogeneous, the entropy is zero and if the sample is an equally divided it has an entropy of one. 
 
 The information gain is based on the decrease in entropy after a dataset is split on an attribute. Constructing a decision tree is all about finding an attribute that returns the highest information gain (i.e. the most homogeneous branches, or the lowest entropy). After that, all the outcome instances that are possible are examined whether they belong to the same class or not. For the instances of the same class, a single name class is used to denote otherwise the instances are classified on the basis of splitting attribute.
 
-#7.   Overfitting and Pruning
+# 7.   Overfitting and Pruning
 
 One of the most common problems with decision trees, especially the ones that have a table full of columns, is that they tend to **overfit** a lot. Sometimes it looks like the tree just *memorizes* the data. Here are the typical examples of decision trees that overfit, both for categorical and continuous data:
 
-Categorical:*If the client is male, between 15 and 25, from the US, likes ice-cream, has a German friend, hates birds and ate pancakes on August 25th, 2012, - he is likely to download Pokemon Go.*
+Categorical: *If the client is male, between 15 and 25, from the US, likes ice-cream, has a German friend, hates birds and ate pancakes on August 25th, 2012, - he is likely to download Pokemon Go.*
 
 Continuous: <img src="/uploads/doc/classification/rf_contin.PNG" alt="Continuous Data" align="middle" height="250" width="250">
 
@@ -228,21 +228,23 @@ We will not explain this algorithm in this section. It is a separate algorithm a
 
 Pruning involves the removal of nodes and branches in a decision tree to make it simpler so as to mitigate overfitting and improve performance. Ideally, we want the leaf nodes to be as little randomized as possible for high accuracy, but it is very easy to overfit, so much so, that in many cases, the leaf nodes may only have a single data point. We can mitigate this by pruning the decision tree by a method called **cost-effective pruning**.
 
-The following algorithm takes place while applying cost-effective pruning: 
+The following algorithm takes place while applying **cost-effective pruning**: 
 
-Determine the performance of the original tree, T, with the validation data
+<img src="/uploads/doc/classification/dt_id3_validation_set.PNG" alt="Continuous Data" align="right" height="700" width="700">
 
-Consider a sub-tree, t(1), and remove it from the original tree, replacing a sub-tree with a leaf.
+1. Determine the performance of the original tree, T, with the validation data
 
-Determine the performance of a new tree, T(new).
+2. Consider a sub-tree, t(1), and remove it from the original tree, replacing a sub-tree with a leaf.
 
-If the delta in performance is insignificant (that is, if validation set does not have the significant difference in delta performance), consider simpler (pruned) tree (Occam’s razor) as an original, and continue to the next sub-tree.
+3. Determine the performance of a new tree, T(new).
 
-number of leaves
+4. If the delta in performance is insignificant (that is, if validation set does not have the significant difference in delta performance), consider simpler (pruned) tree (Occam’s razor) as an original, and continue to the next sub-tree.
 
-Original tree T
- 
-#8.   Pros & Cons​
+$$
+\delta = -\frac{err(T_new)-err(T)}{\mid T_new \mid + \mid T \mid}
+$$
+
+# 8.   Pros & Cons​
 
 **Advantages of ID3**
 
