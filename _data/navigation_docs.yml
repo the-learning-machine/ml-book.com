@@ -35,6 +35,7 @@
   - cl_rf
   - cl_dt_id3
   - cl_dt_cart
+  - cl_nb
 #  - translation
 #  - customize
 #  - development
