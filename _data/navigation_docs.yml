@@ -13,9 +13,9 @@
 - title: Regression
   docs:
 #  - reg_nb
-#  - reg_lasso_ridge_elastic
   - reg_multi
   - reg_linear
+  - reg_lasso_ridge_elastic
 #  - boxes
 #  - featured
 #  - videos
@@ -30,7 +30,6 @@
 
 - title: Classification
   docs:
-#  - cl_nb
   - cl_lr
   - cl_rf
   - cl_dt_id3
@@ -43,5 +42,6 @@
 
 - title: Clustering
   docs:
+  - clu_k-means
 #  - example
 #  - support
