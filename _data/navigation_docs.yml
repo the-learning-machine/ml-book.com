@@ -42,6 +42,6 @@
 
 - title: Clustering
   docs:
-  - clu_k-means
+  - clus_kmeans
 #  - example
 #  - support
