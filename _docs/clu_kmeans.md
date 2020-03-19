@@ -16,7 +16,7 @@ Labels are an essential ingredient to supervised algorithms like Support Vector 
 - **Within-Cluster Variance** is the coordinate-wise squared deviations from the cluster centroid of all the observations belonging to that cluster:
 
 $$
-W(C_k) = \sum_{x_i\in{C_i}}{}\sum_{j=1}{}P(x_{ij} - \overline{x}_k)^2=\sum_{x_i\inC_i}\mid\mid{x_i - \overline{x}_k}\mid\mid^2
+W(C_k) = \sum_{x_i\in{C_i}{}\sum_{j=1}{}P(x_{ij} - \overline{x}_k)^2=\sum_{x_i\inC_i}\mid\mid{x_i-\overline{x}_k}\mid\mid^2
 $$
 
 <p align="center">
