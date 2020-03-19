@@ -1,11 +1,10 @@
 ---
 title: Hierarchical Clustering
 subtitle: This document will cover something cool.
-author: NobodySpeak
+author: victor
 tags: [mlmindmap]
 permalink:
 ---
-
 
 # 1.   Introduction 
 Hierarchical clustering is an unsupervised learning algorithm that is used to group similar objects (data points) in clusters. It doesn’t require a predefined number of clusters as this algorithm outputs a tree diagram called dendrogram which we can then cut to obtain clusters.
