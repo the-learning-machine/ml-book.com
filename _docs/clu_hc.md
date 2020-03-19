@@ -1,5 +1,5 @@
 ---
-title: Decision Tree (ID3)
+title: Hierarchical Clustering
 subtitle: This document will cover something cool.
 author: NobodySpeak
 tags: [mlmindmap]
