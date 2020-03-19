@@ -60,7 +60,7 @@
     - title: K-Medoids
       url: clus_kmedoids
     - title: K-Means
-      url: clus_kmeans
+      url: clu_kmeans
     - title: Fuzzy C-Means
       url: clus_cmeans_fuzzy
     - title: Hierarchical Clustering
