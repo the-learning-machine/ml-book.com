@@ -78,7 +78,6 @@ The steps 2 and 3 of the algorithm are repeated until we have just one class:
 
 <p align="center">
     <img src="/uploads/doc/clustering/clu_hc_DataPoints_4.PNG" height="1100" width="450">
-    <img src="/uploads/doc/clustering/clu_hc_DataPoints_5.PNG" height="400" width="450">
 </p>
 
 Note that when we have clusters (A,B,C), (D) and (E,F) we can join (A,B,C) and (E,F) as well as (D) and (E,F). We proceeded with latter to keep cluster equivalent in terms of size. The dendrogram of this clustering can be found below. The scale at the left-hand side denotes the distance between clusters at which the join appeared. We can perform a cut of this dendrogram at the particular distance in order to achieve the clustering we want. For example, if we cut at a distance of 2 we will have clusters (A), (B,C), (D) and (E,F).
