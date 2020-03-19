@@ -16,17 +16,15 @@ Labels are an essential ingredient to supervised algorithms like Support Vector 
 - **Within-Cluster Variance** is the coordinate-wise squared deviations from the cluster centroid of all the observations belonging to that cluster:
 
 $$
-W(C_k) = \sum_{x_i\in{C_i}}{}\sum_{j=1}{}P(x_{ij} - \overline{x}_k)^2=\sum_{x_i\inC_i}\mid\mid{x_i-\overline{x}_k}\mid\mid^2
+W(C_k) = \sum_{x_i\in{C_i}}{}\sum_{j=1}{}P(x_{ij} - \overline{x}_k)^2=\sum_{x_i\in{C_i}}\mid\mid{x_i-\overline{x}_k}\mid\mid^2
 $$
 
-<p align="center">
 In the expression above $$x_{ij}$$ denotes *j-th* predictor of observation $$x_i$$. $$C_k$$ denotes a set of points belonging to cluster *k* and $$x_k$$ denotes a centroid of cluster *k*.
-</p>
 
 - **Total Within-Cluster Variance** is a within-cluster variance summed up across all clusters:
 
 $$
-W(C) = \sum_{k=1}{K}\sum_{x_i\in{C_x}}{}\mid\mid{x_i - \overline{x}_k}\mid\mid^2
+W(C) = \sum_{k=1}^{K}\sum_{x_i\in{C_x}}{}\mid\mid{x_i - \overline{x}_k}\mid\mid^2
 $$
 
 Note that the notation, $$\mid\mid{x_i - \overline{x}_k}\mid\mid$$ means the euclidean distance between vectors $$x_i$$ and $$x_k$$. 
