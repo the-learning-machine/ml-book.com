@@ -24,7 +24,7 @@ In the expression above $$x_{ij}$$ denotes *j-th* predictor of observation $$x_i
 - **Total Within-Cluster Variance** is a within-cluster variance summed up across all clusters:
 
 $$
-W(C) = \sum_{k=1}{K}\sum_{x_i\in{C_x}}{}\mid\mid{x_i - \overline{x}_k}\mid\mid^2
+W(C) = \sum_{k=1}^{K}\sum_{x_i\in{C_x}}{}\mid\mid{x_i - \overline{x}_k}\mid\mid^2
 $$
 
 Note that the notation, $$\mid\mid{x_i - \overline{x}_k}\mid\mid$$ means the euclidean distance between vectors $$x_i$$ and $$x_k$$. 

@@ -64,7 +64,7 @@
     - title: Fuzzy C-Means
       url: clus_cmeans_fuzzy
     - title: Hierarchial Clustering
-      url: clus_hierarchical
+      url: clu_hc
 
   - title: Generation
     url: generation-algorithms
