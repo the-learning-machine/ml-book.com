@@ -43,5 +43,6 @@
 - title: Clustering
   docs:
   - clu_kmeans
+  - clu_hc
 #  - example
 #  - support
