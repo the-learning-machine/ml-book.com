@@ -60,11 +60,11 @@
     - title: K-Medoids
       url: clus_kmedoids
     - title: K-Means
-      url: clu_kmeans
+      url: clus_kmeans
     - title: Fuzzy C-Means
       url: clus_cmeans_fuzzy
     - title: Hierarchical Clustering
-      url: clu_hc
+      url: clus_hierarchical
 
   - title: Generation
     url: generation-algorithms
